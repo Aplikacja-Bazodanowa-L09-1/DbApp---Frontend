@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import Main from "./Main";
 import '../Style/Login.css'
 
 const Login = () => {
@@ -39,6 +38,7 @@ const Login = () => {
             }
             else{
                 setStatus(false);
+                console.log(data.detail);
             }
             
         }).catch((err)=>{console.log(err.message);});
@@ -46,19 +46,25 @@ const Login = () => {
 
     if(status===true)
     {
-        window.location.href = '/'
+        window.location.href = '/main'
     }
     else{
     return ( 
         <div>
-            <div id="dLogin">
-                <form>
-                    Podaj login:
-                    <input type="text" value={login} onChange={(e)=>setLogin(e.target.value)} placeholder="Login" id="ilogin" required/>
-                    Podaj hasło:
-                    <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} placeholder="Password" id="ipassword" required/>
-                    <input type="submit" value='LOGIN' onClick={OnClick} id="blogin"/>
-                </form>
+            <div id="divLogin">
+                Zaloguj się
+                <div id="formLogin">
+                    <form onSubmit={OnClick}>
+                        <div className="inputfield">
+                            <label className="Name">Login</label>
+                            <input type="text" value={login} onChange={(e)=>setLogin(e.target.value)} placeholder="Login" id="ilogin" required/>
+                        </div>
+                        <div className="inputfield">
+                            <lable className="Name">Hasło</lable>
+                            <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} placeholder="Password" id="ipassword" required/>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
      );}

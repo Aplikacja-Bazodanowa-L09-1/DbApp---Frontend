@@ -1,18 +1,61 @@
-#dLogin{
-    width: 200px;
-    height:130px;
+body{
+    background-color: red;
     align-items: center;
-    margin: 100px auto auto auto;
-    background: lightpink;
+    justify-content: center;
+    margin: auto;
+    
+}
+#divLogin{
+    color:white;
+    font-size: 35px;
+    width: 25%;
+    text-align: center;
+    margin: auto;
+    margin-top: 5%;
+}
+#formLogin{
+    border-radius: 8px;
+    height: 250px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    color:black;
+    background: white;
+}
+
+.inputfield{
+    position: relative;
+    justify-content: center;
+}
+.inputfield>input{
+    margin: 0px;
+}
+.Name{
+    float:left;
+    margin-bottom: 0px;
+    margin-left: 5%;
+}
+#textlogin{
+    margin-bottom: 0px;
 }
 #ilogin{
     margin-left: 5px;
+    margin-top: 0px;
+    width: 90%;
+    margin-bottom: 20px;
 }
 #ipassword{
     margin-left: 5px;
+    width: 90%;
+    margin-top:0px;
 }
 #blogin{
     float: right;
     margin-top: 15px;
     margin-right: 20px;
+}
+@media(max-width:512px){
+    #dLogin{
+        width:205px;
+    }
 }
