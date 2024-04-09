@@ -1,0 +1,35 @@
+#Form{
+    width: 200px;
+    height: auto;
+    background: blue;
+    align-items: center;
+    margin: 100px auto;
+    align-items: center;
+    justify-content: center;
+}
+form{
+    text-align: center;
+}
+#FirstName{
+    margin-top:5px;
+}
+#LastName{
+    margin-top:5px;
+}
+#FirstEmail{
+    margin-top:5px;
+}
+#SecondEmail{
+    margin-top:5px;
+}
+#NewPassword{
+    margin-top: 5px;
+}
+#RepeatPassword{
+    margin-top: 5px;
+}
+#bSubmit{
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}

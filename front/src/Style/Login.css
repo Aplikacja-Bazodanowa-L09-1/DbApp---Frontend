@@ -1,0 +1,18 @@
+#dLogin{
+    width: 200px;
+    height:130px;
+    align-items: center;
+    margin: 100px auto auto auto;
+    background: lightpink;
+}
+#ilogin{
+    margin-left: 5px;
+}
+#ipassword{
+    margin-left: 5px;
+}
+#blogin{
+    float: right;
+    margin-top: 15px;
+    margin-right: 20px;
+}

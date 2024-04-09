@@ -1,16 +1,9 @@
-import Navbar from './Navbar';
-
 const Main = () => {
-    return(
-        <div>
-            <Navbar />
-            <div id="main">
-                <a>Hejo</a>
-                <h1>Nic</h1>
-            </div>
-
-        </div>
-    )
+    return ( 
+    <div>
+        <h1>Udało się zalogować</h1>
+    </div> 
+    );
 }
-
-export default Main
+ 
+export default Main;

@@ -1,0 +1,20 @@
+#divMenu{
+    margin:auto;
+    width: 400px;
+    background: blue;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+#bLogin{
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background: rgb(24, 130, 112);
+    color:white;
+}
+#bRegister{
+    margin-left: 10px;
+    margin-bottom: 10px;
+    background: rgb(188, 23, 64);
+    color:white;
+}
