@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Main from "./Main";
 import '../Style/Login.css'
 
@@ -7,22 +7,47 @@ const Login = () => {
     const[password,setPassword]=useState('');
     const [status,setStatus]=useState(false);
 
+    /// DOPISANE PRZEZ DEJWA ///
+
+    const [isAuth, setIsAuth] = useState(false);
+
+    useEffect(() => {
+        if(localStorage.getItem('access_token') !== null) {
+            setIsAuth(true);
+        }
+    }, [isAuth]);
+
+    let credentials = {username:login, password:password}
+
+
+    /// KONIEC DOPISANIA PRZEZ DEJWA ///
+
     const OnClick =(event)=>{
         event.preventDefault();
-        fetch('https://dbapp.pythonanywhere.com/login',{
+        fetch('https://dbapp.pythonanywhere.com/token/',{
+            mode: 'cors',
             method: 'POST',
-            headers: {"Content-Type": "application/json, application/x-www-form-urlencoded, multipart/form-data, text/plain","Access-Control-Allow-Credentials":true,"Access-Control-Allow-Origin": "https://dbapp.pythonanywhere.com/login", "X-PINGOTHER": "pingpong"},
-            body: JSON.stringify(login,password)
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(credentials)
         }).then((respond)=>respond.json()).then((data)=>{
-            console.log(data);
-            setStatus(true);
+            //console.log(data)
+            if(data.access){
+                localStorage.clear();
+                localStorage.setItem('access_token', data.access);
+                localStorage.setItem('refresh_token', data.refresh);
+                setStatus(true);
+            }
+            else{
+                setStatus(false);
+            }
+            
         }).catch((err)=>{console.log(err.message);});
     }
 
     if(status===true)
-    {return(
-        <div><Main/></div>
-    )}
+    {
+        window.location.href = '/'
+    }
     else{
     return ( 
         <div>

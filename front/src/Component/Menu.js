@@ -14,19 +14,11 @@ const Menu = () => {
     }
     if(register===true && login===false)
     {
-        return(
-            <div>
-                <Registration/>
-            </div>
-        )
+        window.location.href = 'register/'
     }
     else if(register===false && login===true)
     {
-        return(
-            <div>
-                <Login/>
-            </div>
-        )
+        window.location.href = 'login/'
     }
     else{
         return (
