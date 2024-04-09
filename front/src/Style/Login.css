@@ -16,7 +16,7 @@ body{
 }
 #formLogin{
     border-radius: 8px;
-    height: 250px;
+    height: 220px;
     justify-content: center;
     align-items: center;
     margin: auto;
@@ -27,6 +27,11 @@ body{
 .inputfield{
     position: relative;
     justify-content: center;
+    margin: 0px;
+}
+p{
+    margin: 0px;
+    margin-bottom: 10px;
 }
 .inputfield>input{
     margin: 0px;
@@ -36,6 +41,7 @@ body{
     font-size: 20px;
     margin-bottom: 0px;
     margin-left: 5%;
+    margin-top: 10px;
 }
 #textlogin{
     margin-bottom: 0px;
@@ -48,7 +54,7 @@ body{
     width: 90%;
     margin-bottom: 20px;
     position: relative;
-    top: -5px;
+    top: -2px;
     height: 45px;
     border-radius: 20px;
     border:transparent;
@@ -61,11 +67,12 @@ body{
 #ipassword{
     margin-left: 5px;
     width: 90%;
+    text-align: center;
     font-size: 25px;
     height: 45px;
     margin-top:0px;
     position: relative;
-    top: -10px;
+    top: -5px;
     border-radius: 20px;
     border: none;
     background: lightgray;
