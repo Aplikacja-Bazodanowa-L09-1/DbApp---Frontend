@@ -13,6 +13,7 @@ const Login = () => {
     useEffect(() => {
         if(localStorage.getItem('access_token') !== null) {
             setIsAuth(true);
+            return window.location.href='/main/'
         }
     }, [isAuth]);
 
@@ -35,6 +36,7 @@ const Login = () => {
                 localStorage.setItem('access_token', data.access);
                 localStorage.setItem('refresh_token', data.refresh);
                 setStatus(true);
+                window.location.href='/main/'
             }
             else{
                 setStatus(false);
@@ -44,23 +46,18 @@ const Login = () => {
         }).catch((err)=>{console.log(err.message);});
     }
 
-    if(status===true)
-    {
-        window.location.href = '/main'
-    }
-    else{
     return ( 
         <div>
             <div id="divLogin">
-                Zaloguj się
+                <p onClick={OnClick}>Zaloguj się</p>
                 <div id="formLogin">
-                    <form onSubmit={OnClick}>
+                    <form>
                         <div className="inputfield">
                             <label className="Name">Login</label>
                             <input type="text" value={login} onChange={(e)=>setLogin(e.target.value)} placeholder="Login" id="ilogin" required/>
                         </div>
                         <div className="inputfield">
-                            <lable className="Name">Hasło</lable>
+                            <label className="Name">Hasło</label>
                             <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} placeholder="Password" id="ipassword" required/>
                         </div>
                     </form>
@@ -68,6 +65,6 @@ const Login = () => {
             </div>
         </div>
      );}
-}
+
  
 export default Login;
