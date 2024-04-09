@@ -54,11 +54,13 @@ const Login = () => {
                     <form>
                         <div className="inputfield">
                             <label className="Name">Login</label>
-                            <input type="text" value={login} onChange={(e)=>setLogin(e.target.value)} placeholder="Login" id="ilogin" required/>
+                            <input type="text" value={login} onChange={(e)=>setLogin(e.target.value)} id="ilogin" required/>
                         </div>
                         <div className="inputfield">
                             <label className="Name">Hasło</label>
                             <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} placeholder="Password" id="ipassword" required/>
+                            <lable className="Name">Hasło</lable>
+                            <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} id="ipassword" required/>
                         </div>
                     </form>
                 </div>
