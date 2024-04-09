@@ -52,16 +52,16 @@ const Login = () => {
     return ( 
         <div>
             <div id="divLogin">
-                Zaloguj się
+                <p onClick={OnClick}>Zaloguj się</p>
                 <div id="formLogin">
-                    <form onSubmit={OnClick}>
+                    <form>
                         <div className="inputfield">
                             <label className="Name">Login</label>
-                            <input type="text" value={login} onChange={(e)=>setLogin(e.target.value)} placeholder="Login" id="ilogin" required/>
+                            <input type="text" value={login} onChange={(e)=>setLogin(e.target.value)} id="ilogin" required/>
                         </div>
                         <div className="inputfield">
                             <lable className="Name">Hasło</lable>
-                            <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} placeholder="Password" id="ipassword" required/>
+                            <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} id="ipassword" required/>
                         </div>
                     </form>
                 </div>
