@@ -49,7 +49,7 @@ const Login = () => {
     return ( 
         <div>
             <div id="divLogin">
-                <p onClick={OnClick}>Zaloguj się</p>
+                <button onClick={OnClick} id="ButtonLogin">Zaloguj się</button>
                 <div id="formLogin">
                     <form>
                         <div className="inputfield">
