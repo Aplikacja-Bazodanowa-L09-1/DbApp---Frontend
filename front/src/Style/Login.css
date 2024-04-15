@@ -5,6 +5,12 @@ body{
     margin: auto;
     
 }
+label{
+    text-align: left;
+}
+#text{
+    text-align: left;
+}
 #ButtonLogin{
     border:none;
     background: transparent;
@@ -28,7 +34,7 @@ body{
 }
 #formLogin{
     border-radius: 8px;
-    height: 220px;
+    height: 260px;
     justify-content: center;
     align-items: center;
     margin: auto;
@@ -89,6 +95,19 @@ p{
     border: none;
     background: lightgray;
     appearance: none;
+    margin-bottom: 0px;
+}
+#prz_haslo{
+    position: relative;
+    border: none;
+    font-size: 15px;
+    text-decoration: underline;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#prz_haslo:hover{
+    color: blueviolet;
 }
 
 #blogin{

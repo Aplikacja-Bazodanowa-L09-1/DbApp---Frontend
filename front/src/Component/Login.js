@@ -4,7 +4,6 @@ import '../Style/Login.css'
 const Login = () => {
     const [login,setLogin]=useState('');
     const[password,setPassword]=useState('');
-    const [status,setStatus]=useState(false);
 
     /// DOPISANE PRZEZ DEJWA ///
 
@@ -22,7 +21,7 @@ const Login = () => {
 
     /// KONIEC DOPISANIA PRZEZ DEJWA ///
 
-    const OnClick =(event)=>{
+    const handleSubmit =(event)=>{
         event.preventDefault();
         fetch('https://dbapp.pythonanywhere.com/token/',{
             mode: 'cors',
@@ -35,32 +34,39 @@ const Login = () => {
                 localStorage.clear();
                 localStorage.setItem('access_token', data.access);
                 localStorage.setItem('refresh_token', data.refresh);
-                setStatus(true);
                 window.location.href='/main/'
             }
             else{
-                setStatus(false);
                 console.log(data.detail);
             }
             
         }).catch((err)=>{console.log(err.message);});
     }
 
+    const Przypomnienie = () =>{
+        window.location.href='/remind-password/'
+    }
+
     return ( 
         <div>
             <div id="divLogin">
-                <button onClick={OnClick} id="ButtonLogin">Zaloguj się</button>
+            <form>
+                <div id="text">Login:</div>
                 <div id="formLogin">
-                    <form>
+                    
                         <div className="inputfield">
                             <label className="Name">Login</label>
                             <input type="text" value={login} onChange={(e)=>setLogin(e.target.value)} id="ilogin" required/>
                         
                             <lable className="Name">Hasło</lable>
                             <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} id="ipassword" required/>
+                            <label id="prz_haslo" onClick={Przypomnienie}>Przypomnij hasło</label>
                         </div>
-                    </form>
+                        
+                    
                 </div>
+                <button onClick={handleSubmit} id="ButtonLogin">Zaloguj się</button>
+                </form>
             </div>
         </div>
      );}
