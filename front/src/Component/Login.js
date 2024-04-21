@@ -50,22 +50,22 @@ const Login = () => {
     return ( 
         <div>
             <div id="divLogin">
-            <form>
-                <div id="text">Login:</div>
-                <div id="formLogin">
-                    
-                        <div className="inputfield">
-                            <label className="Name">Login</label>
-                            <input type="text" value={login} onChange={(e)=>setLogin(e.target.value)} id="ilogin" required/>
+                <form>
+                    <div id="text">Login:</div>
+                    <div id="formLogin">
                         
-                            <lable className="Name">Hasło</lable>
-                            <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} id="ipassword" required/>
-                            <label id="prz_haslo" onClick={Przypomnienie}>Przypomnij hasło</label>
-                        </div>
+                            <div className="inputfield">
+                                <label className="Name">Login</label>
+                                <input type="text" value={login} onChange={(e)=>setLogin(e.target.value)} id="ilogin" required/>
+                            
+                                <lable className="Name">Hasło</lable>
+                                <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} id="ipassword" required/>
+                                <label id="prz_haslo" onClick={Przypomnienie}>Przypomnij hasło</label>
+                            </div>
+                            
                         
-                    
-                </div>
-                <button onClick={handleSubmit} id="ButtonLogin">Zaloguj się</button>
+                    </div>
+                    <button onClick={handleSubmit} id="ButtonLogin">Zaloguj się</button>
                 </form>
             </div>
         </div>
