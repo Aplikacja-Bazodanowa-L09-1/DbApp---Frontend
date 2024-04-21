@@ -1,22 +1,25 @@
-import '../Style/RemindPassword.css'
+import '../Style/RemindPassword.css';
+import { useState } from 'react';
 
-const handlePrzypomnij = () => {
-    
+
+const sendEmail = () =>{
+
 }
 
 const RemindPassword = () => {
+    const [email,setEmail] = useState('')
     return ( 
         <div>
-            <div id="divPryzpomnij">
-                <form>
+            <div>
+                <form id="formPrzypomnij">
                     <div id="text">Przypomnij hasło:</div>
-                        <div id="formPrzypomnij">
+                        <div id="idPrzypomnij">
                             
                                 <div className="inputfield">
                                     <label className="topic">Email</label>
                                     <input type="email" className="data" required/>
                                 </div>
-                                <label id="przypomnij" onSubmit={handlePrzypomnij}>Przypomnij</label>
+                                <input className="przypomnij" type="submit" value="Przypomnij"/>
                             
                         </div>
                 </form>
