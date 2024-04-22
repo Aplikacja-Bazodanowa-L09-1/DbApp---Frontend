@@ -23,10 +23,10 @@ const Login = () => {
 
     const handleSubmit =(event)=>{
         event.preventDefault();
-        fetch('https://dbapp.pythonanywhere.com/token/',{
+        fetch('https://db-app-backend.vercel.app/auth/token/',{
             mode: 'cors',
             method: 'POST',
-            headers: {"Content-Type": "application/json"},
+            headers: {"Content-Type": "application/json", "Access-Control-Allow-Origin":"allow"},
             body: JSON.stringify(credentials)
         }).then((respond)=>respond.json()).then((data)=>{
             //console.log(data)
