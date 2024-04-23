@@ -1,5 +1,5 @@
 import './App.css';
-import Register from './Component/Registration';
+import ResetPassword from './Component/ResetPassword';
 import Login from './Component/Login'
 import Menu from './Component/Menu'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
@@ -13,7 +13,7 @@ function App() {
         <Routes>
           <Route path='/' Component={Menu} />
           <Route path='login/' Component={Login} />
-          <Route path='register/' Component={Register} />
+          <Route path='reset_password/:token' Component={ResetPassword} />
           <Route path='main/' Component={Main}/>
           <Route path='remind-password/' Component={RemindPassword}/>
         </Routes>

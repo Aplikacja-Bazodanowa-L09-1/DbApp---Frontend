@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Login from "./Login";
 import '../Style/Menu.css'
-import Registration from "./Registration";
+import Registration from "./ResetPassword";
 
 const Menu = () => {
     const [register,setRegister]=useState(false);
