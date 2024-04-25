@@ -4,6 +4,7 @@ import '../Style/Login.css'
 const Login = () => {
     const [login,setLogin]=useState('');
     const[password,setPassword]=useState('');
+    const[status,setStatus]=useState(true);
 
     /// DOPISANE PRZEZ DEJWA ///
 
@@ -38,6 +39,9 @@ const Login = () => {
             }
             else{
                 console.log(data.detail);
+                setStatus(false);
+                setLogin('');
+                setPassword('');
             }
             
         }).catch((err)=>{console.log(err.message);});
@@ -47,29 +51,57 @@ const Login = () => {
         window.location.href='/remind-password/'
     }
 
-    return ( 
-        <div>
-            <div id="divLogin">
-                <form>
-                    <div id="text">Login:</div>
-                    <div id="formLogin">
-                        
-                            <div className="inputfield">
-                                <label className="Name">Login</label>
-                                <input type="text" value={login} onChange={(e)=>setLogin(e.target.value)} id="ilogin" required/>
+    if(status===true)
+        {return ( 
+            <div>
+                <div id="divLogin">
+                    <form>
+                        <div id="text">Login:</div>
+                        <div id="formLogin">
                             
-                                <lable className="Name">Hasło</lable>
-                                <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} id="ipassword" required/>
-                                <label id="prz_haslo" onClick={Przypomnienie}>Przypomnij hasło</label>
-                            </div>
+                                <div className="inputfield">
+                                    <label className="Name">Login</label>
+                                    <input type="text" value={login} onChange={(e)=>setLogin(e.target.value)} id="ilogin" required/>
+                                
+                                    <lable className="Name">Hasło</lable>
+                                    <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} id="ipassword" required/>
+                                    <label id="prz_haslo" onClick={Przypomnienie}>Przypomnij hasło</label>
+                                </div>
+                                
                             
-                        
-                    </div>
-                    <button onClick={handleSubmit} id="ButtonLogin">Zaloguj się</button>
-                </form>
+                        </div>
+                        <button onClick={handleSubmit} id="ButtonLogin">Zaloguj się</button>
+                    </form>
+                </div>
             </div>
-        </div>
-     );}
+        );}
+    else if(status===false)
+    {
+        {return ( 
+            <div>
+                <div id="divLogin">
+                    <form>
+                        <div id="text">Login:</div>
+                        <div id="formLoginzle">
+                            <label id="wiadomosc">Błędny login lub hasło</label>
+                                <div className="inputfield">
+                                    <label className="Name">Login</label>
+                                    <input type="text" value={login} onChange={(e)=>setLogin(e.target.value)} id="nilogin" required/>
+                                
+                                    <lable className="Name">Hasło</lable>
+                                    <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} id="nipassword" required/>
+                                    <label id="prz_haslo" onClick={Przypomnienie}>Przypomnij hasło</label>
+                                </div>
+                                
+                            
+                        </div>
+                        <button onClick={handleSubmit} id="ButtonLogin">Zaloguj się</button>
+                    </form>
+                </div>
+            </div>
+        );}
+    }
+    }
 
  
 export default Login;
