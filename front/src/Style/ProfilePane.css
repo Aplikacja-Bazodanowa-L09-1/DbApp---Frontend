@@ -1,0 +1,55 @@
+@media only screen and (max-width: 800px) {
+    #profPane{
+        width: 20px;
+        background-color: red;
+    }
+}
+
+#profPane
+{
+    min-height: 20vh;
+    width: 40vw;
+    background-color: white;
+    border-radius: 10px ;
+}
+#profBox{
+    display: flex;
+}
+#profPhoto{
+    width: auto;
+    height: 18vh;
+    margin: 1vh;
+    background-color: gray;
+}
+#profInfo{
+    margin: 1vh;
+    width: 40%;
+}
+.info{
+    margin-bottom: 4px;
+    font-size: 14px;
+}
+#playerName{
+    font-weight: 700;
+}
+#buttonBox{
+    display: flex;
+    position: relative;
+    width: 40%;
+    justify-content: end;
+    align-items: end;
+    padding: 0 1vh 1vh 0;
+}
+#logoutButton{
+    width: 130px;
+    height: 30px;
+    padding-top: 5px;
+    border-radius: 10px;
+    background-color: rgb(214, 15, 15);
+    text-align: center;
+}
+#logoutButton:hover
+{
+    background-color: rgb(240, 0, 0);
+    cursor: pointer;
+}

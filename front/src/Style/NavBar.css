@@ -1,0 +1,29 @@
+#navPane
+{
+    width: 90px;
+    min-height: 90vh;
+    background-color: white;
+    border-radius: 10px ;
+}
+.buttons
+{
+    max-width: 100px;
+    height: 18vh;
+    text-align: center;
+    justify-content: center;   
+}
+.buttons> img{
+    padding-top: 30px;
+}
+.buttons:hover
+{
+    background-color: gainsboro;
+}
+.buttons:first-child:hover
+{
+    border-radius: 10px 10px 0px 0px;
+}
+.buttons:nth-child(5):hover
+{
+    border-radius: 0px 0px 10px 10px;
+}
