@@ -6,12 +6,11 @@ body {
 
 .calendar {
   border-radius: 20px;
-  width: 474px;
-  height: 407px;
+  min-height: 45vh;
+  width: 40vw;
   background-color:#F9F1F1;
   font-family: 'Inter';
   font-size: 21.26px;
-  float:right;
   text-align: center;
 }
 
