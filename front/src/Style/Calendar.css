@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Inter');
+
+body {
+  background-color:#D32020;
+}
+
+.calendar {
+  border-radius: 20px;
+  width: 474px;
+  height: 407px;
+  background-color:#F9F1F1;
+  font-family: 'Inter';
+  font-size: 21.26px;
+  float:right;
+  text-align: center;
+}
+
+.calendar p {
+  color: #D32020;
+}
+
+.table_days {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.table_days td {
+  height: 32px;
+  width: 32px;
+  vertical-align:middle;
+}
+
+.week {
+  color:#B3B3B3;
+}
+
+.day {
+  color:#000000;
+  font-weight: bold;
+}
+
+.days {
+  color:#B3B3B3;
+  font-weight: bold;
+}
