@@ -5,6 +5,7 @@ import Menu from './Component/Menu'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Main from './Component/Main';
 import RemindPassword from './Component/RemindPassword';
+import TeamStatistic from './Component/TeamStatistic';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path='reset_password/:token' Component={ResetPassword} />
           <Route path='main/' Component={Main}/>
           <Route path='remind-password/' Component={RemindPassword}/>
+          <Route path='team-statistic/' Component={TeamStatistic}/>
         </Routes>
       </BrowserRouter>
     </div>

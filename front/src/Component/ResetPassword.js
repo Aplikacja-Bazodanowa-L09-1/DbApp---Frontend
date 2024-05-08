@@ -15,25 +15,30 @@ const ResetPassword = (event) => {
     const [password,setPassword]=useState('');
     const [password2,setPassword2]=useState('');
     const [status,setStatus]=useState(0);
-
+    
     const changePassword = () => {
-        fetch(`http://localhost:8184/auth/reset_password/${token}/`, {
+        if(password===password2)
+        {
+            fetch(`http://localhost:8184/auth/reset_password/${token}/`, {
             mode: 'cors',
             method: 'POST',
             headers: {"Content-Type": "application/json", "Access-Control-Allow-Origin":"allow"},
             body: JSON.stringify({password : password})
-        }).then(response => response.json()).then(data => {
-            if(data.message == 'password changed'){
+            }).then(response => response.json()).then(data => {
+            if(data.message === 'password changed'){
                 setStatus(1);
                 window.location.href = '/login'
             }
             else
             {
                 setStatus(2);
+                sleep(3000);
                 window.location.href='/login';
             }
         })
         .catch(err => {console.log(err)},sleep(3000),setStatus(2),window.location.href='/login')
+        }
+        else setStatus(3);
     }
     if(status===0)
         {return (
@@ -78,6 +83,26 @@ const ResetPassword = (event) => {
             </div>
             );
     }
+    else if(status===3)
+        {
+            return (
+                <div>
+                    <div id="Form">
+                        <form>
+                        <div id="text">Ustawienie hasła:</div>
+                        <div id="divForm">
+                            <label id="zle">Hasła nie są takie same</label>
+                            <label className='napis'>Nowe hasło:</label>
+                            <input type="password" className='zlepola' onChange={(e)=>setPassword(e.target.value)}/>
+                            <label className='napis'>Powtórz hasło:</label>
+                            <input type="password" className='zlepola' onChange={(e)=>setPassword2(e.target.value)}/>
+                        </div>
+                            <label id="przUstaw" onClick={changePassword}>Ustaw</label>
+                        </form>
+                    </div>
+                </div>
+                );
+        }
 };
  
 export default ResetPassword;
