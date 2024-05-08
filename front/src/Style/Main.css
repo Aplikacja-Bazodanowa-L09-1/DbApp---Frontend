@@ -1,0 +1,48 @@
+@media only screen and (max-width: 800px) {
+    #profPane{
+        width: 20px;
+        background-color: red;
+    }
+    #box{
+        flex-direction: column;
+    }
+    #bar{
+        display: none;
+    }
+    #leftSide{
+        height: 90vh;
+        width: 80vw;
+    }
+    #rightSide{
+        height: 90vh;
+        width: 80vw;
+    }
+  }
+#box{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-block: 5vh;
+}
+#bar
+{
+    min-height: 90vh;
+    width: 10vw;
+    display: flex;
+    justify-content: center;
+}
+#leftSide{
+    height: 90vh;
+    width: 40vw;
+}
+#rightSide{
+    height: 90vh;
+    width: 40vw;
+}
+.headers{
+    height: 4vh;
+    font-weight: 600;
+    color: white;
+    margin-top: 1vh;
+    margin-left: 1vh;
+}
