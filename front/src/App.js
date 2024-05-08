@@ -13,7 +13,6 @@ import NavBar from './Component/NavBar';
 import NoticesPane from './Component/NoticesPane';
 import ProfilePane from './Component/ProfilePane';
 import StatisticsPane from './Component/StatisticsPane';
-import TeamStatistic from './Component/TeamStatistic';
 import SurveyPane from './Component/SurveyPane';
 
 
@@ -27,7 +26,7 @@ function App() {
           <Route path='reset_password/:token' Component={ResetPassword} />
           <Route path='main/' Component={Main}/>
           <Route path='remind-password/' Component={RemindPassword}/>
-
+          <Route path='team-statistic/' Component={TeamStatistic}/>
 
           <Route path='calendar/' Component={Calendar} />
           <Route path='calendarpane/' Component={CalendarPane} />
