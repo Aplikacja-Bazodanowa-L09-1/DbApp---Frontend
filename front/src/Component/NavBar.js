@@ -7,6 +7,9 @@ const NavBar = () => {
     {
         window.location.href = '/main/';
     }
+    const goToTeamStatistic =() =>{
+        window.location.href = '/team-statistic/';
+    }
 
     return (
         <div>
@@ -14,7 +17,7 @@ const NavBar = () => {
                 <div className="buttons" onClick={goToMain}>
                     <img src={HomeIcon} width="70%"  alt="1"/>
                 </div>
-                <div className="buttons">
+                <div className="buttons" onClick={goToTeamStatistic}>
                     <img  src={HomeIcon} width="70%" alt="2"/>
                 </div>
                 <div className="buttons">
