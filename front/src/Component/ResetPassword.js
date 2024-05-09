@@ -91,6 +91,7 @@ const ResetPassword = (event) => {
                         <div id="text">Ustawienie hasła:</div>
                         <div id="divForm">
                             <label id="zle">Hasła nie są takie same</label>
+                            <br/>
                             <label className='napis'>Nowe hasło:</label>
                             <input type="password" className='zlepola' onChange={(e)=>setPassword(e.target.value)}/>
                             <label className='napis'>Powtórz hasło:</label>
