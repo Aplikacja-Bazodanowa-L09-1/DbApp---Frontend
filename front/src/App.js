@@ -34,7 +34,6 @@ function App() {
           <Route path='noticespane/' Component={NoticesPane} />
           <Route path='profilepane/' Component={ProfilePane} />
           <Route path='statisticspane/' Component={StatisticsPane} />
-          <Route path='teamstatistic/' Component={TeamStatistic} />
           <Route path='surveypane/' Component={SurveyPane} />
           
         </Routes>
