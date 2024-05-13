@@ -24,7 +24,7 @@ const ResetPassword = (event) => {
             headers: {"Content-Type": "application/json", "Access-Control-Allow-Origin":"allow"},
             body: JSON.stringify({password : password})
             }).then(response => response.json()).then(data => {
-            if(data.message === 'password changed'){
+            if(data.message === 'success'){
                 setStatus(1);
                 window.location.href = '/login'
             }

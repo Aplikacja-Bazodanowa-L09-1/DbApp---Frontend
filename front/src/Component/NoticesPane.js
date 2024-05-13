@@ -1,4 +1,5 @@
 import '../Style/NoticesPane.css'
+const bicepsIcon = require('../Icons/biceps.png')
 
 const NoticesPane = () => {
 
@@ -7,7 +8,7 @@ const NoticesPane = () => {
             <div id="notification">
                 <div id="notifTop">
                     <div id="notifLeft">
-                        <img id="notifIcon" alt="icon" />
+                        <img id="notifIcon" src={bicepsIcon} alt="icon" />
                     </div>
                     <div id="notifRight">
                         <div id="notifTitle">

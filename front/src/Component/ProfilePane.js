@@ -1,11 +1,19 @@
 import '../Style/ProfilePane.css'
+import { useState, React, useEffect} from "react"
 
 const ProfilePane = () => {
+
+
+    const [name, setName] = useState('')
+    const [surname, setSurname] = useState('')
+    const [role, setRole] = useState('')
+    const [team, setTeam] = useState('')
+
     const logoutHandler = (event) => {
         const refrsh_token = localStorage.getItem('refresh_token')
-        const data = {"refresh": refrsh_token}
+        const data = {"token": refrsh_token}
 
-        fetch('https://dbapp.pythonanywhere.com/logout/',{
+        fetch('http://localhost:8184/auth/revoke_token/',{
             mode: 'cors',
             method: 'POST',
             headers: {"Content-Type": "application/json"},
@@ -18,14 +26,29 @@ const ProfilePane = () => {
         }).catch(err=>{console.log(err)})
     }
 
+    useEffect(() => {
+        fetch('http://localhost:8184/app/user/profile', {
+            mode: 'cors',
+            method: 'GET',
+            headers: {"Content-Type": "application/json", "authorization": `Berear ${localStorage.getItem('access_token')}`},
+        }).then(response=>response.json()).then(data=>{
+            console.log(data.user)
+            setName(data.user.first_name)
+            setSurname(data.user.last_name)
+            setRole(data.user.role)
+            setTeam(data.user.player.team.name)
+
+        })
+    })
+
      return (
         <div id="profPane">
             <div id="profBox">
-                <img id="profPhoto" alt="Tu będzie profilowe"/>
+                <img id="profPhoto" src="https://i.pravatar.cc/100" alt="Tu będzie profilowe"/>
                 <div id="profInfo">
-                    <p id="playerName" className="info">Marek Mostkowiak</p>
-                    <p id="playerPosition" className="info">Bramkarz</p>
-                    <p id="playerClub" className="info">Stal Rzeszów</p>
+                    <p id="playerName" className="info">{name} {surname}</p>
+                    <p id="playerPosition" className="info">{role}</p>
+                    <p id="playerClub" className="info">{team}</p>
                 </div>
                 <div id="buttonBox">
                     <div id="logoutButton" onClick={logoutHandler}>Wyloguj</div>

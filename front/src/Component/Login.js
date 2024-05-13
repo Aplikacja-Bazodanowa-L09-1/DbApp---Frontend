@@ -24,7 +24,7 @@ const Login = () => {
 
     const handleSubmit =(event)=>{
         event.preventDefault();
-        fetch('https://db-app-backend.vercel.app/auth/token/',{
+        fetch('http://localhost:8184/auth/token/',{
             mode: 'cors',
             method: 'POST',
             headers: {"Content-Type": "application/json", "Access-Control-Allow-Origin":"allow"},
