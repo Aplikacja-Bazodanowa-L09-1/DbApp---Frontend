@@ -1,23 +1,4 @@
-@media only screen and (max-width: 800px) {
-    #profPane{
-        width: 20px;
-        background-color: red;
-    }
-    #box{
-        flex-direction: column;
-    }
-    #bar{
-        display: none;
-    }
-    #leftSide{
-        height: 90vh;
-        width: 80vw;
-    }
-    #rightSide{
-        height: 90vh;
-        width: 80vw;
-    }
-  }
+
 #box{
     display: flex;
     justify-content: space-around;
@@ -26,7 +7,7 @@
 }
 #bar
 {
-    min-height: 90vh;
+    height: 90vh;
     width: 10vw;
     display: flex;
     justify-content: center;
@@ -45,4 +26,43 @@
     color: white;
     margin-top: 1vh;
     margin-left: 1vh;
+}
+
+.calHeader{
+    display: none;
+}
+#bottom{
+    display: none;
+}
+
+@media only screen and (max-width: 800px) {
+    #box{
+        flex-direction: column;
+    }
+    #leftSide{
+        height: 90vh;
+        width: 80vw;
+    }
+    #rightSide{
+        height: 90vh;
+        width: 80vw;
+    }
+    .calHeader{
+        display: block;
+    }
+    #bar{
+        position: fixed;
+        top: 82%;
+        background-color: #D32020;
+        height: 100px;
+        width: 90vh;
+        padding-top: 10px;
+        padding-bottom: 20px;
+    }
+    #bottom{
+        display: block;
+        height: 150px;
+        width: 100%;
+        background-color: #D32020;
+    }
 }

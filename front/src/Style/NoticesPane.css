@@ -46,3 +46,12 @@
 #notifTitle{
     font-weight: 700;
 }
+@media only screen and (max-width: 800px) {
+    #noticesPane{
+        width: 80vw;
+    }
+    #notification
+    {
+      width: 75vw;
+    }
+}

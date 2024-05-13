@@ -86,9 +86,11 @@ const Main = () => {
                 <SurveyPane/>
             </div>
             <div id="rightSide">
+                <div className="headers calHeader">Kalendarz</div>
                 <CalendarPane/>
                 <div className="headers">Statystyki</div>
                 <StatisticsPane/>
+                <div id="bottom"></div>
             </div>
         </div>
     </div> 

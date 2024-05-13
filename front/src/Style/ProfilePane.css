@@ -1,9 +1,3 @@
-@media only screen and (max-width: 800px) {
-    #profPane{
-        width: 20px;
-        background-color: red;
-    }
-}
 
 #profPane
 {
@@ -52,4 +46,10 @@
 {
     background-color: rgb(240, 0, 0);
     cursor: pointer;
+}
+
+@media only screen and (max-width: 800px) {
+    #profPane{
+        width: 80vw;
+    }
 }

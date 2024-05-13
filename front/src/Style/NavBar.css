@@ -1,7 +1,7 @@
 #navPane
 {
     width: 90px;
-    min-height: 90vh;
+    height: 90vh;
     background-color: white;
     border-radius: 10px ;
 }
@@ -26,4 +26,39 @@
 .buttons:nth-child(5):hover
 {
     border-radius: 0px 0px 10px 10px;
+}
+
+@media only screen and (max-width: 800px) {
+    #navPane
+    {
+        display: flex;
+        flex-direction: row;
+        width: 90vh;
+        height: 100px;
+        background-color: white;
+        border-radius: 10px ;
+    }
+    .buttons
+    {
+        width: 18vh;
+        height: 100px;
+        text-align: center;
+        justify-content: center;   
+    }
+    .buttons> img{
+        width: 60%;
+        padding-top: 5%;
+    }
+    .buttons:hover
+    {
+        background-color: gainsboro;
+    }
+    .buttons:first-child:hover
+    {
+        border-radius: 10px 0px 0px 10px;
+    }
+    .buttons:nth-child(5):hover
+    {
+        border-radius: 0px 10px 10px 0px;
+    }
 }
