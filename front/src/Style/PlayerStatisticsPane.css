@@ -1,0 +1,19 @@
+#playerStatisticsPane
+{
+    min-height: 32.5vh;
+    width: 35vw;
+    background-color: white;
+    border-radius: 10px ;
+    display: flex;
+    flex-direction: column;
+    padding: 5vh 2.5vw 5vh 2.5vw;
+    justify-content: space-between;
+}
+.bStyle{
+    font-weight: 700;
+}
+@media only screen and (max-width: 800px) {
+    #playerStatisticsPane{
+        width: 75vw;
+    }
+}

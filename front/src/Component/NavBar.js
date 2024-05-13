@@ -10,7 +10,10 @@ const NavBar = () => {
     const goToTeamStatistic =() =>{
         window.location.href = '/team-statistic/';
     }
-
+    const goToUserView = () =>
+    {
+        window.location.href = '/user-view/'
+    }
     return (
         <div>
             <div id="navPane">
@@ -20,7 +23,7 @@ const NavBar = () => {
                 <div className="buttons" onClick={goToTeamStatistic}>
                     <img  src={HomeIcon} width="70%" alt="2"/>
                 </div>
-                <div className="buttons">
+                <div className="buttons" onClick={goToUserView}>
                     <img src={HomeIcon} width="70%"alt="3"/>
                 </div>
                 <div className="buttons">
