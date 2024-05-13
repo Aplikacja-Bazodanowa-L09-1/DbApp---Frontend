@@ -1,0 +1,51 @@
+#mainhead{
+    margin-top:65px;
+}
+#formmain{
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    height: 200px;
+    font-size:20px;
+}
+#formlabel{
+    color: white;
+    font-size: 30px;
+}
+#formclub{
+    display: flex;
+    margin: 10px;
+    text-align: center;
+    width: 100%;
+}
+#formclubinfo{
+    margin-left: 10px;
+    width: 100%;
+}
+#frontimage{
+    width: 60px;
+    height: 60px;
+}
+#formdate{
+    text-align: right;
+}
+#formleft{
+    width: 60%;
+    text-align: center;
+}
+#formright{
+    width: 40%;
+    margin-right: 10px;
+}
+#formhowmany{
+    text-align: right;
+    font-size: 35px;
+}
+#formbutton{
+    background-color: black;
+    color: white;
+    border: none;
+    width:  120px;
+    height: 40px;
+    margin-top: 35px;
+}
