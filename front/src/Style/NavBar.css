@@ -18,6 +18,7 @@
 }
 .buttons:hover
 {
+    cursor: pointer;
     background-color: gainsboro;
 }
 .buttons:first-child:hover
@@ -31,7 +32,6 @@
 .icon-home
 {
     font-size: 300%;
-    /* font-size: 300%; */
 }
 .icon-user
 {

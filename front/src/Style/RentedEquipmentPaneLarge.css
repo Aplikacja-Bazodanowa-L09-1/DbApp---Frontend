@@ -11,11 +11,23 @@
 }
 #scrollBoxB{
     background-color: white;
-    /* height: 450px; */
+    height: 450px;
     overflow-y: auto;
 }
-#abc
-
+.eqButton
+{
+    display: flex;
+    width: 100px;
+    height: 35px;
+    background-color: #A69999;
+    color: white;
+    font-weight: 700;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 3px solid black;
+    margin-top: 10px;
+}
 .bStyle{
     font-weight: 700;
 }

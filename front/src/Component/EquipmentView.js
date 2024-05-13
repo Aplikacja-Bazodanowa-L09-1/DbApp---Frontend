@@ -4,8 +4,8 @@ import AvailableEquipmentPane from "./AvailableEquipmentPane"
 import RentedEquipmentPaneLarge from "./RentedEquipmentPaneLarge"
 
 
-const UserView = () => {
-
+const EquipmentView = () => {
+    
     return (
         <div>
         <div id="box">
@@ -26,4 +26,4 @@ const UserView = () => {
    );
 }
 
-export default UserView
+export default EquipmentView

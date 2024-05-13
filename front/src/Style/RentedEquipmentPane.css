@@ -1,12 +1,12 @@
 #rentedEquipmentPane
 {
-    min-height: 32.5vh;
+    min-height: 35.5vh;
     width: 35vw;
     background-color: white;
     border-radius: 10px ;
     display: flex;
     flex-direction: column;
-    padding: 2.5vh 2.5vw 2.5vh 2.5vw;
+    padding: 1vh 2.5vw 1vh 2.5vw;
     justify-content: center;
 }
 #scrollBox{
@@ -16,6 +16,12 @@
 }
 .bStyle{
     font-weight: 700;
+}
+.listStyle
+{
+    list-style: disc;
+    display: list-item;
+    list-style-position: inside;
 }
 
 @media only screen and (max-width: 800px) {
