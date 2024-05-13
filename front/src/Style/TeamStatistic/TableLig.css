@@ -1,0 +1,29 @@
+#tableligmain{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+#tablelabel{
+    color: white;
+    font-size: 25px;
+}
+#tableligblock{
+    width: 90%;
+    height: 200px;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+}
+#tableligleftdiv{
+    width: 40%;
+}
+#tableligrightdiv{
+    width: 60%;
+    background-color: lightgray;
+    border-radius: 20px;
+}
+#tableligbutton{
+    border-radius: 20px;
+    border: none;
+    width: 80%;
+    height: 60px;
+}

@@ -1,0 +1,35 @@
+#squadmain{
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 90%;
+}
+#squadlabel{
+    font-size: 25px;
+    color: white;
+}
+#squadblock{
+    background-color: white;
+    height: 175px;
+    border-radius: 20px;
+    display: flex;
+}
+#squadbutton{
+    border-radius: 20px;
+    border: none;
+    width: 80%;
+    height: 60px;
+}
+#squadsquad{
+    background-color: lightgray;
+    width: 80%;
+    height: 80%;
+    margin-left: 10%;
+    margin-top: 10%;
+    border-radius: 20px;
+}
+#squadrightdiv{
+    width: 60%;
+}
+#squadleftdiv{
+    width: 40%;
+}
