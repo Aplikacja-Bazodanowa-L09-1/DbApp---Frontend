@@ -1,6 +1,6 @@
-#rentedEquipmentPane
+#availableEquipmentPane
 {
-    min-height: 32.5vh;
+    min-height: 70vh;
     width: 35vw;
     background-color: white;
     border-radius: 10px ;
@@ -9,9 +9,9 @@
     padding: 2.5vh 2.5vw 2.5vh 2.5vw;
     justify-content: center;
 }
-#scrollBox{
+#scrollBoxA{
     background-color: white;
-    height: 200px;
+    /* height: 450px; */
     overflow-y: auto;
 }
 .bStyle{
@@ -19,7 +19,7 @@
 }
 
 @media only screen and (max-width: 800px) {
-    #rentedEquipmentPane{
+    #availableEquipmentPane{
         width: 75vw;
     }
 }

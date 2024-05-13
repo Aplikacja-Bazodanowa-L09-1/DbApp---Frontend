@@ -16,6 +16,7 @@ import StatisticsPane from './Component/StatisticsPane';
 import SurveyPane from './Component/SurveyPane';
 
 import UserView from './Component/UserView';
+import EquipmentView from './Component/EquipmentView'
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           <Route path='remind-password/' Component={RemindPassword}/>
           <Route path='team-statistic/' Component={TeamStatistic}/>
           <Route path='user-view/' Component={UserView}/>
+          <Route path='equipment-view/' Component={EquipmentView}/>
 
           <Route path='calendar/' Component={Calendar} />
           <Route path='calendarpane/' Component={CalendarPane} />

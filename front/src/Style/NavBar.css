@@ -1,7 +1,7 @@
 #navPane
 {
     width: 90px;
-    height: 90vh;
+    height: 80vh;
     background-color: white;
     border-radius: 10px ;
 }
@@ -9,7 +9,8 @@
 {
     max-width: 100px;
     height: 18vh;
-    text-align: center;
+    display: flex;
+    align-items: center;
     justify-content: center;   
 }
 .buttons> img{
@@ -27,13 +28,29 @@
 {
     border-radius: 0px 0px 10px 10px;
 }
-
+.icon-home
+{
+    font-size: 300%;
+    /* font-size: 300%; */
+}
+.icon-user
+{
+    font-size: 300%;
+}
+.icon-users
+{
+    font-size: 300%;
+}
+.icon-soccer-ball
+{
+    font-size: 300%;
+}
 @media only screen and (max-width: 800px) {
     #navPane
     {
         display: flex;
         flex-direction: row;
-        width: 90vh;
+        width: 80vw;
         height: 100px;
         background-color: white;
         border-radius: 10px ;

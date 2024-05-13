@@ -1,12 +1,12 @@
 #playerDataPane
 {
-    min-height: 45vh;
+    min-height: 40vh;
     width: 35vw;
     background-color: white;
     border-radius: 10px ;
     display: flex;
     flex-direction: column;
-    padding: 10vh 2.5vw 10vh 2.5vw;
+    padding: 7.5vh 2.5vw 7.5vh 2.5vw;
     justify-content: space-between;
 }
 .bStyle{

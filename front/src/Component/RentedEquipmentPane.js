@@ -5,7 +5,9 @@ const RentedEquipmentPane = () => {
 
     return (
     <div id="rentedEquipmentPane">
-        
+        <div id="scrollBox">
+            
+        </div>
     </div> 
    );
 }

@@ -28,10 +28,6 @@
     margin-left: 1vh;
 }
 
-.statHeader{
-    position: absolute;
-    top: 5vh;
-}
 #bottom{
     display: none;
 }
@@ -48,12 +44,12 @@
         height: 80vh;
         width: 80vw;
     }
-    .statHeader{
-        position: static;
+    .calHeader{
+        display: block;
     }
     #bar{
         position: fixed;
-        bottom: 0;
+        bottom: 0%;
         background-color: #D32020;
         height: 100px;
         width: 100vw;
