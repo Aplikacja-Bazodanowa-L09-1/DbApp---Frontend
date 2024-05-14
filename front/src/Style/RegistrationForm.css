@@ -1,0 +1,51 @@
+#registrationformmain{
+    width: 100%;
+    text-align: center;
+}
+#registrationforminside{
+    background-color: white;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#registrationformform{
+    text-align: left;
+    width: 500px;
+}
+.registrationformlabel{
+    text-align: left;
+    font-size: 20px;
+    margin-left: 12%;
+}
+#registrationformtitle{
+    color: white;
+    font-size: 30px;
+}
+#registrationformbutton{
+    border: none;
+    color: white;
+    background-color: transparent;
+    font-size: 30px;
+    transition: 1s;
+}
+#registrationformbutton:hover{
+    transition: 1s;
+    font-size: 40px;
+}
+.registrationforminput{
+    border: none;
+    background-color: lightgray;
+    border-radius: 20px;
+    text-align: center;
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+.registrationforminput:hover{
+    border: solid 1px black;
+}
+#registrationformbuttondiv{
+    width: 100%;
+    text-align: center;
+}
