@@ -74,7 +74,7 @@ const TeamStatistic = () => {
 
     return ( 
         <div id="main">
-            <div id="widget">
+            <div id="bar">
                 <NavBar/>
             </div>
             <div id="teamleft">

@@ -18,11 +18,11 @@ const NoticesPane = () => {
             method: 'GET',
             headers: {"Content-Type": "application/json", "authorization": `Berear ${localStorage.getItem('access_token')}`},
         }).then(response=>response.json()).then(data=>{
-            console.log(data.user)
-            setTeamMessageTitle(data.user.player.team.team_message_title)
-            setTeamMessage(data.user.player.team.team_message)
+            console.log(data.notification.player.team.team_message_title)
+            setTeamMessageTitle(data.notification.player.team.team_message_title)
+            setTeamMessage(data.notification.player.team.team_message)
 
-            localStorage.setItem('notification.team_message_title', data.notofication.player.team.team_message_title)
+            localStorage.setItem('notification.team_message_title', data.notification.player.team.team_message_title)
             localStorage.setItem('notification.team_message', data.notification.player.team.team_message)
         })
         }
