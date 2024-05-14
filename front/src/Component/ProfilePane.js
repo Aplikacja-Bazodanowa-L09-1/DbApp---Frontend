@@ -15,7 +15,7 @@ const ProfilePane = () => {
         const refrsh_token = localStorage.getItem('refresh_token')
         const data = {"token": refrsh_token}
 
-        fetch('http://localhost:8184/auth/revoke_token/',{
+        fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/auth/revoke_token/`,{
             mode: 'cors',
             method: 'POST',
             headers: {"Content-Type": "application/json"},
@@ -29,7 +29,7 @@ const ProfilePane = () => {
     }
 
     useEffect(() => {
-        fetch('http://localhost:8184/app/user/profile', {
+        fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/app/user/profile`, {
             mode: 'cors',
             method: 'GET',
             headers: {"Content-Type": "application/json", "authorization": `Berear ${localStorage.getItem('access_token')}`},

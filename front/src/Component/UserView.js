@@ -16,7 +16,7 @@ const UserView = () => {
         const refrsh_token = localStorage.getItem('refresh_token')
         const data = {"token": refrsh_token}
 
-        fetch('http://localhost:8184/auth/revoke_token/',{
+        fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/auth/revoke_token/`,{
             mode: 'cors',
             method: 'POST',
             headers: {"Content-Type": "application/json"},
@@ -31,7 +31,7 @@ const UserView = () => {
 
     useEffect(() => {
 
-        fetch('http://localhost:8184/user/', {
+        fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/user/`, {
             mode: 'cors',
             method: 'GET',
             headers: {
@@ -52,7 +52,7 @@ const UserView = () => {
                 if (window.confirm("Sesja wygasła. Czy chcesz ją odnowić?")) {
 
                     /// ODNOWIENIE SESJI
-                    fetch('http://localhost:8184/auth/refresh_token/', {
+                    fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/auth/refresh_token/`, {
                         mode: 'cors',
                         method: 'POST',
                         headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "allow" },

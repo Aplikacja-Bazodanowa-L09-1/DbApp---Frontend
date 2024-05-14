@@ -20,7 +20,7 @@ const PlayerDataPane = () => {
             setPhoneNumber(localStorage.getItem('user_info.phone_number'))
         }
         else{
-            fetch('http://localhost:8184/user/info/', {
+            fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/user/info/`, {
             mode: 'cors',
             method: 'GET',
             headers: {"Content-Type": "application/json", "authorization": `Berear ${localStorage.getItem('access_token')}`},

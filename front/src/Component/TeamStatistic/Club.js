@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import '../../Style/TeamStatistic/Club.css'
 
+
 const Club = () => {
     const [clubName,setClubName] = useState('')
     const [coachName,setCoachName] = useState('')
@@ -13,7 +14,7 @@ const Club = () => {
             setCoachSurname(localStorage.getItem('team_info.coach_surname'))
         }
         else{
-            fetch('http://localhost:8184/team_stats/info/', {
+            fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/team_stats/info/`, {
             mode: 'cors',
             method: 'GET',
             headers: {"Content-Type": "application/json", "authorization": `Berear ${localStorage.getItem('access_token')}`},

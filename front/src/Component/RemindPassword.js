@@ -12,7 +12,7 @@ const RemindPassword = () => {
     const [status,setStatus]=useState(0);
     const sendEmail = (event) =>{
         event.preventDefault();
-        fetch('http://localhost:8184/auth/remind_password/',{
+        fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/auth/remind_password/`,{
             mode: 'cors',
             method: 'POST',
             headers: {"Content-Type": "application/json", "Access-Control-Allow-Origin":"allow"},

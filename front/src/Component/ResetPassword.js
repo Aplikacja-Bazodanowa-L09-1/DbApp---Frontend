@@ -18,7 +18,7 @@ const ResetPassword = (event) => {
     const changePassword = () => {
         if(password===password2)
         {
-            fetch(`http://localhost:8184/auth/reset_password/${token}/`, {
+            fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/auth/reset_password/${token}/`, {
             mode: 'cors',
             method: 'POST',
             headers: {"Content-Type": "application/json", "Access-Control-Allow-Origin":"allow"},

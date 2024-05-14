@@ -19,7 +19,7 @@ const PlayerStatisticsPane = () => {
             setAttendanceAtMatches(localStorage.getItem('user_stats.attendance_at_matches'))
         }
         else{
-            fetch('http://localhost:8184/user/statistics/', {
+            fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/user/statistics/`, {
             mode: 'cors',
             method: 'GET',
             headers: {"Content-Type": "application/json", "authorization": `Berear ${localStorage.getItem('access_token')}`},

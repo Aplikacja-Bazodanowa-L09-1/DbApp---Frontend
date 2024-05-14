@@ -24,7 +24,7 @@ const Login = () => {
 
     const handleSubmit =(event)=>{
         event.preventDefault();
-        fetch('http://localhost:8184/auth/token/',{
+        fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/auth/token/`,{
             mode: 'cors',
             method: 'POST',
             headers: {"Content-Type": "application/json", "Access-Control-Allow-Origin":"allow"},

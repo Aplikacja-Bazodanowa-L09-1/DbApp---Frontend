@@ -32,7 +32,7 @@ const Main = () => {
 
     useEffect(() => {
 
-        fetch('http://localhost:8184/app/', {
+        fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/app/`, {
             mode: 'cors',
             method: 'GET',
             headers: {
@@ -53,7 +53,7 @@ const Main = () => {
                 if (window.confirm("Sesja wygasła. Czy chcesz ją odnowić?")) {
 
                     /// ODNOWIENIE SESJI
-                    fetch('http://localhost:8184/auth/refresh_token/', {
+                    fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/auth/refresh_token/`, {
                         mode: 'cors',
                         method: 'POST',
                         headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "allow" },

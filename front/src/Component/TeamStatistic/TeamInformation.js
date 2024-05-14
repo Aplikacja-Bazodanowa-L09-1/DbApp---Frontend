@@ -18,7 +18,7 @@ const TeamInformation = () => {
             setLeastCards(localStorage.getItem('team_stats.least_cards'))
         }
         else{
-            fetch('http://localhost:8184/team_stats/statistics/', {
+            fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/team_stats/statistics/`, {
             mode: 'cors',
             method: 'GET',
             headers: {"Content-Type": "application/json", "authorization": `Berear ${localStorage.getItem('access_token')}`},

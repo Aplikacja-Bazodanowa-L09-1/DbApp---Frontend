@@ -16,7 +16,7 @@ const TeamStatistic = () => {
         const refrsh_token = localStorage.getItem('refresh_token')
         const data = {"token": refrsh_token}
 
-        fetch('http://localhost:8184/auth/revoke_token/',{
+        fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/auth/revoke_token/`,{
             mode: 'cors',
             method: 'POST',
             headers: {"Content-Type": "application/json"},
@@ -32,7 +32,7 @@ const TeamStatistic = () => {
 
     useEffect(() => {
 
-        fetch('http://localhost:8184/team_stats/', {
+        fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/team_stats/`, {
             mode: 'cors',
             method: 'GET',
             headers: {
@@ -53,7 +53,7 @@ const TeamStatistic = () => {
                 if (window.confirm("Sesja wygasła. Czy chcesz ją odnowić?")) {
 
                     /// ODNOWIENIE SESJI
-                    fetch('http://localhost:8184/auth/refresh_token/', {
+                    fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/auth/refresh_token/`, {
                         mode: 'cors',
                         method: 'POST',
                         headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "allow" },

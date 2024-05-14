@@ -13,7 +13,7 @@ const NoticesPane = () => {
             setTeamMessage(localStorage.getItem('notification.team_message'))
         }
         else{
-            fetch('http://localhost:8184/app/team/notification/', {
+            fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/app/team/notification/`, {
             mode: 'cors',
             method: 'GET',
             headers: {"Content-Type": "application/json", "authorization": `Berear ${localStorage.getItem('access_token')}`},
