@@ -8,6 +8,8 @@ const ProfilePane = () => {
     const [surname, setSurname] = useState('')
     const [role, setRole] = useState('')
     const [team, setTeam] = useState('')
+    const [teamMessageTitle, setTeamMessageTitle] = useState('')
+    const [teamMessage, setTeamMessage] = useState('')
 
     const logoutHandler = (event) => {
         const refrsh_token = localStorage.getItem('refresh_token')
@@ -37,7 +39,15 @@ const ProfilePane = () => {
             setSurname(data.user.last_name)
             setRole(data.user.role)
             setTeam(data.user.player.team.name)
+            setTeamMessageTitle(data.user.player.team.team_message_title)
+            setTeamMessage(data.user.player.team.team_message)
 
+            localStorage.setItem('user.name', data.user.first_name)
+            localStorage.setItem('user.surname', data.user.last_namee)
+            localStorage.setItem('user.role', data.user.role)
+            localStorage.setItem('user.team', data.user.player.team.name)
+            localStorage.setItem('notification.team_message_title', data.user.player.team.team_message_title)
+            localStorage.setItem('notification.team_message', data.user.player.team.team_message)
         })
     })
 

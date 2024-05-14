@@ -1,7 +1,32 @@
+import { useState, useEffect } from "react";
 import '../Style/NoticesPane.css'
 const bicepsIcon = require('../Icons/biceps.png')
 
 const NoticesPane = () => {
+
+    const [teamMessageTitle, setTeamMessageTitle] = useState('')
+    const [teamMessage, setTeamMessage] = useState('')
+
+    useEffect(() => {
+        if(localStorage.getItem('notification.team_message_title') !== null){
+            setTeamMessageTitle(localStorage.getItem('notification.team_message_title'))
+            setTeamMessage(localStorage.getItem('notification.team_message'))
+        }
+        else{
+            fetch('http://localhost:8184/app/team/notification/', {
+            mode: 'cors',
+            method: 'GET',
+            headers: {"Content-Type": "application/json", "authorization": `Berear ${localStorage.getItem('access_token')}`},
+        }).then(response=>response.json()).then(data=>{
+            console.log(data.user)
+            setTeamMessageTitle(data.user.player.team.team_message_title)
+            setTeamMessage(data.user.player.team.team_message)
+
+            localStorage.setItem('notification.team_message_title', data.notofication.player.team.team_message_title)
+            localStorage.setItem('notification.team_message', data.notification.player.team.team_message)
+        })
+        }
+    })
 
      return (
         <div id="noticesPane">
@@ -12,15 +37,15 @@ const NoticesPane = () => {
                     </div>
                     <div id="notifRight">
                         <div id="notifTitle">
-                            Trening
+                            {teamMessageTitle}
                         </div>
                         <div id="notifDate">
-                            21.04.2024
+                            data
                         </div>
                     </div>
                 </div>
                 <div id="notifBottom">
-                    Dzisiejszy trening o godz 17:00
+                    {teamMessage}
                 </div>
             </div>
         </div>
