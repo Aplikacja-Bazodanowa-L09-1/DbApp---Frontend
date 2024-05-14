@@ -34,20 +34,20 @@ const ProfilePane = () => {
             method: 'GET',
             headers: {"Content-Type": "application/json", "authorization": `Berear ${localStorage.getItem('access_token')}`},
         }).then(response=>response.json()).then(data=>{
-            console.log(data.user)
-            setName(data.user.first_name)
-            setSurname(data.user.last_name)
-            setRole(data.user.role)
-            setTeam(data.user.player.team.name)
-            setTeamMessageTitle(data.user.player.team.team_message_title)
-            setTeamMessage(data.user.player.team.team_message)
+            //console.log(data.user_cred.first_name)
+            setName(data.user_cred.first_name)
+            setSurname(data.user_cred.last_name)
+            setRole(data.user_cred.role)
+            setTeam(data.user_cred.player.team.name)
+            setTeamMessageTitle(data.user_cred.player.team.team_message_title)
+            setTeamMessage(data.user_cred.player.team.team_message)
 
-            localStorage.setItem('user.name', data.user.first_name)
-            localStorage.setItem('user.surname', data.user.last_namee)
-            localStorage.setItem('user.role', data.user.role)
-            localStorage.setItem('user.team', data.user.player.team.name)
-            localStorage.setItem('notification.team_message_title', data.user.player.team.team_message_title)
-            localStorage.setItem('notification.team_message', data.user.player.team.team_message)
+            localStorage.setItem('user.name', data.user_cred.first_name)
+            localStorage.setItem('user.surname', data.user_cred.last_namee)
+            localStorage.setItem('user.role', data.user_cred.role)
+            localStorage.setItem('user.team', data.user_cred.player.team.name)
+            localStorage.setItem('notification.team_message_title', data.user_cred.player.team.team_message_title)
+            localStorage.setItem('notification.team_message', data.user_cred.player.team.team_message)
         })
     })
 
