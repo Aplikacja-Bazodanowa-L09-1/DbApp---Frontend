@@ -1,6 +1,8 @@
 #registrationformmain{
-    width: 100%;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
 }
 #registrationforminside{
     background-color: white;
@@ -11,6 +13,7 @@
 #registrationformform{
     text-align: left;
     width: 500px;
+    min-width: 400px;
 }
 .registrationformlabel{
     text-align: left;

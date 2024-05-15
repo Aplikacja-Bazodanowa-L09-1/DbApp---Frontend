@@ -6,6 +6,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Main from './Component/Main';
 import RemindPassword from './Component/RemindPassword';
 import TeamStatistic from './Component/TeamStatistic';
+import RegistrationForm from './Component/RegistrationForm';
 
 import Calendar from './Component/Calendar';
 import CalendarPane from './Component/CalendarPane';
@@ -32,7 +33,7 @@ function App() {
           <Route path='team-statistic/' Component={TeamStatistic}/>
           <Route path='user-view/' Component={UserView}/>
           <Route path='equipment-view/' Component={EquipmentView}/>
-
+          <Route path='registrationform/' Component={RegistrationForm}/>
           <Route path='calendar/' Component={Calendar} />
           <Route path='calendarpane/' Component={CalendarPane} />
           <Route path='navbar/' Component={NavBar} />
