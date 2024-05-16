@@ -4,34 +4,40 @@
     align-items: center;
     margin-top: 10%;
 }
-#registrationforminside{
+#registrationformstart{
     background-color: white;
-    width: 100%;
-    margin-top: 10px;
+    border-radius: 20px;
+    margin-top: 20px;
     margin-bottom: 10px;
 }
-#registrationformform{
+#registrationforminformation{
+    display: flex;
     text-align: left;
-    width: 500px;
+}
+
+#registrationformform{
+    text-align: center;
+    width: 810px;
     min-width: 400px;
 }
 .registrationformlabel{
     text-align: left;
     font-size: 20px;
     margin-left: 12%;
+    width: 30%;
 }
 #registrationformtitle{
     color: white;
-    font-size: 30px;
+    font-size: 40px;
 }
-#registrationformbutton{
+#registrationformbuttonmove,#registrationformbuttonreg,#registrationformbuttonsave{
     border: none;
     color: white;
     background-color: transparent;
     font-size: 30px;
     transition: 1s;
 }
-#registrationformbutton:hover{
+#registrationformbuttonmove:hover,#registrationformbuttonreg:hover,#registrationformbuttonsave:hover{
     transition: 1s;
     font-size: 40px;
 }
@@ -51,4 +57,27 @@
 #registrationformbuttondiv{
     width: 100%;
     text-align: center;
+}
+#registrationformbuttondivsecond{
+    width: 100%;
+    text-align: center;
+    display: flex;
+}
+.registrationformbuttonblock{
+    width: 50%;
+}
+.registrationformblocks{
+    width: 50%;
+}
+#registrationformlabelinfo{
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+}
+#registrationformimage{
+    margin-left: 11%;
+}
+#registrationforminformationIs{
+    color: red;
+    font-size: 20px;
 }
