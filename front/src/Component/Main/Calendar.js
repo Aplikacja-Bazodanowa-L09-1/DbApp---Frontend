@@ -1,4 +1,4 @@
-import '../Style/Calendar.css'
+import '../../Style/Calendar.css'
 
 const Calendar = () => {    
     return (

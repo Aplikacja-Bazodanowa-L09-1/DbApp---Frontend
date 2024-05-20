@@ -1,4 +1,4 @@
-import '../Style/CalendarPane.css'
+import '../../Style/CalendarPane.css'
 import Calendar from './Calendar';
 
 const CalendarPane = () => {

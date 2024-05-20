@@ -1,13 +1,13 @@
-import "../Style/Main.css"
-import NavBar from "./NavBar"
-import ProfilePane from "./ProfilePane"
-import NoticesPane from "./NoticesPane"
-import SurveyPane from "./SurveyPane"
-import CalendarPane from "./CalendarPane"
-import StatisticsPane from "./StatisticsPane"
+import '../../Style/UserView.css'
+import NavBar from "../NavBar"
+import ProfilePane from "../Main/ProfilePane"
+import PlayerDataPane from "../UserView/PlayerDataPane"
+import PlayerStatisticsPane from "../UserView/PlayerStatisticsPane"
+import RentedEquipmentPane from "../UserView/RentedEquipmentPane"
 import { useState, React, useEffect} from "react"
 
-const Main = () => {
+
+const UserView = () => {
 
     const [PageContent, setPageContent] = useState('')
 
@@ -16,7 +16,7 @@ const Main = () => {
         const refrsh_token = localStorage.getItem('refresh_token')
         const data = {"token": refrsh_token}
 
-        fetch('http://localhost:8184/auth/revoke_token/',{
+        fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/auth/revoke_token/`,{
             mode: 'cors',
             method: 'POST',
             headers: {"Content-Type": "application/json"},
@@ -29,10 +29,9 @@ const Main = () => {
         }).catch(err=>{console.log(err)})
     }
 
-
     useEffect(() => {
 
-        fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/app/`, {
+        fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/user/`, {
             mode: 'cors',
             method: 'GET',
             headers: {
@@ -72,29 +71,27 @@ const Main = () => {
         })
     })
 
-    return ( 
-    <div>
+    return (
+        <div>
         <div id="box">
             <div id="bar">
                  <NavBar/>
             </div>
             <div id="leftSide">
                 <ProfilePane/>
-                <div className="headers">Powiadomienia</div>
-                <NoticesPane/>
-                <div className="headers">Ankieta meczowa</div>
-                <SurveyPane/>
+                <div className="headers">Dane Zawodnika:</div>
+                <PlayerDataPane/>
             </div>
             <div id="rightSide">
-                <div className="headers calHeader">Kalendarz</div>
-                <CalendarPane/>
-                <div className="headers">Statystyki</div>
-                <StatisticsPane/>
+                <div className="headers statHeader">Statystyki Zawodnika</div>
+                <PlayerStatisticsPane/>
+                <div className="headers">Wypożyczony Sprzęt</div>
+                <RentedEquipmentPane/>
                 <div id="bottom"></div>
             </div>
         </div>
     </div> 
-    );
+   );
 }
- 
-export default Main;
+
+export default UserView

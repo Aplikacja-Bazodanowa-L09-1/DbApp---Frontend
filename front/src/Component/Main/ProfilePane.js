@@ -1,4 +1,4 @@
-import '../Style/ProfilePane.css'
+import '../../Style/ProfilePane.css'
 import { useState, React, useEffect} from "react"
 
 const ProfilePane = () => {

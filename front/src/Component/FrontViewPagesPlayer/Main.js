@@ -1,22 +1,22 @@
+import "../../Style/Main.css"
+import NavBar from "../NavBar"
+import ProfilePane from "../Main/ProfilePane"
+import NoticesPane from "../Main/NoticesPane"
+import SurveyPane from "../Main/SurveyPane"
+import CalendarPane from "../Main/CalendarPane"
+import StatisticsPane from "../Main/StatisticsPane"
 import { useState, React, useEffect} from "react"
-import NavBar from './NavBar.js';
-import Club from './TeamStatistic/Club.js'
-import TeamInformation from './TeamStatistic/TeamInformation.js';
-import FormView from './TeamStatistic/FormView.js';
-import TableLig from './TeamStatistic/TableLig.js';
-import Squad from './TeamStatistic/Squad.js'
 
-import '../Style/TeamStatistic.css'
-
-const TeamStatistic = () => {
+const Main = () => {
 
     const [PageContent, setPageContent] = useState('')
+
 
     const logoutHandler = (event) => {
         const refrsh_token = localStorage.getItem('refresh_token')
         const data = {"token": refrsh_token}
 
-        fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/auth/revoke_token/`,{
+        fetch('http://localhost:8184/auth/revoke_token/',{
             mode: 'cors',
             method: 'POST',
             headers: {"Content-Type": "application/json"},
@@ -32,7 +32,7 @@ const TeamStatistic = () => {
 
     useEffect(() => {
 
-        fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/team_stats/`, {
+        fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/app/`, {
             mode: 'cors',
             method: 'GET',
             headers: {
@@ -73,22 +73,28 @@ const TeamStatistic = () => {
     })
 
     return ( 
-        <div id="main">
+    <div>
+        <div id="box">
             <div id="bar">
-                <NavBar/>
+                 <NavBar/>
             </div>
-            <div id="teamleft">
-                <div id="teamclub"><Club/></div>
-                <div id="teaminformation"><TeamInformation/></div>
+            <div id="leftSide">
+                <ProfilePane/>
+                <div className="headers">Powiadomienia</div>
+                <NoticesPane/>
+                <div className="headers">Ankieta meczowa</div>
+                <SurveyPane/>
             </div>
-            <div id="teamright">
-                <div id="formview"><FormView/></div>
-                <div id="tablelig"><TableLig/></div>
-                <div id="squad"><Squad/></div>
+            <div id="rightSide">
+                <div className="headers calHeader">Kalendarz</div>
+                <CalendarPane/>
+                <div className="headers">Statystyki</div>
+                <StatisticsPane/>
+                <div id="bottom"></div>
             </div>
-            
         </div>
-     );
+    </div> 
+    );
 }
  
-export default TeamStatistic;
+export default Main;

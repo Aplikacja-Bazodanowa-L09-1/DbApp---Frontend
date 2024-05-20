@@ -1,5 +1,5 @@
-import '../Style/RegistrationForm.css'
-import { useState } from 'react';
+import '../../Style/RegistrationForm.css'
+import { useState, useEffect } from 'react';
 
 
 const RegistrationForm = () => {
@@ -16,6 +16,7 @@ const RegistrationForm = () => {
     const[weight,setWeight]=useState();
     const[islogin,setIsLogin]=useState();
     const[ismail,setIsMail]=useState();
+    const[ispassword,setIsPassword]=useState();
     const[information,setInformation]=useState('');
     const[informationpassword,setInformationPassword]=useState('');
     const[loginis,setLoginIs]=useState({
@@ -23,12 +24,10 @@ const RegistrationForm = () => {
         backgroundcolor: ''
     });
     const[mailis,setMailIs]=useState({
-        border: '',
-        backgroundcolor: ''
+        
     });
     const[passwordchangestyle,setPasswordChangeStyle]=useState({
-        border:"",
-        backgroundcolor:""
+        
     });
 
     const gotoSecondPageRegistration = () =>{
@@ -54,21 +53,32 @@ const RegistrationForm = () => {
             
         }).catch((err)=>{console.log(err.message);});
         if(islogin && ismail)
+        {
+            setInformation("Taki login istnieje   Taki email istnieje");
+        }
+        else if(islogin && !ismail)
+        {
+            setInformation("Taki login istnieje");
+        }
+        else if(!islogin &&ismail)
+        {
+            setInformation("Taki email istnieje");
+        }
+        else
+        {
+            setInformation("");
+        }
+        if(password!==passwordRepeat || password.length===0)
+        {
+            setInformationPassword("Hasła nie są takie same / Brak hasła");
+        }
+        else
+        {
+            setInformationPassword("");
+        }
+        if(!islogin && !ismail && ispassword)
             {
-                setInformation("Taki login istnieje.   Taki email istnieje.");
-            }
-        else if(ismail && !ismail)
-            {
-                setInformation("Taki login istnieje");
-            }
-        else if(!ismail &&ismail)
-            {
-                setInformation("Taki email istnieje");
-            }
-        if(password!==passwordRepeat)
-            {
-                setInformationPassword("Hasła nie są takie same");
-                setPasswordChangeStyle("solid 2px red","lightread")
+                setPage(2);
             }
     }
 
@@ -94,9 +104,9 @@ const RegistrationForm = () => {
                                     <label className='registrationformlabel'>Login</label>
                                     <input type="text" className='registrationforminput' onChange={(e)=>setLogin(e.target.value)} value={login} required/>
                                     <label className='registrationformlabel'>Hasło:</label>
-                                    <input type='password' className='registrationforminput' onChange={(e)=>setPassword(e.target.value)} value={password} required/>
+                                    <input type='password' className='registrationforminput' id="pass" onChange={(e)=>setPassword(e.target.value)} value={password} required/>
                                     <label className='registrationformlabel'>Powtórz Hasło:</label>
-                                    <input type="password" className='registrationforminput' onChange={(e)=>setPasswordRepeat(e.target.value)} value={passwordRepeat} required style={{backgroundColor:passwordchangestyle.backgroundcolor,border:passwordchangestyle.border}}/>
+                                    <input type="password" id="pass" className='registrationforminput' onChange={(e)=>setPasswordRepeat(e.target.value)} value={passwordRepeat} required/>
                                 </div>
                             </div>
                         </div>

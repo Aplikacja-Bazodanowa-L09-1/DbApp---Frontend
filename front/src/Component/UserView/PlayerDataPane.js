@@ -1,4 +1,4 @@
-import '../Style/PlayerDataPane.css'
+import '../../Style/PlayerDataPane.css'
 import { useState, React, useEffect} from "react"
 
 const PlayerDataPane = () => {

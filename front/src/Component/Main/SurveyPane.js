@@ -1,4 +1,4 @@
-import '../Style/SurveyPane.css'
+import '../../Style/SurveyPane.css'
 
 const SurveyPane = () => {
 

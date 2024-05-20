@@ -1,16 +1,16 @@
-import '../Style/UserView.css'
-import NavBar from "./NavBar"
-import ProfilePane from "./ProfilePane"
-import PlayerDataPane from "./PlayerDataPane"
-import PlayerStatisticsPane from "./PlayerStatisticsPane"
-import RentedEquipmentPane from "./RentedEquipmentPane"
 import { useState, React, useEffect} from "react"
+import NavBar from '../NavBar.js';
+import Club from '../TeamStatistic/Club.js'
+import TeamInformation from '../TeamStatistic/TeamInformation.js';
+import FormView from '../TeamStatistic/FormView.js';
+import TableLig from '../TeamStatistic/TableLig.js';
+import Squad from '../TeamStatistic/Squad.js'
 
+import '../../Style/TeamStatistic.css'
 
-const UserView = () => {
+const TeamStatistic = () => {
 
     const [PageContent, setPageContent] = useState('')
-
 
     const logoutHandler = (event) => {
         const refrsh_token = localStorage.getItem('refresh_token')
@@ -29,9 +29,10 @@ const UserView = () => {
         }).catch(err=>{console.log(err)})
     }
 
+
     useEffect(() => {
 
-        fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/user/`, {
+        fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/team_stats/`, {
             mode: 'cors',
             method: 'GET',
             headers: {
@@ -71,27 +72,23 @@ const UserView = () => {
         })
     })
 
-    return (
-        <div>
-        <div id="box">
+    return ( 
+        <div id="main">
             <div id="bar">
-                 <NavBar/>
+                <NavBar/>
             </div>
-            <div id="leftSide">
-                <ProfilePane/>
-                <div className="headers">Dane Zawodnika:</div>
-                <PlayerDataPane/>
+            <div id="teamleft">
+                <div id="teamclub"><Club/></div>
+                <div id="teaminformation"><TeamInformation/></div>
             </div>
-            <div id="rightSide">
-                <div className="headers statHeader">Statystyki Zawodnika</div>
-                <PlayerStatisticsPane/>
-                <div className="headers">Wypożyczony Sprzęt</div>
-                <RentedEquipmentPane/>
-                <div id="bottom"></div>
+            <div id="teamright">
+                <div id="formview"><FormView/></div>
+                <div id="tablelig"><TableLig/></div>
+                <div id="squad"><Squad/></div>
             </div>
+            
         </div>
-    </div> 
-   );
+     );
 }
-
-export default UserView
+ 
+export default TeamStatistic;

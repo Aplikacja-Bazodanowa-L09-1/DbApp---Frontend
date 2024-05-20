@@ -1,7 +1,7 @@
-import '../Style/EquipmentView.css'
-import NavBar from "./NavBar"
-import AvailableEquipmentPane from "./AvailableEquipmentPane"
-import RentedEquipmentPaneLarge from "./RentedEquipmentPaneLarge"
+import '../../Style/EquipmentView.css'
+import NavBar from "../NavBar"
+import AvailableEquipmentPane from "../EquipmentView/AvailableEquipmentPane"
+import RentedEquipmentPaneLarge from "../EquipmentView/RentedEquipmentPaneLarge"
 
 
 const EquipmentView = () => {

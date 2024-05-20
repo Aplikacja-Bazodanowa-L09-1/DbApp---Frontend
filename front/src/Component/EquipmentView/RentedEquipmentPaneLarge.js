@@ -1,4 +1,4 @@
-import '../Style/RentedEquipmentPaneLarge.css'
+import '../../Style/RentedEquipmentPaneLarge.css'
 import { useState, React, useEffect} from "react"
 
 const RentedEquipmentPaneLarge = () => {

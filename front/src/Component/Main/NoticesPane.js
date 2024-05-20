@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import '../Style/NoticesPane.css'
-const bicepsIcon = require('../Icons/biceps.png')
+import '../../Style/NoticesPane.css'
+const bicepsIcon = require('../../Icons/biceps.png')
 
 const NoticesPane = () => {
 

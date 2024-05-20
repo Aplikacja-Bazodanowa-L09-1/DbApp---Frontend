@@ -1,4 +1,4 @@
-import '../Style/AvailableEquipmentPane.css'
+import '../../Style/AvailableEquipmentPane.css'
 import { useState, React, useEffect} from "react"
 
 const AvailableEquipmentPane = () => {

@@ -1,4 +1,4 @@
-import '../Style/RemindPassword.css';
+import '../../Style/RemindPassword.css';
 import { useState } from 'react';
 
 
@@ -25,14 +25,14 @@ const RemindPassword = () => {
             <div>
                 <div>
                     <form id="formPrzypomnij">
-                        <div id="text">Przypomnij hasło:</div>
+                        <div id="text">Resetuj hasło:</div>
                         <div id="idPrzypomnij">                            
                                 <div className="inputfield">
                                     <label className="topic">Email</label>
                                     <input type="email" className="data" value={email} onChange={(e)=>setEmail(e.target.value)} required/>
                                 </div>
                         </div>
-                        <input className="przypomnij" type="submit" value="Przypomnij" onClick={sendEmail}/>
+                        <input className="przypomnij" type="submit" value="Wyślij" onClick={sendEmail}/>
                     </form>
                 </div>
             </div>
@@ -55,7 +55,7 @@ const RemindPassword = () => {
         return (
             <div>
                 <form id="formPrzypomnij2">
-                <div id="text">Przypomnij hasło:</div>
+                <div id="text">Resetuj hasło:</div>
                         <div id="idPrzypomnij2">    
                             <label id="informacja2">Nie udało się wyślać emaila<br/>Spróbuj ponownie</label>                        
                                 <div className="inputfield">
@@ -63,7 +63,7 @@ const RemindPassword = () => {
                                     <input type="email" className="data" value={email} onChange={(e)=>setEmail(e.target.value)} required/>
                                 </div>
                         </div>
-                        <input className="przypomnij" type="submit" value="Przypomnij" onClick={sendEmail}/>
+                        <input className="przypomnij" type="submit" value="Wyślij" onClick={sendEmail}/>
                     
                 </form>
             </div>
