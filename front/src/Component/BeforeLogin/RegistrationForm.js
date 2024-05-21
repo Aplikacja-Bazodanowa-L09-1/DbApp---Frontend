@@ -1,5 +1,5 @@
 import '../../Style/RegistrationForm.css'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 
 const RegistrationForm = () => {
@@ -14,25 +14,34 @@ const RegistrationForm = () => {
     const[height,setHeight]=useState();
     const[bootnumber,setBootNumber]=useState();
     const[weight,setWeight]=useState();
-    const[islogin,setIsLogin]=useState();
-    const[ismail,setIsMail]=useState();
-    const[ispassword,setIsPassword]=useState();
+    const[islogin,setIsLogin]=useState(true);
+    const[ismail,setIsMail]=useState(true);
+    const[ispassword,setIsPassword]=useState(true);
     const[information,setInformation]=useState('');
     const[informationpassword,setInformationPassword]=useState('');
-    const[loginis,setLoginIs]=useState({
-        border: '',
-        backgroundcolor: ''
-    });
-    const[mailis,setMailIs]=useState({
-        
-    });
-    const[passwordchangestyle,setPasswordChangeStyle]=useState({
-        
-    });
+    
+    const [image, setImage] = useState("");
+  const imageRef = useRef(null);
 
-    const gotoSecondPageRegistration = () =>{
-        setPage(2);
+  function useDisplayImage() {
+    const [result, setResult] = useState("");
+
+    function uploader(e) {
+      const imageFile = e.target.files[0];
+
+      const reader = new FileReader();
+      reader.addEventListener("load", (e) => {
+        setResult(e.target.result);
+      });
+
+      reader.readAsDataURL(imageFile);
     }
+
+    return { result, uploader };
+  }
+
+  const { result, uploader } = useDisplayImage();
+
     const gotoFirstPageRegistration = () =>{
         setPage(1);
     }
@@ -41,40 +50,40 @@ const RegistrationForm = () => {
     }
     const CheckPasswords = (e) =>{
         e.preventDefault();
-        fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/auth/token/`,{
-            mode: 'cors',
-            method: 'POST',
-            headers: {"Content-Type": "application/json", "Access-Control-Allow-Origin":"allow"},
-            body: JSON.stringify()
-        }).then((respond)=>respond.json()).then((data)=>{
-            if(data.access){
-                localStorage.clear();
-            }
-            
-        }).catch((err)=>{console.log(err.message);});
-        if(islogin && ismail)
+
+        if(islogin && ismail)//jak istnieje email lub login niech zwroci true, a jeśli nie ma w bazie to false
         {
             setInformation("Taki login istnieje   Taki email istnieje");
+            setIsLogin(false);
+            setIsMail(false);
         }
         else if(islogin && !ismail)
         {
             setInformation("Taki login istnieje");
+            setIsLogin(false);
+            setIsMail(true);
         }
         else if(!islogin &&ismail)
         {
             setInformation("Taki email istnieje");
+            setIsLogin(true);
+            setIsMail(false);
         }
         else
         {
             setInformation("");
+            setIsLogin(true);
+            setIsMail(true);
         }
         if(password!==passwordRepeat || password.length===0)
         {
             setInformationPassword("Hasła nie są takie same / Brak hasła");
+            setIsPassword(false);
         }
         else
         {
             setInformationPassword("");
+            setIsPassword(true);
         }
         if(!islogin && !ismail && ispassword)
             {
@@ -98,15 +107,19 @@ const RegistrationForm = () => {
                                     <label className='registrationformlabel'>Nazwisko:</label>
                                     <input type="text" className='registrationforminput' onChange={(e)=>setSurname(e.target.value)} value={surname} required/>
                                     <label className='registrationformlabel'>Mail:</label>
-                                    <input type='email' className='registrationforminput' onChange={(e)=>setEmail(e.target.value)} value={email} required/>
+                                    {ismail && <input type='email' className='registrationforminput' onChange={(e)=>setEmail(e.target.value)} value={email} required/>}
+                                    {!ismail && <input type='email' className='registrationforminputbad' onChange={(e)=>setEmail(e.target.value)} value={email} required/>}
                                 </div>
                                 <div className='registrationformblocks'>
                                     <label className='registrationformlabel'>Login</label>
-                                    <input type="text" className='registrationforminput' onChange={(e)=>setLogin(e.target.value)} value={login} required/>
+                                    {islogin && <input type="text" className='registrationforminput' onChange={(e)=>setLogin(e.target.value)} value={login} required/>}
+                                    {!islogin && <input type="text" className='registrationforminputbad' onChange={(e)=>setLogin(e.target.value)} value={login} required/>}
                                     <label className='registrationformlabel'>Hasło:</label>
-                                    <input type='password' className='registrationforminput' id="pass" onChange={(e)=>setPassword(e.target.value)} value={password} required/>
+                                    {ispassword && <input type='password' className='registrationforminput' id="pass" onChange={(e)=>setPassword(e.target.value)} value={password} required/>}
+                                    {!ispassword && <input type='password' className='registrationforminputbad' id="pass" onChange={(e)=>setPassword(e.target.value)} value={password} required/>}
                                     <label className='registrationformlabel'>Powtórz Hasło:</label>
-                                    <input type="password" id="pass" className='registrationforminput' onChange={(e)=>setPasswordRepeat(e.target.value)} value={passwordRepeat} required/>
+                                    {ispassword && <input type="password" id="pass" className='registrationforminput' onChange={(e)=>setPasswordRepeat(e.target.value)} value={passwordRepeat} required/>}
+                                    {!ispassword && <input type="password" id="pass" className='registrationforminputbad' onChange={(e)=>setPasswordRepeat(e.target.value)} value={passwordRepeat} required/>}
                                 </div>
                             </div>
                         </div>
@@ -134,10 +147,12 @@ const RegistrationForm = () => {
                                 <div className='registrationformblocks'>
                                     <label className='registrationformlabel'>Numer buta:</label>
                                     <input type='number' className='registrationforminput' onChange={(e)=>setBootNumber(e.target.value)} value={bootnumber} required/>
-                                   <div>
+                                   
                                     <label className='registrationformlabel' >Wgraj zdjęcie</label>
-                                    <input type="file" id="registrationformimage"/>
-                                   </div>
+                                    <div id="imgregisterform">
+                                        <input type="file" id="registrationformimage" onChange={(e)=>{setImage(e.target.files[0]);uploader(e);}} accept="image/jpeg,image/png"/><br/>
+                                        {result && <img ref={imageRef} src={result} id="registrationformimg"/>}
+                                    </div>
                                 </div>
                             </div>
                         </div>
