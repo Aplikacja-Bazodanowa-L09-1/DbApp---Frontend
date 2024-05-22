@@ -18,7 +18,6 @@
 #registrationformform{
     text-align: center;
     width: 810px;
-    min-width: 400px;
 }
 .registrationformlabel{
     text-align: left;
@@ -54,6 +53,20 @@
 .registrationforminput:hover{
     border: solid 1px black;
 }
+.registrationforminputbad{
+    border: 2px solid red;
+    background: #faa59d;
+    border-radius: 20px;
+    text-align: center;
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+.registrationforminputbad:hover{
+    border:solid red 1px;
+    border-radius: 20px;
+}
 #registrationformbuttondiv{
     width: 100%;
     text-align: center;
@@ -76,8 +89,29 @@
 }
 #registrationformimage{
     margin-left: 11%;
+    width: 30%;
 }
 #registrationforminformationIs{
     color: red;
     font-size: 20px;
+}
+#registrationformimg{
+    width: 150px;
+    height: 150px;
+    margin-left: 11%;
+    margin-bottom: 10px;
+}
+#imgregisterform{
+    display: flex;
+}
+@media(max-width:600px){
+    #registrationforminformation{
+        display: block;
+    }
+    .registrationforminput{
+        width: 80%;
+    }
+    .registrationformblocks{
+        width: 100%;
+    }
 }
