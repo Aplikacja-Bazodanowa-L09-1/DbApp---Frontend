@@ -72,22 +72,24 @@ const TeamStatistic = () => {
         })
     })
 
-    return ( 
-        <div id="main">
-            <div id="bar">
-                <NavBar/>
+    return (
+        <div> 
+            <div id="box">
+                <div id="bar">
+                    <NavBar/>
+                </div>
+                <div id="leftSide">
+                    <Club/>
+                    <TeamInformation/>
+                </div>
+                <div id="rightSide">
+                    <FormView/>
+                    <TableLig/>
+                </div>
+                
             </div>
-            <div id="teamleft">
-                <div id="teamclub"><Club/></div>
-                <div id="teaminformation"><TeamInformation/></div>
-            </div>
-            <div id="teamright">
-                <div id="formview"><FormView/></div>
-                <div id="tablelig"><TableLig/></div>
-                <div id="squad"><Squad/></div>
-            </div>
-            
         </div>
+        
      );
 }
  
