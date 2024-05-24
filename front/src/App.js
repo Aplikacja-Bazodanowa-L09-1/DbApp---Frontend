@@ -8,6 +8,7 @@ import TeamStatistic from './Component/FrontViewPagesPlayer/TeamStatistic';
 import RegistrationForm from './Component/BeforeLogin/RegistrationForm.js';
 
 import Calendar from './Component/Main/Calendar';
+import CalendarComponent from './Component/Main/CalendarComponent';
 import CalendarPane from './Component/Main/CalendarPane.js';
 import NavBar from './Component/NavBar';
 import NoticesPane from './Component/Main/NoticesPane';
@@ -24,6 +25,7 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
+          <Route path='/' Component={Login} />
           <Route path='login/' Component={Login} />
           <Route path='reset_password/:token' Component={ResetPassword} />
           <Route path='main/' Component={Main}/>
@@ -33,6 +35,7 @@ function App() {
           <Route path='equipment-view/' Component={EquipmentView}/>
           <Route path='registrationform/' Component={RegistrationForm}/>
           <Route path='calendar/' Component={Calendar} />
+          <Route path='calendar-component/' Component={CalendarComponent} />
           <Route path='calendarpane/' Component={CalendarPane} />
           <Route path='navbar/' Component={NavBar} />
           <Route path='noticespane/' Component={NoticesPane} />

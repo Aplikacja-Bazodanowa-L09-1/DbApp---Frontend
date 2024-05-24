@@ -1,10 +1,10 @@
 import '../../Style/CalendarPane.css'
-import Calendar from './Calendar';
+import CalendarComponent from './CalendarComponent';
 
 const CalendarPane = () => {
      return (
         <div id="calPane">
-            <Calendar />
+            <CalendarComponent />
         </div>
     );
 }
