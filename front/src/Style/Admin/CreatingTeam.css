@@ -4,11 +4,15 @@
     align-items: center;
     margin-top: 10%;
     margin-right: 8%;
-
+    width: 100%;
 }
 #creatingteamnavbaradmin{
     margin-left: 5%;
     margin-right: 5%;
+    width: 20%;
+}
+#creatingteamform{
+    width: 80%;
 }
 
 @media(max-width:800px){
@@ -20,8 +24,11 @@
         margin-top: 0px;
         margin-left: 0%;
         margin-right: 0%;
+        width: 0%;
+        
     }
     #creatingteamform{
         width: 300px;
+        margin: auto;
     }
 }

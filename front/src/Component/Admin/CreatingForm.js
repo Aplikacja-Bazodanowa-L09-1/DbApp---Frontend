@@ -40,8 +40,10 @@ const CreatingForm = () => {
                     <div className="creatingformtext">
                         <label className='creatingformlabel'>Logo:</label>
                     </div>
-                    <input type='file'  accept="image/jpeg, image/png"/>
-                    <div id="creatingformimage">{result && <img id="createformimg" ref={imageRef} src={result} onChange={(e)=>{setImage(e.target.files[0]);uploader(e);}} accept="image/jpeg,image/png"/>}</div>
+                    <input type='file'  accept="image/jpeg, image/png" onChange={(e)=>{setImage(e.target.files[0]);uploader(e);}}/>
+                    <div id="creatingformimage">
+                      {result && <img id="createformimg" ref={imageRef} src={result}/>}
+                    </div>
                     <div id="createformhelp"></div>
                 </div>
                 <div id="createformbuttonlocation"><button id="createformbutton" onClick={createTeam}>Zatwierdź</button></div>
