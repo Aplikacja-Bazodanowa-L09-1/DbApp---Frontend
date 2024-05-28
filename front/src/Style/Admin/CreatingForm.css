@@ -1,0 +1,75 @@
+#creatingform{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#creatingforminfo{
+    background-color: white;
+    width: 600px;
+    text-align: center;
+}
+
+#creatingformtitlediv{
+    margin: 0px 0px 20px 0px;
+}
+#creatingformtitle{
+    font-size: 40px;
+}
+.creatingformlabel{
+    font-size: 30px;
+    text-align: left;
+}
+#creatingformteamname{
+    border: none;
+    background-color: rgb(198, 196, 196);
+    border-radius: 20px;
+    width: 50%;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+#creatingformteamname:hover{
+    border: solid 1px black;
+}
+.creatingformtext{
+    text-align: left;
+    margin: auto;
+    width: 50%;
+}
+#creatingformimage{
+    width: 200px;
+    height: 200px;
+    background-color: lightgray;
+    border-radius: 20px;
+    margin: auto;
+    margin-top: 20px;
+}
+#createformhelp{
+    height: 20px;
+}
+#createformimg{
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+}
+#createformbuttonlocation{
+    text-align: center;
+    margin-top: 10px;
+}
+#createformbutton{
+    border: none;
+    background-color: transparent;
+    color:white;
+    transition: 1s;
+    font-size: 30px;
+}
+#createformbutton:hover{
+    transition: 1s;
+    font-size: 40px;
+}
+@media(max-width:800px){
+    #creatingforminfo{
+        width: 450px;
+    }
+}

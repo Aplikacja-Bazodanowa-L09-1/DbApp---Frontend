@@ -6,7 +6,7 @@ import Main from './Component/FrontViewPagesPlayer/Main';
 import RemindPassword from './Component/BeforeLogin/RemindPassword.js';
 import TeamStatistic from './Component/FrontViewPagesPlayer/TeamStatistic';
 import RegistrationForm from './Component/BeforeLogin/RegistrationForm.js';
-
+import CreatingTeam from './Component/Admin/CreatingTeam.js';
 import Calendar from './Component/Main/Calendar';
 import CalendarPane from './Component/Main/CalendarPane.js';
 import NavBar from './Component/NavBar';
@@ -24,7 +24,7 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path='login/' Component={Login} />
+          <Route path='/' Component={Login} />
           <Route path='reset_password/:token' Component={ResetPassword} />
           <Route path='main/' Component={Main}/>
           <Route path='remind-password/' Component={RemindPassword}/>
@@ -39,7 +39,7 @@ function App() {
           <Route path='profilepane/' Component={ProfilePane} />
           <Route path='statisticspane/' Component={StatisticsPane} />
           <Route path='surveypane/' Component={SurveyPane} />
-          
+          <Route path='createteam/' Component={CreatingTeam}/>
         </Routes>
       </BrowserRouter>
     </div>
