@@ -18,7 +18,7 @@ const NoticesPane = () => {
             method: 'GET',
             headers: {"Content-Type": "application/json", "authorization": `Berear ${localStorage.getItem('access_token')}`},
         }).then(response=>response.json()).then(data=>{
-            console.log(data.user)
+            console.log(data.notification.player.team.team_message_title)
             setTeamMessageTitle(data.notification.player.team.team_message_title)
             setTeamMessage(data.notification.player.team.team_message)
 
