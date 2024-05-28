@@ -3,6 +3,7 @@
     "create-react-app": "^5.0.1",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.4",
+    "react-calendar": "^5.0.0",
     "react-router-dom": "^6.23.0",
     "sort-by": "^1.2.0"
   }

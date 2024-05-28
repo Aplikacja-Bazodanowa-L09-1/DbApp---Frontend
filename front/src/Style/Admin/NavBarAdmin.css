@@ -1,0 +1,53 @@
+#navPaneAdmin{
+    width: 90px;
+    height: 20vh;
+    background-color: white;
+    border-radius: 10px ;
+}
+.navbarbuttons{
+    max-width: 100px;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.navbarbuttons> img{
+    padding-top: 30px;
+}
+.navbarbuttons:hover{
+    cursor: pointer;
+    background-color: gainsboro;
+}
+.navbarbuttons:first-child:hover{
+    border-radius: 10px 10px 0px 0px;
+}
+.navbarbuttons:nth-child(2):hover{
+    border-radius: 0px 0px 10px 10px;
+}
+.icon-circled_plus{
+    font-size: 300%;
+}
+@media only screen and (max-width: 800px) {
+    #navbaradminmain{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #navPaneAdmin{
+        display: flex;
+        width: 200px;
+        height: 100px;
+        background-color: white;
+        border-radius: 10px ;
+    }
+    .navbarbuttons{
+        width: 50%;
+        height: 100px;  
+    }
+    .navbarbuttons:first-child:hover{
+        border-radius: 10px 0px 0px 10px;
+    }
+    .navbarbuttons:nth-child(2):hover{
+        border-radius: 0px 10px 10px 0px;
+    }
+}

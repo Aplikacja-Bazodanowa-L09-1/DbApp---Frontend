@@ -1,22 +1,21 @@
-import { useState, React, useEffect} from "react"
-import NavBar from '../NavBar.js';
-import Club from '../TeamStatistic/Club.js'
-import TeamInformation from '../TeamStatistic/TeamInformation.js';
-import FormView from '../TeamStatistic/FormView.js';
-import TableLig from '../TeamStatistic/TableLig.js';
-import Squad from '../TeamStatistic/Squad.js'
+import '../Style/UserView.css'
+import NavBar from "./NavBar"
+import ProfilePane from "./ProfilePane"
+import PlayerDataPane from "./PlayerDataPane"
+import PlayerStatisticsPane from "./PlayerStatisticsPane"
+import RentedEquipmentPane from "./RentedEquipmentPane"
+import { useEffect, useState } from 'react'
 
-import '../../Style/TeamStatistic.css'
 
-const TeamStatistic = () => {
-
+const UserView = () => {
     const [PageContent, setPageContent] = useState('')
-
+ 
+ 
     const logoutHandler = (event) => {
         const refrsh_token = localStorage.getItem('refresh_token')
         const data = {"token": refrsh_token}
-
-        fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/auth/revoke_token/`,{
+ 
+        fetch('http://localhost:8184/auth/revoke_token/',{
             mode: 'cors',
             method: 'POST',
             headers: {"Content-Type": "application/json"},
@@ -28,32 +27,31 @@ const TeamStatistic = () => {
             window.location.href='/login/'
         }).catch(err=>{console.log(err)})
     }
-
-
+ 
     useEffect(() => {
-
-        fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/team_stats/`, {
+ 
+        fetch('http://localhost:8184/user/', {
             mode: 'cors',
             method: 'GET',
             headers: {
                 "authorization": `Berear ${localStorage.getItem('access_token')}`
             }
         }).then(response => {
-
+ 
             if (response.status == 403) {
                 throw new Error("access_token expired")
             }
             else return response.json()
-
+ 
         }).then(data => {
             setPageContent(data.content)
-
+ 
         }).catch(err => {
             if (err == 'Error: access_token expired') {
                 if (window.confirm("Sesja wygasła. Czy chcesz ją odnowić?")) {
-
+ 
                     /// ODNOWIENIE SESJI
-                    fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/auth/refresh_token/`, {
+                    fetch('http://localhost:8184/auth/refresh_token/', {
                         mode: 'cors',
                         method: 'POST',
                         headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "allow" },
@@ -64,33 +62,34 @@ const TeamStatistic = () => {
                             localStorage.setItem('access_token', data.accessToken)
                             window.location.reload()
                         })
-                        
+ 
                 } else {
                     logoutHandler()
                 }
             }
         })
     })
-
     return (
-        <div id="teamstatisticmain"> 
-            <div id="box">
-                <div id="bar">
-                    <NavBar/>
-                </div>
-                <div id="leftSide">
-                    <Club/>
-                    <TeamInformation/>
-                </div>
-                <div id="rightSide">
-                    <FormView/>
-                    <TableLig/>
-                </div>
-                
+        <div>
+        <div id="box">
+            <div id="bar">
+                 <NavBar/>
+            </div>
+            <div id="leftSide">
+                <ProfilePane/>
+                <div className="headers">Dane Zawodnika:</div>
+                <PlayerDataPane/>
+            </div>
+            <div id="rightSide">
+                <div className="headers statHeader">Statystyki Zawodnika</div>
+                <PlayerStatisticsPane/>
+                <div className="headers">Wypożyczony Sprzęt</div>
+                <RentedEquipmentPane/>
+                <div id="bottom"></div>
             </div>
         </div>
-        
-     );
+    </div> 
+   );
 }
- 
-export default TeamStatistic;
+
+export default UserView
