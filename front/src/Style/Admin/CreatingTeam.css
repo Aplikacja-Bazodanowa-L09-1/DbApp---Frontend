@@ -1,0 +1,33 @@
+#creatingteammain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+    margin-right: 8%;
+    width: 100%;
+}
+#creatingteamnavbaradmin{
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 20%;
+}
+#creatingteamform{
+    width: 80%;
+    margin-right: 15%;
+}
+
+@media(max-width:800px){
+    #creatingteammain{
+        flex-direction: column;
+    }
+    #creatingteamnavbaradmin{
+        margin-bottom: 4%;
+        margin-top: 0px;
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+    #creatingteamform{
+        width: 300px;
+        margin: auto;
+    }
+}
