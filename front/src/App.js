@@ -7,7 +7,7 @@ import RemindPassword from './Component/BeforeLogin/RemindPassword.js';
 import TeamStatistic from './Component/FrontViewPagesPlayer/TeamStatistic';
 import RegistrationForm from './Component/BeforeLogin/RegistrationForm.js';
 import CreatingTeam from './Component/Admin/CreatingTeam.js';
-import ManageTeam from './Component/CoachView/manageTeam.js';
+import ManageTeam from './Component/CoachView/ManageTeam.js';
 
 import Calendar from './Component/Main/Calendar';
 import CalendarComponent from './Component/Main/CalendarComponent';
