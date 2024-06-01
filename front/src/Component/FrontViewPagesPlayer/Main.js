@@ -11,6 +11,16 @@ const Main = () => {
 
     const [PageContent, setPageContent] = useState('')
 
+    const [visibility, setVisibility] = useState({visibility: "hidden"});
+
+    const visibilityOn = () =>
+        {
+            setVisibility({visibility: "visible"});
+        }
+    const visibilityOff = () =>
+        {
+            setVisibility({visibility: "hidden"});
+        }
 
     const logoutHandler = (event) => {
         const refrsh_token = localStorage.getItem('refresh_token')
@@ -91,6 +101,37 @@ const Main = () => {
                 <div className="headers">Statystyki</div>
                 <StatisticsPane/>
                 <div id="bottom"></div>
+            </div>
+        </div>
+        <div id="survBox" style={visibility} >
+            <div id="survWindow">
+                <div id="survTitle">
+                    Ankieta Przedmeczowa
+                </div>
+                <div id="survInputs">
+                    <div className="survOption">
+                        Kondycja Mentalna:
+                        <input type="number" name="" id="" />
+                    </div>
+                    <div className="survOption">
+                        Kondycja Fizyczna:
+                        <input type="number" name="" id="" />
+                    </div>
+                    <div className="survOption">
+                        Chęci Do Grania:
+                        <input type="number" name="" id="" />
+                    </div>
+                    <div className="survOption">
+                        Kontuzje:
+                        <select name="" id="">
+                            <option value="Brak">Brak</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="survButtons">
+                    <div class="survBtn" id="exitBtn" onClick={visibilityOff}>X</div>
+                    <div class="survBtn" id="okBtn">OK</div>
+                </div>
             </div>
         </div>
     </div> 

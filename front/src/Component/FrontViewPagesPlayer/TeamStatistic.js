@@ -73,7 +73,7 @@ const TeamStatistic = () => {
     })
 
     return (
-        <div> 
+        <div id="teamstatisticmain"> 
             <div id="box">
                 <div id="bar">
                     <NavBar/>
@@ -86,9 +86,11 @@ const TeamStatistic = () => {
                     <FormView/>
                     <TableLig/>
                 </div>
-            
+                
             </div>
+            
         </div>
+        
      );
 }
  

@@ -34,7 +34,7 @@ const ProfilePane = () => {
             method: 'GET',
             headers: {"Content-Type": "application/json", "authorization": `Berear ${localStorage.getItem('access_token')}`},
         }).then(response=>response.json()).then(data=>{
-            console.log(data.user_cred)
+            //console.log(data.user_cred.first_name)
             setName(data.user_cred.first_name)
             setSurname(data.user_cred.last_name)
             setRole(data.user_cred.role)

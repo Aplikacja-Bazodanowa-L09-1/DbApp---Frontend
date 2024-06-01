@@ -70,7 +70,6 @@ const UserView = () => {
             }
         })
     })
-
     return (
         <div>
         <div id="box">
@@ -89,7 +88,7 @@ const UserView = () => {
                 <RentedEquipmentPane/>
                 <div id="bottom"></div>
             </div>
-        </div>
+        </div>    
     </div> 
    );
 }
