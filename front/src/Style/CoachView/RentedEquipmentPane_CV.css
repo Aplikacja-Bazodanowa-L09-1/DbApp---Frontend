@@ -1,0 +1,48 @@
+#playerEquipmentPane_CV {
+    width: 100%;
+}
+
+#dataBox {
+    background-color: #ffffff;
+    border-radius: 20px;
+    min-height: 25vh;
+    border-radius: 10px ;
+    display: flex;
+    flex-direction: column;
+    padding: 1vh 0.5vw 1vh 0.5vw;
+    justify-content: space-between;
+}
+
+#whiteFont {
+    color: white;
+}
+
+.eq_CV {
+    flex-grow: 1;
+    font-weight: 700;
+}
+  
+#dataBox > p:nth-child(n+8) {
+flex-grow: 2;
+margin-bottom: 1vh;
+}
+
+.listStyle
+{
+    list-style: disc;
+    display: list-item;
+    list-style-position: inside;
+}
+
+#scrollBoxCV {
+    background-color: white;
+    overflow-y: auto;
+    background-color: #ffffff;
+    border-radius: 20px;
+    min-height: 25vh;
+    border-radius: 10px ;
+    display: flex;
+    flex-direction: column;
+    padding: 1vh 0.5vw 1vh 0.5vw;
+    justify-content: space-between;
+}

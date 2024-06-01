@@ -1,0 +1,73 @@
+#boxManageTeam_CV {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-block: 10vh;
+}
+
+#playerListCV {
+    height: auto;
+    width: 25vw;
+    align-self: flex-start;
+}
+
+#playerStatsCV {
+    height: 80vh;
+    width: 55vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: space-between;
+}
+
+#playerDataBoxCV {
+    width: 45%;
+}
+
+#playerStatsBoxCV {
+    width: 45%;
+}
+
+#rentedEqBoxCV {
+    width: 100%;
+}
+
+@media only screen and (max-width: 800px) {
+
+    #boxManageTeam_CV {
+        flex-direction: column;
+    }
+
+    #navbarCV{
+        position: fixed;
+        bottom: 0%;
+        background-color: #D32020;
+        height: 100px;
+        width: 100vw;
+    }
+
+    #playerListCV {
+        align-self: center;
+        width: 80vw;
+    }
+
+    #playerStatsCV {
+        height: 80vh;
+        width: 80vw;
+        display: flex;
+        flex-direction: row;
+    }
+
+    #playerDataBoxCV {
+        width: 100%;
+    }
+    
+    #playerStatsBoxCV {
+        width: 100%;
+    }
+    
+    #rentedEqBoxCV {
+        width: 100%;
+    }
+
+}

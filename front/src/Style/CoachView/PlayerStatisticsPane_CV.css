@@ -1,0 +1,22 @@
+#playerStatisticsPane_CV {
+    margin-bottom: 20px;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+#dataBoxStatisticsPane_CV {
+    background-color: #ffffff;
+    margin-top: 20px;
+    border-radius: 20px;
+    height: 35vh;
+    min-height: 27.5vh;
+    border-radius: 10px ;
+    display: flex;
+    flex-direction: column;
+    padding: 1vh 0.5vw 1vh 0.5vw;
+    justify-content: space-between;
+}
+
+#whiteFont {
+    color: white;
+}

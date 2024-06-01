@@ -7,6 +7,7 @@ import RemindPassword from './Component/BeforeLogin/RemindPassword.js';
 import TeamStatistic from './Component/FrontViewPagesPlayer/TeamStatistic';
 import RegistrationForm from './Component/BeforeLogin/RegistrationForm.js';
 import CreatingTeam from './Component/Admin/CreatingTeam.js';
+import ManageTeam from './Component/CoachView/manageTeam.js';
 
 import Calendar from './Component/Main/Calendar';
 import CalendarComponent from './Component/Main/CalendarComponent';
@@ -44,6 +45,7 @@ function App() {
           <Route path='statisticspane/' Component={StatisticsPane} />
           <Route path='surveypane/' Component={SurveyPane} />
           <Route path='createteam/' Component={CreatingTeam}/>
+          <Route path='manageteam/' Component={ManageTeam} />
           
         </Routes>
       </BrowserRouter>

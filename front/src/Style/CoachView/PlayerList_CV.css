@@ -1,0 +1,46 @@
+
+.copy_CV {
+    background-color: #e53935;
+    border: none;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.playerCard_CV {
+    background-color: #ffffff;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    border-radius: 20px;
+}
+
+#profPhoto_CV{
+    width: auto;
+    height: 10vh;
+    margin: 1vh;
+    background-color: gray;
+}
+
+.playerName_CV {
+    margin-right: 10px;
+}
+
+.editButton_CV {
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.copy_CV:hover {
+    background-color: #922523;
+}
+
+.playerCard_CV:hover {
+    background-color: gainsboro;
+}
