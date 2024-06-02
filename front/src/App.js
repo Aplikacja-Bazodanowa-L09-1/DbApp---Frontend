@@ -8,6 +8,7 @@ import TeamStatistic from './Component/FrontViewPagesPlayer/TeamStatistic';
 import RegistrationForm from './Component/BeforeLogin/RegistrationForm.js';
 import CreatingTeam from './Component/Admin/CreatingTeam.js';
 import ManageTeam from './Component/CoachView/ManageTeam.js';
+import RegistrationCouch from './Component/CoachView/Registration/RegistrationCouch.js';
 
 import Calendar from './Component/Main/Calendar';
 import CalendarComponent from './Component/Main/CalendarComponent';
@@ -46,6 +47,7 @@ function App() {
           <Route path='surveypane/' Component={SurveyPane} />
           <Route path='createteam/' Component={CreatingTeam}/>
           <Route path='manageteam/' Component={ManageTeam} />
+          <Route path='registrationcouch/' Component={RegistrationCouch} />
           
         </Routes>
       </BrowserRouter>

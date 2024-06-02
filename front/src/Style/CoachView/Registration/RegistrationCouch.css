@@ -1,0 +1,56 @@
+#registrationcouch{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#registrationcouchtitle{
+    color: white;
+    font-size: 50px;
+}
+#registrationcouchtitleblock{
+    text-align: center;
+    width: 100%;
+}
+#registrationmaincouch{
+    width: 500px;
+}
+#registrationcouchphoto{
+    background-color: white;
+    border-radius: 20px;
+    text-align: center;
+    align-items: center;
+}
+#registrationcouchimage{
+    background-color: rgba(196, 196, 196, 0.905);
+    border-radius: 20px;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+}
+#registrationcouchtext1{
+    font-size: 35px;
+}
+#registrationcouchtext2{
+    font-size: 20px;
+}
+#registrationcouchimg{
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+}
+#registrationcouchbuttonsend{
+    border:none;
+    background-color: transparent;
+    font-size: 25px;
+    transition: 1s;
+    color: white;
+    margin: auto;
+}
+#registrationcouchbuttonsend:hover{
+    font-size: 35px;
+    transition: 1s;
+}
+#registrationcouchbutton{
+    text-align: center;
+}

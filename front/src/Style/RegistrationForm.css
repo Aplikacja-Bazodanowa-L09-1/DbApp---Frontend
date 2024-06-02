@@ -41,7 +41,7 @@
     font-size: 40px;
 }
 .registrationforminput{
-    border: none;
+    border: solid white 2px;
     background-color: lightgray;
     border-radius: 20px;
     text-align: center;
@@ -51,7 +51,7 @@
     font-size: 30px;
 }
 .registrationforminput:hover{
-    border: solid 1px black;
+    border: solid 2px black;
 }
 .registrationforminputbad{
     border: 2px solid red;
@@ -64,7 +64,7 @@
     font-size: 30px;
 }
 .registrationforminputbad:hover{
-    border:solid red 1px;
+    border:solid red 2px;
     border-radius: 20px;
 }
 #registrationformbuttondiv{
