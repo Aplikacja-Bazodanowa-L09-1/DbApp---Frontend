@@ -1,6 +1,6 @@
 import '../../Style/RegistrationForm.css'
 import { useState, useEffect, useRef } from 'react';
-
+import { validEmail } from '../Regex.js';
 
 const RegistrationForm = () => {
     const[page,setPage]=useState(1);
@@ -50,34 +50,41 @@ const RegistrationForm = () => {
     }
     const CheckPasswords = (e) =>{
         e.preventDefault();
-
-        if(islogin && ismail)//jak istnieje email lub login niech zwroci true, a jeśli nie ma w bazie to false
-        {
-            setInformation("Taki login istnieje. Taki email istnieje.");
-            setIsLogin(false);
-            setIsMail(false);
+        if(!validEmail.test(email))
+            {
+                setIsMail(false);
+                setInformation("Źle napisany email");
+            }
+        else{
+            if(islogin && ismail)//jak istnieje email lub login niech zwroci true, a jeśli nie ma w bazie to false
+            {
+                setInformation("Taki login istnieje. Taki email istnieje.");
+                setIsLogin(false);
+                setIsMail(false);
+            }
+            else if(islogin && !ismail)
+            {
+                setInformation("Taki login istnieje.");
+                setIsLogin(false);
+                setIsMail(true);
+            }
+            else if(!islogin &&ismail)
+            {
+                setInformation("Taki email istnieje.");
+                setIsLogin(true);
+                setIsMail(false);
+            }
+            else
+            {
+                setInformation("");
+                setIsLogin(true);
+                setIsMail(true);
+            }
         }
-        else if(islogin && !ismail)
+        
+        if(password!==passwordRepeat || password.length<5)
         {
-            setInformation("Taki login istnieje.");
-            setIsLogin(false);
-            setIsMail(true);
-        }
-        else if(!islogin &&ismail)
-        {
-            setInformation("Taki email istnieje.");
-            setIsLogin(true);
-            setIsMail(false);
-        }
-        else
-        {
-            setInformation("");
-            setIsLogin(true);
-            setIsMail(true);
-        }
-        if(password!==passwordRepeat || password.length===0)
-        {
-            setInformationPassword("Hasła nie są takie same / Brak hasła");
+            setInformationPassword("Hasła nie są takie same / Brak hasła Hasło jest z krótkie /");
             setIsPassword(false);
         }
         else
@@ -85,7 +92,7 @@ const RegistrationForm = () => {
             setInformationPassword("");
             setIsPassword(true);
         }
-        if(!islogin && !ismail && ispassword)
+        if(!islogin && !ismail && ispassword && password.length>4)
             {
                 setPage(2);
             }

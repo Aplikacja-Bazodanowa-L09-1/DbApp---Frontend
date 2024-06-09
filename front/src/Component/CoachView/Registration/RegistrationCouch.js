@@ -38,13 +38,56 @@ const RegistrationCouch = () => {
     }
     const { result, uploader } = useDisplayImage();
     const NextPage = () =>{
-        setPage(2);
+        if(!validEmail.test(email)){
+            setInformation('Źle wprowadzony email');
+            setIsMail(false);
+        }
+        else{
+            if(islogin && ismail)//jak istnieje email lub login niech zwroci true, a jeśli nie ma w bazie to false
+            {
+                setInformation("Taki login istnieje. Taki email istnieje.");
+                setIsLogin(false);
+                setIsMail(false);
+            }
+            else if(islogin && !ismail)
+            {
+                setInformation("Taki login istnieje.");
+                setIsLogin(false);
+                setIsMail(true);
+            }
+            else if(!islogin &&ismail)
+            {
+                setInformation("Taki email istnieje.");
+                setIsLogin(true);
+                setIsMail(false);
+            }
+            else
+            {
+                setInformation("");
+                setIsLogin(true);
+                setIsMail(true);
+            }
+            if(password!==passwordRepeat || password.length<5)
+                {
+                    setInformationPassword("Hasła nie są takie same / Brak hasła Hasło jest z krótkie /");
+                    setIsPassword(false);
+                }
+            else
+                {
+                    setInformationPassword("");
+                    setIsPassword(true);
+                }
+            if(!islogin && !ismail && ispassword && password.length>4)
+                    {
+                        setPage(2);
+                    }
+        }
     }
     if(page===1){
         return ( 
         <div>
             <div id='registrationformmain'>
-                <form id="registrationformform">
+                <div id="registrationformform">
                     <label id="registrationformtitle"><b>Rejestracja</b></label>
                         <div id="registrationformstart">
                             <label id="registrationformlabelinfo">Stwórz konto</label>
@@ -57,8 +100,8 @@ const RegistrationCouch = () => {
                                     <label className='registrationformlabel'>Nazwisko:</label>
                                     <input type="text" className='registrationforminput' onChange={(e)=>setSurname(e.target.value)} value={surname} required/>
                                     <label className='registrationformlabel'>Mail:</label>
-                                    {ismail && <input type='email' className='registrationforminput' onChange={(e)=>setEmail(e.target.value)} value={email} required/>}
-                                    {!ismail && <input type='email' className='registrationforminputbad' onChange={(e)=>setEmail(e.target.value)} value={email} required/>}
+                                    {ismail && <input type='text' className='registrationforminput' onChange={(e)=>setEmail(e.target.value)} value={email} required/>}
+                                    {!ismail && <input type='text' className='registrationforminputbad' onChange={(e)=>setEmail(e.target.value)} value={email} required/>}
                                 </div>
                                 <div className='registrationformblocks'>
                                     <label className='registrationformlabel'>Login</label>
@@ -74,7 +117,7 @@ const RegistrationCouch = () => {
                             </div>
                         </div>
                         <div id="registrationformbuttondiv"><button id="registrationformbuttonmove" onClick={NextPage}>Przejdź dalej</button></div>
-                </form>
+                </div>
             </div>
         </div>
         );
