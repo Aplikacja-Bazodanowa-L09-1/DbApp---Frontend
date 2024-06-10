@@ -1,37 +1,52 @@
-import { useState, useEffect, useRef } from 'react';
-import "../../Style/CoachView/RentedEquipmentPane_CV.css"
+import { useState, useEffect } from 'react';
+import "../../Style/CoachView/RentedEquipmentPane_CV.css";
 
-const PlayerEquipmentPane_CV = () => {
-
+const RentedEquipmentPane_CV = ({ playerId }) => {
     const [rEquipment, setREquipment] = useState([]);
-    if(rEquipment[0] == null) rEquipment[0] = "Gracz nie wypożyczył żadnego sprzętu"
 
-    return (
+    useEffect(() => {
+        const fetchRentedEquipment = async (playerId) => {
+            try {
+                const response = await fetch(`YOUR_API_ENDPOINT/${playerId}/rented-equipment`);
+                const data = await response.json();
+                setREquipment(data);
+            } catch (error) {
+                console.error('Error fetching rented equipment:', error);
+            }
+        };
 
-        /*<div id="playerEquipmentPane_CV">
-            <h2 id="whiteFont">Wypożyczony Sprzęt</h2>
-            <div id="dataBox">
-                <p><span class="eq_CV">Korki - Rozmiar 41</span></p>
-                <p><span class="eq_CV">Koszulka Meczowa - Nr 10 - Roz. M</span></p>
-                <p><span class="eq_CV">Spodenki Meczowe - Nr 10 - Roz. M</span></p>
-                <p><span class="eq_CV">Bluza Meczowa - Nr 10 - Roz. M</span></p>
-            </div>
-        </div>*/
+        if (playerId) {
+            fetchRentedEquipment(playerId);
+        }
+    }, [playerId]);
 
-        
-        <div id="playerEquipmentPane_CV">
-            <h2 id="whiteFont">Wypożyczony Sprzęt</h2>
-            <div id="scrollBoxCV">
-                {rEquipment.map(rEq =>(
+    //from here
+    let placeHolder1 = null;
+
+    if (!playerId) {
+        placeHolder1 = " "
+    }
+    else if (rEquipment.length === 0) {
+        placeHolder1 = "Gracz nie wypożyczył żadnego sprzętu"
+    }
+    else {
+        placeHolder1 = rEquipment.map(rEq => (
                     <p>
                         <span className="eq_CV listStyle">
                             {rEq}
                         </span>
-                    </p>   
-                ))}
+                    </p>
+                    ))
+    }
+
+    return (
+        <div id="playerEquipmentPane_CV">
+            <h2 id="whiteFont">Wypożyczony Sprzęt</h2>
+            <div id="scrollBoxCV">
+                {placeHolder1}
             </div>
-        </div> 
+        </div>
     );
 }
 
-export default PlayerEquipmentPane_CV;
+export default RentedEquipmentPane_CV;
