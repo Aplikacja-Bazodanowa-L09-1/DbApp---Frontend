@@ -26,7 +26,7 @@ const Main = () => {
         const refrsh_token = localStorage.getItem('refresh_token')
         const data = {"token": refrsh_token}
 
-        fetch('http://localhost:8184/auth/revoke_token/',{
+        fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/auth/revoke_token/`,{
             mode: 'cors',
             method: 'POST',
             headers: {"Content-Type": "application/json"},
@@ -129,8 +129,8 @@ const Main = () => {
                     </div>
                 </div>
                 <div id="survButtons">
-                    <div class="survBtn" id="exitBtn" onClick={visibilityOff}>X</div>
-                    <div class="survBtn" id="okBtn">OK</div>
+                    <div className="survBtn" id="exitBtn" onClick={visibilityOff}>X</div>
+                    <div className="survBtn" id="okBtn">OK</div>
                 </div>
             </div>
         </div>
