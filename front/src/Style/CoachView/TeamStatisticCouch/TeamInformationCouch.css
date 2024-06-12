@@ -1,0 +1,23 @@
+#couchinformationdiv{
+    width: 100%;
+    text-align: center;
+    padding-bottom: 10px;
+}
+#couchinformationbutton{
+    border: solid 2px white;
+    background-color: rgb(152, 141, 141);
+    font-size:30px;
+    width: 200px;
+    height: 60px;
+    border-radius: 20px;
+}
+.couchinformationinput{
+    border-radius: 20px;
+    text-align: center;
+    border: solid 3px white;
+    width: 100%;
+}
+.couchinformationinput:hover{
+    border: solid 3px black;
+    
+}

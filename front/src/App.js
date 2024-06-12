@@ -9,7 +9,8 @@ import RegistrationForm from './Component/BeforeLogin/RegistrationForm.js';
 import CreatingTeam from './Component/Admin/CreatingTeam.js';
 import ManageTeam from './Component/CoachView/ManageTeam.js';
 import RegistrationCouch from './Component/CoachView/Registration/RegistrationCouch.js';
-
+import TeamInformationCouch from './Component/CoachView/TeamStatisticCouch/TeamInformationCouch.js';
+import TeamStatisticCouch from './Component/CoachView/TeamStatisticCouch/TeamStatisticCouch.js';
 import Calendar from './Component/Main/Calendar';
 import CalendarComponent from './Component/Main/CalendarComponent';
 import CalendarPane from './Component/Main/CalendarPane.js';
@@ -48,7 +49,8 @@ function App() {
           <Route path='createteam/' Component={CreatingTeam}/>
           <Route path='manageteam/' Component={ManageTeam} />
           <Route path='registrationcouch/' Component={RegistrationCouch} />
-          
+          <Route path='/teamstatisticouch' Component={TeamStatisticCouch}/>
+          <Route path='/teaminformationcouch' Component={TeamInformationCouch}/>
         </Routes>
       </BrowserRouter>
     </div>
