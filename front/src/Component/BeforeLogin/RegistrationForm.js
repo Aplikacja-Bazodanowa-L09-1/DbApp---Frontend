@@ -56,6 +56,8 @@ const RegistrationForm = () => {
                 setInformation("Źle napisany email");
             }
         else{
+            setIsMail(true);
+            setInformation('');
             if(islogin && ismail)//jak istnieje email lub login niech zwroci true, a jeśli nie ma w bazie to false
             {
                 setInformation("Taki login istnieje. Taki email istnieje.");
