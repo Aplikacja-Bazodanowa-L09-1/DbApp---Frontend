@@ -44,3 +44,7 @@
 #deleteButton_CV:hover {
     background-color: #922523;
 }
+
+#deleteButton_CV:active {
+    background-color: #661817;
+}

@@ -35,6 +35,12 @@
       "css": "plus",
       "code": 59395,
       "src": "fontawesome"
+    },
+    {
+      "uid": "70370693ada58ef0a60fa0984fe8d52a",
+      "css": "plus-alternative",
+      "code": 59396,
+      "src": "entypo"
     }
   ]
 }

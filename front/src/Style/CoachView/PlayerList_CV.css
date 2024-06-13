@@ -1,4 +1,13 @@
 
+#listOfPlayers_CV {
+    height: 68.5vh; /* Set a fixed height to limit the vertical size */
+    align-self: flex-start;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column; /* Ensure items are stacked vertically */
+    justify-content: flex-start; /* Align items to the top */
+}
+
 .copy_CV {
     background-color: #e53935;
     border: none;
@@ -6,6 +15,20 @@
     color: white;
     cursor: pointer;
     border-radius: 20px;
+    height: 40%;
+    width: 30%;
+    margin-left: 15%;
+}
+
+.addPlayerCard_CV {
+    background-color: #ffffff;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    border-radius: 20px;
+    justify-content: flex-start;
 }
 
 .playerCard_CV {
@@ -16,6 +39,7 @@
     align-items: center;
     height: 10vh;
     border-radius: 20px;
+    justify-content: space-between;
 }
 
 #profPhoto_CV{
@@ -39,6 +63,21 @@
 
 .copy_CV:hover {
     background-color: #922523;
+}
+
+.copy_CV:active {
+    background-color: #661817;
+}
+
+.icon-plus-alternative {
+    font-size: 250%;
+    border: 4px solid black;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+    margin-right: 3%;
 }
 
 .playerCard_CV:hover {

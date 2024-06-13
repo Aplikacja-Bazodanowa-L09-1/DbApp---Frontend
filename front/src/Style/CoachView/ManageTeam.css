@@ -6,9 +6,12 @@
 }
 
 #playerListCV {
-    height: auto;
+    height: 80vh; /* Set a fixed height to limit the vertical size */
     width: 25vw;
     align-self: flex-start;
+    display: flex;
+    flex-direction: column; /* Ensure items are stacked vertically */
+    justify-content: flex-start; /* Align items to the top */
 }
 
 #playerStatsCV {
