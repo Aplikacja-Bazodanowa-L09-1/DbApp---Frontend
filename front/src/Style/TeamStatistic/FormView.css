@@ -22,18 +22,19 @@
 }
 #formclubinfo{
     margin-left: 10px;
-    width: 100%;
 }
 #frontimage{
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
 }
 #formdate{
     text-align: right;
+    margin: 10px;
 }
 #formleft{
     width: 60%;
-    text-align: center;
+    text-align: left;
+    margin-left: 20px;
 }
 #formright{
     width: 40%;
@@ -50,4 +51,5 @@
     width:  120px;
     height: 40px;
     margin-top: 35px;
+    margin-left: 15px;
 }
