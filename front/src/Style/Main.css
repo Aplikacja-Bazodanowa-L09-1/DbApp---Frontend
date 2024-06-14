@@ -39,13 +39,13 @@
     -webkit-box-shadow: 10px 16px 16px 7px rgba(88, 9, 9, 1);
     -moz-box-shadow: 10px 16px 16px 7px rgba(88, 9, 9, 1);
     box-shadow: 10px 16px 16px 7px rgba(88, 9, 9, 1);
-    transition: 1s;
+    /* transition: 1s; */
 }
-.paneShadow:hover
+/* .paneShadow:hover
 {
     transform: scale(1.05);
     transition: 1s;
-}
+} */
 @media only screen and (max-width: 800px) {
     #box{
         flex-direction: column;

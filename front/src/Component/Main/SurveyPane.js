@@ -11,13 +11,13 @@ const SurveyPane = () => {
 
     const visibilityOn = () =>
       {
-          // window.scrollTo(0, 0);
-          // document.body.style.overflow = 'hidden';
+          window.scrollTo(0, 0);
+          document.body.style.overflow = 'hidden';
           setVisibility({visibility: "visible"});
       }
     const visibilityOff = () =>
       {
-        // document.body.style.overflow = 'auto';
+        document.body.style.overflow = 'auto';
         setVisibility({visibility: "hidden"});
       }
 
