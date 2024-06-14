@@ -6,33 +6,7 @@ const PlayerList_CV = ({ onSelectPlayer }) => {
     const [alertMessage, setAlertMessage] = useState('');
     const [showAlert, setShowAlert] = useState(false);
 
-    const [players, setPlayers] = useState([]);
-
-    const fetchPlayerList_CV = () => {
-        fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/coach/list/`, {
-            mode: 'cors',
-            method: 'GET',
-            headers: { "Content-Type": "application/json", "authorization": `Berear ${localStorage.getItem('access_token')}` },
-        }).then(response => response.json()).then(data => {
-            if (data.detail) {
-                console.log(data.detail)
-            } else {
-                
-                //console.log(data.eq)
-                // for(let i=0; i<data.eq.length; i++){
-                //     console.log(data.eq[i])
-                //     setAEquipment([])
-                // }
-                setFetchedPlayers(data.list)
-                console.log(fetchedPlayers)
-            }
-        })
-    }
-    useEffect(() => {
-        fetchPlayerList_CV()
-    })
-
-    useEffect(() => {
+    /*useEffect(() => {
         fetch('YOUR_API_ENDPOINT')
             .then(response => response.json())
             .then(data => setFetchedPlayers(data))
