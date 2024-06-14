@@ -5,7 +5,7 @@ import '../../Style/Admin/CreatingTeam.css'
 const CreatingTeam = () => {
 
     return (
-        <div>
+        <div id="creatingteamdiv">
             <div id="creatingteammain">
                 <div id="creatingteamnavbaradmin"><NavBarAdmin/></div>
                 <div id="creatingteamform"><CreatingForm/></div>

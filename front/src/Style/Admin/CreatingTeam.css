@@ -1,7 +1,6 @@
 #creatingteammain{
     display: flex;
     justify-content: center;
-    align-items: center;
     margin-top: 10%;
     margin-right: 8%;
     width: 100%;
@@ -13,12 +12,14 @@
 }
 #creatingteamform{
     width: 80%;
+    margin-left: -10%;
     /* margin-right: 15%; */
 }
 
 @media(max-width:800px){
     #creatingteammain{
         flex-direction: column;
+        align-items: center;
     }
     #creatingteamnavbaradmin{
         margin-bottom: 4%;
