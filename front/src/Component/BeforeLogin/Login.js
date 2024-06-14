@@ -35,7 +35,15 @@ const Login = () => {
                 localStorage.clear();
                 localStorage.setItem('access_token', data.access);
                 localStorage.setItem('refresh_token', data.refresh);
-                window.location.href='/main/'
+                if(data.role==='admin'){
+                    window.location.href='/createteam/';
+                }
+                else if(data.role==='player'){
+                    window.location.href='/main/';
+                }
+                else if(data.role==='couch'){
+                    window.location.href='/teamstatisticouch/';
+                }
             }
             else{
                 console.log(data.detail);
@@ -65,7 +73,7 @@ const Login = () => {
                                 
                                     <lable className="Name">Hasło</lable>
                                     <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} id="ipassword" required/>
-                                    <label id="prz_haslo" onClick={Przypomnienie}>Przypomnij hasło</label>
+                                    <label id="prz_haslo" onClick={Przypomnienie}>Nie pamiętasz hasła?</label>
                                 </div>
                                 
                             
