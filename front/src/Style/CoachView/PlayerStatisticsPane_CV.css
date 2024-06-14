@@ -15,6 +15,7 @@
     flex-direction: column;
     padding: 1vh 0.5vw 1vh 0.5vw;
     justify-content: space-between;
+    box-shadow: 1vw 1.6vh 1vw 0.7vh rgba(88, 9, 9, 1);
 }
 
 #whiteFont {

@@ -47,7 +47,7 @@ const PlayerDataPane_CV = ({ playerId }) => {
 
     return (
         <div id="playerDataPane_CV">
-            <h2 id="whiteFont">Dane Zawodnika</h2>
+            <h2 id="whiteFont" class="whiteTextShadow">Dane Zawodnika</h2>
             <div id="dataBoxDataPane_CV">
                 <div id="positionDeleteBox_CV">
                     <p><span className="bStyle playerPositionStyle">BRAMKARZ</span></p>

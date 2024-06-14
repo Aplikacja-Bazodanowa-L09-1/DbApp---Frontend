@@ -31,17 +31,17 @@ const RentedEquipmentPane_CV = ({ playerId }) => {
     }
     else {
         placeHolder1 = rEquipment.map(rEq => (
-                    <p>
-                        <span className="eq_CV listStyle">
-                            {rEq}
-                        </span>
-                    </p>
-                    ))
+        <p>
+            <span className="eq_CV listStyle">
+                {rEq}
+            </span>
+        </p>
+        ))
     }
 
     return (
         <div id="playerEquipmentPane_CV">
-            <h2 id="whiteFont">Wypożyczony Sprzęt</h2>
+            <h2 id="whiteFont" class="whiteTextShadow">Wypożyczony Sprzęt</h2>
             <div id="scrollBoxCV">
                 {placeHolder1}
             </div>

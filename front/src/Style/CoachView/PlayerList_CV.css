@@ -1,11 +1,44 @@
 
 #listOfPlayers_CV {
-    height: 68.5vh; /* Set a fixed height to limit the vertical size */
+    height: 68.5vh;
     align-self: flex-start;
     overflow-y: auto;
     display: flex;
-    flex-direction: column; /* Ensure items are stacked vertically */
-    justify-content: flex-start; /* Align items to the top */
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* WebKit Browsers (Chrome, Safari) */
+#listOfPlayers_CV::-webkit-scrollbar {
+    width: 0.8vw;
+}
+
+#listOfPlayers_CV::-webkit-scrollbar-track {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0.4vw 0.6vh 0.4vw 0.25vh rgba(88, 9, 9, 1);
+}
+
+#listOfPlayers_CV::-webkit-scrollbar-thumb {
+    background-color: #e53935; /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Rounded corners for the thumb */
+    border: 2px solid #ffffff; /* Padding around the thumb */
+}
+
+#listOfPlayers_CV::-webkit-scrollbar-thumb:hover {
+    background-color: #922523; /* Color on hover */
+}
+
+#listOfPlayers_CV::-webkit-scrollbar-button {
+    display: none; /* Hides the up and down arrows */
+}
+
+/* Firefox specific styles */
+@-moz-document url-prefix() {
+    #listOfPlayers_CV {
+        scrollbar-width: thin; /* Thin scrollbar */
+        scrollbar-color: #e53935 #ffffff; /* Thumb and track colors */
+    }
 }
 
 .copy_CV {
@@ -29,17 +62,20 @@
     height: 10vh;
     border-radius: 20px;
     justify-content: flex-start;
+    box-shadow: 0.5vw 0.8vh 0.5vw 0.35vh rgba(88, 9, 9, 1);
 }
 
 .playerCard_CV {
     background-color: #ffffff;
     padding: 10px;
-    margin-bottom: 10px;
+    margin-right: 0.5vw;
+    margin-bottom: 1vh;
     display: flex;
     align-items: center;
     height: 10vh;
     border-radius: 20px;
     justify-content: space-between;
+    box-shadow: 0.5vw 0.8vh 0.5vw 0.35vh rgba(88, 9, 9, 1);
 }
 
 #profPhoto_CV{

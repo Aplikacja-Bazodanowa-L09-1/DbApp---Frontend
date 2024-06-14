@@ -4,6 +4,7 @@
     height: 80vh;
     background-color: white;
     border-radius: 10px ;
+    box-shadow: 1vw 1.6vh 1vw 0.7vh rgba(88, 9, 9, 1);
 }
 .buttons
 {

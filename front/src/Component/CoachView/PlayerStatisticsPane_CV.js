@@ -58,7 +58,7 @@ const PlayerStatisticsPane_CV = ({ playerId }) => {
 
     return (
         <div id="playerStatisticsPane_CV">
-            <h2 id="whiteFont">Statystyki Zawodnika</h2>
+            <h2 id="whiteFont" class="whiteTextShadow">Statystyki Zawodnika</h2>
             <div id="dataBoxStatisticsPane_CV">
                 <p><span className="bStyle" id="whiteFont">BRAMKARZ</span></p>
                 <p><span className="bStyle">Gole: {placeHolder1}</span></p>

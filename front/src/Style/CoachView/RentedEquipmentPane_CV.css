@@ -2,17 +2,6 @@
     width: 100%;
 }
 
-#dataBox {
-    background-color: #ffffff;
-    border-radius: 20px;
-    min-height: 25vh;
-    border-radius: 10px ;
-    display: flex;
-    flex-direction: column;
-    padding: 1vh 0.5vw 1vh 0.5vw;
-    justify-content: space-between;
-}
-
 #whiteFont {
     color: white;
 }
@@ -20,11 +9,6 @@
 .eq_CV {
     flex-grow: 1;
     font-weight: 700;
-}
-  
-#dataBox > p:nth-child(n+8) {
-flex-grow: 2;
-margin-bottom: 1vh;
 }
 
 .listStyle
@@ -45,4 +29,5 @@ margin-bottom: 1vh;
     flex-direction: column;
     padding: 1vh 0.5vw 1vh 0.5vw;
     justify-content: space-between;
+    box-shadow: 1vw 1.6vh 1vw 0.7vh rgba(88, 9, 9, 1);
 }
