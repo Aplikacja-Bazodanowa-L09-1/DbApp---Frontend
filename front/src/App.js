@@ -22,7 +22,7 @@ import SurveyPane from './Component/Main/SurveyPane';
 import UserView from './Component/FrontViewPagesPlayer/UserView';
 import EquipmentView from './Component/FrontViewPagesPlayer/EquipmentView'
 import AddEventsPopup from './Component/Main/AddEventsPopup'
-
+import AdminTeamView from './Component/Admin/AdminTeamView/AdminTeamView.js';
 
 function App() {
   return (
@@ -52,6 +52,7 @@ function App() {
           <Route path='registrationcouch/' Component={RegistrationCouch} />
           <Route path='/teamstatisticouch' Component={TeamStatisticCouch}/>
           <Route path='/teaminformationcouch' Component={TeamInformationCouch}/>
+          <Route path='/adminteamview' Component={AdminTeamView}/>
         </Routes>
       </BrowserRouter>
     </div>

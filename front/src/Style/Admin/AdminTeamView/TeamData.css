@@ -1,0 +1,86 @@
+
+#boxTeamData {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5vh 1vw 1.5vh 1vw;
+    background-color: #ffffff;
+    width: 100%;
+}
+
+#logoBoxAdmin {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+}
+
+#logoPhotoAdmin{
+    width: 60%;
+    height: 100%;
+    background-color: gray;
+}
+
+#boxTeamNameAdmin {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#boxCoachNameAdmin {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#teamNameAdmin {
+    width: 50%;
+    font-size: 20px;
+    margin-left: 5%;
+}
+
+#coachNameAdmin {
+    width: 50%;
+    font-size: 20px;
+    margin-left: 5%;
+}
+
+#teamButtonsAdmin {
+    width: 50%;
+    height: 30%;
+    display: flex;
+    flex-direction: space-around;
+}
+
+#coachButtonsAdmin {
+    width: 50%;
+    height: 30%;
+    display: flex;
+    flex-direction: space-around;
+}
+
+.editTeamAdmin {
+    background-color: #e53935;
+    border: none;
+    padding: 1vh 1vw 1vh 1vw;
+    color: white;
+    cursor: pointer;
+    border-radius: 20px;
+    height: 100%;
+    width: 40%;
+}
+
+.deleteTeamAdmin {
+    background-color: #e53935;
+    border: none;
+    padding: 1vh 1vw 1vh 1vw;
+    color: white;
+    cursor: pointer;
+    border-radius: 20px;
+    height: 100%;
+    width: 40%;
+    margin-left: 5%;
+}

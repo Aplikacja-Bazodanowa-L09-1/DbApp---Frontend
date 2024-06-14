@@ -1,0 +1,49 @@
+#boxAdminTeamView {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-block: 10vh;
+}
+
+#notNavbarAdmin {
+    display: flex;
+    justify-content: space-between;
+    width: 70vw;
+    height: 80vh;
+}
+
+#teamList {
+    width: 35%;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column; /* Ensure items are stacked vertically */
+    justify-content: flex-start; /* Align items to the top */
+}
+
+#teamAdminStats {
+    width: 55%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: space-between;
+}
+
+@media only screen and (max-width: 800px) {
+
+    #boxAdminTeamView {
+        flex-direction: column;
+    }
+
+    #teamList {
+        align-self: center;
+        width: 80vw;
+    }
+
+    #teamAdminStats {
+        height: 80vh;
+        width: 80vw;
+        display: flex;
+        flex-direction: row;
+    }
+
+}
