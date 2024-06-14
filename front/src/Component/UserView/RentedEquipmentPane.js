@@ -32,7 +32,7 @@ const RentedEquipmentPane = () => {
 
 
     return (
-    <div id="rentedEquipmentPane">
+    <div id="rentedEquipmentPane" className='paneShadow'>
         <div id="scrollBox">
             {equipment.map(eq =>(
                 <p>

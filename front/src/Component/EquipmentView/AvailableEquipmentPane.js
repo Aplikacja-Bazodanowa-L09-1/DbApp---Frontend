@@ -50,7 +50,7 @@ const AvailableEquipmentPane = ({toggleSharedState, sharedState}) => {
     // DAWID SZYMONIK - koniec ----------------------------------------------------------------------------
 
     return (
-    <div id="availableEquipmentPane">
+    <div id="availableEquipmentPane" className='paneShadow'>
         <div id="scrollBoxA">
         <div id="abc">
         {aEquipment.map(item => {

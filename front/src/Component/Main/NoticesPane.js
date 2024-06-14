@@ -29,7 +29,7 @@ const NoticesPane = () => {
     })
 
      return (
-        <div id="noticesPane">
+        <div id="noticesPane" className='paneShadow'>
             <div id="notification">
                 <div id="notifTop">
                     <div id="notifLeft">

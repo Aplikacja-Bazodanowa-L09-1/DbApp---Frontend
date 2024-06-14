@@ -1,6 +1,7 @@
 import { useState,React, useEffect } from 'react';
 import '../../Style/TeamStatistic/FormView.css'
 const surveyPhoto = require('../../Icons/surveyIcon.png')
+const arrowPhoto = require('../../Icons/arrow.png')
 
 const FormView = () => {
     const [clubinfo,setClubInfo]=useState('');
@@ -13,6 +14,20 @@ const FormView = () => {
             active:''
         }
     );
+
+    const [survData, setSurvData] = useState([[]]);
+    const [visibility, setVisibility] = useState({visibility: "hidden"});
+    const visibilityOn = () =>
+    {
+        window.scrollTo(0, 0);
+        document.body.style.overflow = 'hidden';
+        setVisibility({visibility: "visible"});
+    }
+    const visibilityOff = () =>
+    {
+        document.body.style.overflow = 'auto';
+        setVisibility({visibility: "hidden"});
+    }
 
     useEffect(() => {
         fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/team_stats/form`, {
@@ -54,7 +69,7 @@ const FormView = () => {
                             {sportEvent}
                         </div>
                     </div>
-                    <button id="formbutton">Podgląd</button>
+                    <button id="formbutton" onClick={visibilityOn}>Podgląd</button>
                 </div>
                 <div id="formright">
                     <div id="formdate">{date[0]}<br/>
@@ -65,6 +80,37 @@ const FormView = () => {
                     </div>
                 </div>
             </div>
+
+            <div id="srBox" style={visibility} >
+                <div id="srWindow">
+                    <div id="srExit">
+                        <img src={arrowPhoto} alt="" onClick={visibilityOff}/>
+                    </div>
+                    <div id="srTitle">
+                    Ankieta Przedmeczowa
+                    </div>
+                <div id="srTable">
+                    <div id="srTitleRow">
+                        <div className="srCell">Imie i nazwisko</div>
+                        <div className="srCell">Pozycja</div>
+                        <div className="srCell">Kondycja mentalna</div>
+                        <div className="srCell">Kondycja Fizyczna</div>
+                        <div className="srCell">Chęci do Grania</div>
+                        <div className="srCell">Kontuzje</div>
+                    </div>
+                    {survData.map(row =>(
+                    <div className="srRow">
+                        {row.map(value =>(
+                            <div className="srCell">
+                                {value}
+                            </div>
+                        ))}
+                    </div>
+            ))}
+                </div>
+            </div>
+            </div>    
+
         </div>
      );
 }

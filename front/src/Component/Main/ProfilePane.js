@@ -52,7 +52,7 @@ const ProfilePane = () => {
     })
 
      return (
-        <div id="profPane">
+        <div id="profPane" className='paneShadow'>
             <div id="profBox">
                 <img id="profPhoto" src="https://i.pravatar.cc/100" alt="Tu będzie profilowe"/>
                 <div id="profInfo">

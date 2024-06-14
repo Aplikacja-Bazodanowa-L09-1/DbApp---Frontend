@@ -53,3 +53,74 @@
     margin-top: 35px;
     margin-left: 15px;
 }
+#srBox
+{
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #00000069;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#srWindow
+{
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+    height: 600px;
+    width: 1000px;
+    background-color: #ffffff;
+    border: 10px solid black;
+    border-radius: 25px;
+}
+#srTitle
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #D32020;
+    font-size: 24px;
+    font-weight: 700;
+    height: 15%;
+}
+#srTitleRow
+{
+    display: flex;
+}
+#srTitleRow > .srCell
+{
+    font-weight: 700;
+}
+#srTable
+{
+    width: 90%;
+    height: 450px;
+    overflow: auto;
+}
+.srRow
+{
+    display: flex;
+    border: 2px solid black;
+}
+.srCell
+{
+    width: 16.67%;
+    text-align: center;
+}
+#srExit
+{
+    position: fixed;
+    top: 10%;
+    left: 20%;
+}
+@media only screen and (max-width: 800px) {
+    #srExit
+    {
+        position: fixed;
+        left: 5%;
+    }
+}
