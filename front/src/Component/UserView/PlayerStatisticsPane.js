@@ -48,7 +48,7 @@ const PlayerStatisticsPane = () => {
     })
  
     return (
-    <div id="playerStatisticsPane">
+    <div id="playerStatisticsPane" className='paneShadow'>
         <p><span className="bStyle">Gole: </span>{goalsNumber}</p>
         <p><span className="bStyle">Asysty: </span>{assistsNumber}</p>
         <p><span className="bStyle">Żółte Kartki: </span>{yellowCards}</p>

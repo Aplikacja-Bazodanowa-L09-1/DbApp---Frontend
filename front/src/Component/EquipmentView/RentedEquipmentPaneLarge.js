@@ -52,7 +52,7 @@ const RentedEquipmentPaneLarge = ({toggleSharedState, sharedState}) => {
 
 
     return (
-    <div id="rentedEquipmentPaneLarge">
+    <div id="rentedEquipmentPaneLarge" className='paneShadow'>
         <div id="scrollBoxB">
         {rEquipment.map(item => {
                 return(

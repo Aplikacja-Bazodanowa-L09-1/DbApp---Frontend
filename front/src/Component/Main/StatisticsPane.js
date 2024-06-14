@@ -3,7 +3,7 @@ import '../../Style/StatisticsPane.css'
 const StatisticsPane = () => {
 
      return (
-        <div id="statPane">
+        <div id="statPane" className='paneShadow'>
         Tu będą Statystyki
         </div>
     );

@@ -49,7 +49,7 @@ const PlayerDataPane = () => {
     })
 
     return (
-    <div id="playerDataPane">
+    <div id="playerDataPane" className='paneShadow'>
         <div id="playerData">
             <p><span className="bStyle">Data Urodzenia: </span>{dateOfBirth}</p>
             <p><span className="bStyle">Wzrost: </span>{pHeight}</p>

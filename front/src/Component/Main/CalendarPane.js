@@ -3,7 +3,7 @@ import CalendarComponent from './CalendarComponent';
 
 const CalendarPane = () => {
      return (
-        <div id="calPane">
+        <div id="calPane" className='paneShadow'>
             <CalendarComponent />
         </div>
     );
