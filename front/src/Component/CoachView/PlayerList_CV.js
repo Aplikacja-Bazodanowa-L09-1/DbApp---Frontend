@@ -1,7 +1,14 @@
 import { useState, useEffect, useRef } from 'react';
 import "../../Style/CoachView/PlayerList_CV.css"
 
+<<<<<<< Updated upstream
 const PlayerList_CV = () => {
+=======
+const PlayerList_CV = ({ onSelectPlayer,sharedState }) => {
+    const [fetchedPlayers, setFetchedPlayers] = useState([]);
+    const [alertMessage, setAlertMessage] = useState('');
+    const [showAlert, setShowAlert] = useState(false);
+>>>>>>> Stashed changes
 
     const [players, setPlayers] = useState([]);
 
@@ -27,8 +34,9 @@ const PlayerList_CV = () => {
     }
     useEffect(() => {
         fetchPlayerList_CV()
-    })
+    }, [sharedState])
 
+<<<<<<< Updated upstream
     useEffect(() => {
         fetch('YOUR_API_ENDPOINT')
           .then(response => response.json())
@@ -37,6 +45,33 @@ const PlayerList_CV = () => {
             console.error('Error fetching data:', error);
           });
     }, []);
+=======
+    // useEffect(() => {
+    //     fetch('YOUR_API_ENDPOINT')
+    //         .then(response => response.json())
+    //         .then(data => setFetchedPlayers(data))
+    //         .catch(error => {
+    //             console.error('Error fetching data:', error);
+    //         });
+    // }, []);
+
+    //Delete this when testing and uncomment the above
+    // useEffect(() => {
+    //     // Mock data for testing
+    //     const mockPlayers = [
+    //         { id: 1, profileImage: 'https://i.pravatar.cc/100?img=1', firstName: 'John', lastName: 'Doe', position: 'BR' },
+    //         { id: 2, profileImage: 'https://i.pravatar.cc/100?img=2', firstName: 'Jane', lastName: 'Smith', position: 'LO' },
+    //         { id: 3, profileImage: 'https://i.pravatar.cc/100?img=3', firstName: 'Mike', lastName: 'Johnson', position: 'PO' },
+    //         { id: 4, profileImage: 'https://i.pravatar.cc/100?img=4', firstName: 'Emily', lastName: 'Davis', position: 'CPS' },
+    //         { id: 5, profileImage: 'https://i.pravatar.cc/100?img=5', firstName: 'Chris', lastName: 'Brown', position: 'CLS' },
+    //         { id: 6, profileImage: 'https://i.pravatar.cc/100?img=6', firstName: 'Jessica', lastName: 'Wilson', position: 'ŚO' },
+    //         { id: 7, profileImage: 'https://i.pravatar.cc/100?img=7', firstName: 'David', lastName: 'Miller', position: 'LS' },
+    //         { id: 8, profileImage: 'https://i.pravatar.cc/100?img=8', firstName: 'Laura', lastName: 'Martinez', position: 'PS' },
+    //     ];
+
+    //     setFetchedPlayers(mockPlayers);
+    // }, []);
+>>>>>>> Stashed changes
 
     return (
         /*<div id="playerList_CV">
@@ -44,6 +79,7 @@ const PlayerList_CV = () => {
                 <span class="playerName_CV bStyle">DODAJ ZAWODNIKA</span>
                 <button class="copy_CV">Kopiuj</button>
             </div>
+<<<<<<< Updated upstream
             <div class="playerCard_CV">
                 <img id="profPhoto_CV" src="https://i.pravatar.cc/100" alt="Tu będzie profilowe"/>
                 <span class="playerName_CV">Niko Szytuła BR</span>
@@ -86,6 +122,13 @@ const PlayerList_CV = () => {
                 <div key={player.id} className="playerCard_CV">
                     <img src={player.profileImage} alt={`${player.firstName} ${player.lastName}`} />
                     <span class="playerName_CV">`${player.firstName} ${player.lastName}`</span>
+=======
+            <div id = "listOfPlayers_CV">
+            {fetchedPlayers.map(player => (
+                <div key={player.id} onClick={() => onSelectPlayer(player.id)} className="playerCard_CV">
+                    <img src={'https://i.pravatar.cc/100?img=1'} alt={`${player.first_name} ${player.lastName}`} />
+                    <span className="playerName_CV bStyle">{`${player.first_name} ${player.last_name} ${player.player.player_positions.map(position => position.position.position_code)}`}</span>
+>>>>>>> Stashed changes
                 </div>
             ))}
         </div>
