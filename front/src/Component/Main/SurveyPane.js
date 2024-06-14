@@ -1,5 +1,6 @@
 import '../../Style/SurveyPane.css'
 import { useState, React, useEffect} from "react"
+const surveyPhoto = require('../../Icons/surveyIcon.png')
 
 const SurveyPane = () => {
 

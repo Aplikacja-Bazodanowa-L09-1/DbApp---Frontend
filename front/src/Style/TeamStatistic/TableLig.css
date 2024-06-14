@@ -1,17 +1,8 @@
-#tableligmain{
-    margin-top: 20px;
-    margin-left: 20px;
-    width: 100%;
-}
-#tablelabel{
-    color: white;
-    font-size: 25px;
-}
 #tableligblock{
-    width: 90%;
-    height: 200px;
+    width: 40vw;
+    height: 35vh;
     background-color: white;
-    border-radius: 20px;
+    border-radius: 10px;
     display: flex;
 }
 #tableligleftdiv{
@@ -20,11 +11,16 @@
 #tableligrightdiv{
     width: 60%;
     background-color: lightgray;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 #tableligbutton{
-    border-radius: 20px;
+    border-radius: 10px;
     border: none;
     width: 80%;
     height: 60px;
+}
+@media only screen and (max-width: 800px) {
+    #tableligblock{
+        width: 80vw;
+    }
 }

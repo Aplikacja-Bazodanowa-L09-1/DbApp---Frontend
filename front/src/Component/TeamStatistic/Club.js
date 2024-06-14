@@ -37,7 +37,7 @@ const Club = () => {
 
 
     return ( 
-        <div id="club">
+        <div id="club" className='paneShadow'>
             <div id="clubimage">
                 <img alt="Logo klubu" id="clublogo"/>
             </div>

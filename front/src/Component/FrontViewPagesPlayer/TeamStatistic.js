@@ -4,7 +4,6 @@ import Club from '../TeamStatistic/Club.js'
 import TeamInformation from '../TeamStatistic/TeamInformation.js';
 import FormView from '../TeamStatistic/FormView.js';
 import TableLig from '../TeamStatistic/TableLig.js';
-import Squad from '../TeamStatistic/Squad.js'
 
 import '../../Style/TeamStatistic.css'
 
@@ -80,11 +79,15 @@ const TeamStatistic = () => {
                 </div>
                 <div id="leftSide">
                     <Club/>
+                    <div className="headers">Statystyki drużyny</div>
                     <TeamInformation/>
                 </div>
                 <div id="rightSide">
+                <div className="headers">Wynik ankiety</div>
                     <FormView/>
+                    <div className="headers">Tabela ligowa</div>
                     <TableLig/>
+                <div id="bottom"></div>
                 </div>
                 
             </div>

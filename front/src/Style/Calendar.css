@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Inter');
 
-body {
-  background-color:#D32020;
-}
-
 .react-calendar {
   border-radius: 10px;
   min-height: 45vh;

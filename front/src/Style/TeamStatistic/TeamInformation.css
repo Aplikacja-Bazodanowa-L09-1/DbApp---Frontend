@@ -1,12 +1,13 @@
 #informationmain{
-    margin-top: 10px;
     background-color: white;
-    border-radius: 30px;
+    border-radius: 10px;
+    min-height: 55vh;
+    width: 40vw;
 }
 .informationblocks{
     background-color: rgba(213, 50, 50, 0.934);
     border-radius: 26px;
-    height: 58px;
+    /* height: 58px; */
     width: 90%;
     margin: auto;
     margin-top: 15px;
@@ -33,6 +34,11 @@
 @media(max-width:841px){
     .informationleft.informationright{
         font-size: 12px;
+    }
+}
+@media only screen and (max-width: 800px) {
+    #informationmain{
+        width: 80vw;
     }
 }
 .informationright{

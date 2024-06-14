@@ -1,9 +1,9 @@
 #club{
     display: flex;
     background: white;
-    width: 100%;
-    height: 205px;
-    border-radius: 30px;
+    min-height: 20vh;
+    width: 40vw;
+    border-radius: 10px;
 }
 #clubimage{
     width: 30%;
@@ -24,4 +24,9 @@
 .clubnazwa{
     font-size: 20px;
     margin-top: 20px;
+}
+@media only screen and (max-width: 800px) {
+    #club{
+        width: 80vw;
+    }
 }

@@ -45,9 +45,7 @@ const TeamInformation = () => {
     })
 
     return ( 
-        <div>
-            <div id="informationheader">Statystyki Drużyny</div>
-            <div id="informationmain">
+            <div id="informationmain" className='paneShadow'>
                 <br/>
                 <div className='informationblocks'>
                     <div className='informationleft'>Ilość Wygranych Meczy</div>
@@ -71,7 +69,6 @@ const TeamInformation = () => {
                 </div>
                 <br/><br/>
             </div>
-        </div>
      );
 }
  

@@ -58,9 +58,7 @@ const FormView = () => {
     }, []);
 
     return ( 
-        <div id="mainhead">
-            <label id="formlabel">Wynik Ankiety</label>
-            <div id="formmain">
+            <div id="formmain" className='paneShadow'>
                 <div id="formleft">
                     <div id="formclub">
                         <img src={surveyPhoto} alt='zdjecie' id="frontimage"/>
@@ -79,7 +77,6 @@ const FormView = () => {
                         {players.active}/{players.max}
                     </div>
                 </div>
-            </div>
 
             <div id="srBox" style={visibility} >
                 <div id="srWindow">
@@ -110,7 +107,6 @@ const FormView = () => {
                 </div>
             </div>
             </div>    
-
         </div>
      );
 }
