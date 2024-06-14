@@ -38,13 +38,12 @@ const CreatingForm = () => {
       navigator.clipboard.writeText(link).then(() => {
           window.alert('Link copied successfully: ' +{link});
       });
-  } catch (error) {
-      console.error('Error fetching link:', error);
-      setAlertMessage('Failed to copy link.');
-      setShowAlert(true);
-      setTimeout(() => setShowAlert(false), 3000); // Hide alert after 3 seconds
-  }
-
+    } catch (error) {
+        console.error('Error fetching link:', error);
+        setAlertMessage('Failed to copy link.');
+        setShowAlert(true);
+        setTimeout(() => setShowAlert(false), 3000); // Hide alert after 3 seconds
+    }
   }
   const { result, uploader } = useDisplayImage();
     return ( 
