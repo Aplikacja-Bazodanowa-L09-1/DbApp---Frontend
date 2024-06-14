@@ -7,8 +7,8 @@ body {
 .react-calendar {
   border-radius: 10px;
   min-height: 45vh;
-  width: 40vw;
-  background-color:#F9F1F1;
+  width: 100%;
+  background-color:#FFFFFF;
   border: 1px solid #a0a096;
   font-family: 'Inter';
   font-size: 21.26px;
@@ -37,7 +37,7 @@ body {
   text-align: center;
   font-weight: bold;
   color:#B3B3B3;
-  background-color:#F9F1F1;
+  background-color:#FFFFFF;
   border:none;
 }
 

@@ -1,9 +1,11 @@
 import React, { useState } from "react"
 import ReactCalendar from './Calendar';
 import CalendarPopup from './CalendarPopup';
+import AddEventPopup from "./AddEventsPopup";
 
 function CalendarComponent() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isAddingEvents, setIsAddingEvents] = useState(false);
   const [selectedDate, setSelectedDate] = useState(null);
 
   const togglePopup = (date) => {
@@ -16,8 +18,12 @@ function CalendarComponent() {
     return date.toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit' });
   };
 
-  const showAddSportEvent = () => {
-    alert("Tu będzie dodawanie wydarzeń!");
+  const toggleAddSportEvent = () => {
+    setIsAddingEvents(!isAddingEvents)
+  }
+
+  const closeAddEventPopup = () => {
+    setIsAddingEvents(false);
   }
 
   return (
@@ -37,6 +43,7 @@ function CalendarComponent() {
             <div className="trainings">
               <p className="sub">Trening</p>
             </div>
+            
 
             <img className="image_ball" src={require('../../Icons/ball.png')} alt='ball icon' />
             <div className="matches">
@@ -45,12 +52,16 @@ function CalendarComponent() {
 
             <div>
               <button className="add_button">
-                <p onClick={showAddSportEvent}>Dodaj wydarzenie</p>
+                <p onClick={toggleAddSportEvent}>Dodaj wydarzenie</p>
               </button>
             </div>
           </>
         }
       />}
+
+      {isAddingEvents && <AddEventPopup closePopup={closeAddEventPopup}/>}
+
+      
     </div>
   );
 }

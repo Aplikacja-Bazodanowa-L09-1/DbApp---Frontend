@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css?family=Inter');
+
+.popup{
+    width: 690px;
+    height: 595px;
+    background-color: #FFFFFF;
+    border-radius:20px;
+    border: 10px #000000 solid;
+    z-index: 2;
+    transform: translate(-70%, 12%);
+    position:absolute;
+    left: 60%;
+}
+
+.close{
+    cursor:pointer;
+    background:none;
+    border-top-left-radius: 20px;
+    background-color:#FFFFFF;
+    border:none;
+}
+  
+.close:hover{
+    border-radius: 20px;
+    background-color:#F9F1F1;
+    cursor:pointer;
+    border:none;
+}
+
+.title{
+    font-family: Inter;
+    font-size: 15px;
+    color: #D60F0F;
+    text-align: center;
+    position: fixed;
+    top: 2%;
+    left: 33%;
+}
+
+.description{
+    font-family: Inter;
+    font-size: 14px;
+    color: #000000;
+    line-height: 100px;
+    position: fixed;
+    top: 15%;
+    left: 8%;
+}
+
+.button_date{
+    background-color:#D9D9D9;
+    width:282px;
+    height:70px;
+    border-radius:20px;
+    position: fixed;
+    top:21%;
+    left:52%;
+}
+
+.button_hour{
+    background-color:#D9D9D9;
+    width:282px;
+    height:70px;
+    border-radius:20px;
+    position:fixed;
+    top:41%;
+    left:52%;
+}
+
+.button_name{
+    background-color:#D9D9D9;
+    width:412px;
+    height:70px;
+    border-radius:20px;
+    position:fixed;
+    top: 61%;
+    left: 33%;
+}
+
+.button_reject{
+    background-color:#9F9393;
+    width:144px;
+    height:50px;
+    position:fixed;
+    left: 20%;
+    top: 80%;
+}
+
+.button_accept{
+    background-color:#9F9393;
+    width:144px;
+    height:50px;
+    position:fixed;
+    left: 60%;
+    top: 80%;
+}
+
+@media only screen and (max-width: 800px) {
+    .popup{
+        width: 690px;
+        height: 595px;
+        background-color: #FFFFFF;
+        border-radius:20px;
+        border: 10px #000000 solid;
+        z-index: 2;
+        transform: translate(-70%, 12%);
+        position:absolute;
+        left: 70%;
+    }
+}

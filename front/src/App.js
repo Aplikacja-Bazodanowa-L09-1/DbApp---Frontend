@@ -19,9 +19,9 @@ import NoticesPane from './Component/Main/NoticesPane';
 import ProfilePane from './Component/Main/ProfilePane';
 import StatisticsPane from './Component/Main/StatisticsPane';
 import SurveyPane from './Component/Main/SurveyPane';
-
 import UserView from './Component/FrontViewPagesPlayer/UserView';
 import EquipmentView from './Component/FrontViewPagesPlayer/EquipmentView'
+import AddEventsPopup from './Component/Main/AddEventsPopup'
 
 
 function App() {
@@ -33,6 +33,7 @@ function App() {
           <Route path='login/' Component={Login} />
           <Route path='reset_password/:token' Component={ResetPassword} />
           <Route path='main/' Component={Main}/>
+          <Route path='event-popup/' Component={AddEventsPopup}/>
           <Route path='remind-password/' Component={RemindPassword}/>
           <Route path='team-statistic/' Component={TeamStatistic}/>
           <Route path='user-view/' Component={UserView}/>
