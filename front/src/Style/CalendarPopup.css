@@ -67,7 +67,7 @@
   font-family: 'Inter';
   color:#D60F0F;
   position:fixed;
-  top:5%;
+  top:3%;
   left:35%;
 }
 
@@ -83,8 +83,8 @@
   text-align:center;
   line-height:2.5rem;
   position:fixed;
-  top:4%;
-  left:70%;
+  top:7%;
+  left:71%;
 }
 
 .image_training{
@@ -101,8 +101,18 @@
 
 .sub{
   position: relative;
-  top: 30%;
+  top: 5%;
   left: 5%;
+}
+
+.sub1{
+  position: relative;
+  top: -50%;
+}
+
+.sub2{
+  position: relative;
+  top: -40%;
 }
 
 .add_button{

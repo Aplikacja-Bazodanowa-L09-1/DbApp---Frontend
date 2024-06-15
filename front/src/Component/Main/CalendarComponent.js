@@ -36,7 +36,7 @@ function CalendarComponent() {
           <>
             <p className="sport_events_text">Wydarzenia</p>
             <div className="current_day">
-              <p>{selectedDate ? formatDate(selectedDate) : ''}</p>
+              <p className="sub1">{selectedDate ? formatDate(selectedDate) : ''}</p>
             </div>
 
             <img className="image_training" src={require('../../Icons/barbells.png')} alt='barbells icon' />
@@ -50,11 +50,13 @@ function CalendarComponent() {
               <p className="sub">Mecz</p>
             </div>
 
-            <div>
+            {//tutaj warunek sprawdzający czy ktoś jest zalogowany jako trener (TODO) - opcja ma być niedostępna dla zawodnika
+
+            /*<div>
               <button className="add_button">
-                <p onClick={toggleAddSportEvent}>Dodaj wydarzenie</p>
+                <p className="sub2" onClick={toggleAddSportEvent}>Dodaj wydarzenie</p>
               </button>
-            </div>
+            </div>*/}
           </>
         }
       />}
