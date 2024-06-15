@@ -16,7 +16,7 @@ const AvailableEquipmentPane = ({toggleSharedState, sharedState}) => {
                 console.log(data.detail)
             } else {
                 
-                //console.log(data.eq)
+                // console.log(data.eq)
                 // for(let i=0; i<data.eq.length; i++){
                 //     console.log(data.eq[i])
                 //     setAEquipment([])

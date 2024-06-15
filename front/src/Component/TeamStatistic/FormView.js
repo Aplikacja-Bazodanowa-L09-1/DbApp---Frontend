@@ -3,7 +3,9 @@ import '../../Style/TeamStatistic/FormView.css'
 const surveyPhoto = require('../../Icons/surveyIcon.png')
 const arrowPhoto = require('../../Icons/arrow.png')
 
+
 const FormView = (sharedState) => {
+    const [survData, setSurvData] = useState([[]]);
     const [clubinfo,setClubInfo]=useState('');
     const [sportEvent,setSportEvent]=useState('');
     const [date,setDate]=useState([]);
@@ -15,7 +17,6 @@ const FormView = (sharedState) => {
         }
     );
 
-    const [survData, setSurvData] = useState([[]]);
     const [visibility, setVisibility] = useState({visibility: "hidden"});
     const visibilityOn = () =>
     {
@@ -67,8 +68,12 @@ const FormView = (sharedState) => {
                 console.log(data.detail)
             } else {
                 
-                
-                setSurvData(data.playerNames.map())
+                // console.log(data.playerNames)
+                // for(let i=0; i<data.playerNames.length; i++){
+                //     console.log(data.playerNames[i])
+                //     setSurvData([])
+                // }
+                setSurvData(data.playersNames)
                 console.log(survData)
             }
         })
@@ -115,13 +120,42 @@ const FormView = (sharedState) => {
                         <div className="srCell">Chęci do Grania</div>
                         <div className="srCell">Kontuzje</div>
                     </div>
-                    {survData.map(row =>(
-                    <div className="srRow">
-                            <div className="srCell">
-                                {`${row.first_name}`}
-                            </div>
-                        
+                    {survData.map((row, index) =>(
+                    <div className="srRow" key={index}>
+                    <div className="srCell">
+                        {`${row.first_name} ${row.last_name}`}
                     </div>
+                    <div className="srCell">
+                        {row.player && row.player.player_positions 
+                            ? row.player.player_positions.map(pos => pos.position.full_name).join(', ')
+                            : 'Brak danych'
+                        }
+                    </div>
+                    <div className="srCell">
+                        {row.player && row.player.player_answer
+                            ? row.player.player_answer.mental_condition
+                            : 'Brak danych'
+                        }
+                    </div>
+                    <div className="srCell">
+                        {row.player && row.player.player_answer
+                            ? row.player.player_answer.physical_condition
+                            : 'Brak danych'
+                        }
+                    </div>
+                    <div className="srCell">
+                        {row.player && row.player.player_answer
+                            ? row.player.player_answer.motivation
+                            : 'Brak danych'
+                        }
+                    </div>
+                    <div className="srCell">
+                        {row.player && row.player.player_answer
+                            ? row.player.player_answer.injuries
+                            : 'Brak danych'
+                        }
+                    </div>
+                </div>
             ))}
                 </div>
             </div>
