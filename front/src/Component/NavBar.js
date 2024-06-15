@@ -4,7 +4,7 @@ import HomeIcon from '../Icons/home.png'
 import { useState, React, useEffect} from "react"
 
 const NavBar = () => {
-    const [role, setRole] = useState('')
+    const [role, setRole] = useState('Coach')
 
     useEffect(() => {
         fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/app/user/profile`, {

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import "../../../Style/Admin/AdminTeamView/TeamList.css";
 
-const TeamList = ({ onSelectTeam }) => {
+const TeamList = ({ onSelectTeam,sharedState }) => {
     const [fetchedTeams, setFetchedTeams] = useState([]);
 
     /*useEffect(() => {
@@ -13,22 +13,31 @@ const TeamList = ({ onSelectTeam }) => {
             });
     }, []);*/
 
+    const fetchTeamList = () => {
+        fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/coach/list/`, { //CHANGE PATH BACKEND
+            mode: 'cors',
+            method: 'GET',
+            headers: { "Content-Type": "application/json", "authorization": `Berear ${localStorage.getItem('access_token')}` },
+        }).then(response => response.json()).then(data => {
+            if (data.detail) {
+                console.log(data.detail)
+            } else {
+                
+                //console.log(data.eq)
+                // for(let i=0; i<data.eq.length; i++){
+                //     console.log(data.eq[i])
+                //     setAEquipment([])
+                // }
+                setFetchedTeams(data.list)
+                console.log(fetchedTeams)
+            }
+        })
+    }
+
     //Delete this when testing and uncomment the above
     useEffect(() => {
-        // Mock data for testing
-        const mockTeams = [
-            { id: 1, logoImage: 'https://i.pravatar.cc/100?img=1', name: 'Stal Rzeszów'},
-            { id: 2, logoImage: 'https://i.pravatar.cc/100?img=2', name: 'Stal Mielec'},
-            { id: 3, logoImage: 'https://i.pravatar.cc/100?img=3', name: 'Stal Sanok'},
-            { id: 4, logoImage: 'https://i.pravatar.cc/100?img=4', name: 'Cosmos Nowotaniec'},
-            { id: 5, logoImage: 'https://i.pravatar.cc/100?img=1', name: 'Stal Rzeszów'},
-            { id: 6, logoImage: 'https://i.pravatar.cc/100?img=2', name: 'Stal Mielec'},
-            { id: 7, logoImage: 'https://i.pravatar.cc/100?img=3', name: 'Stal Sanok'},
-            { id: 8, logoImage: 'https://i.pravatar.cc/100?img=4', name: 'Cosmos Nowotaniec'},
-        ];
-
-        setFetchedTeams(mockTeams);
-    }, []);
+        fetchTeamList()
+    }, [sharedState])
 
     return (
         <div id="boxTeamList">

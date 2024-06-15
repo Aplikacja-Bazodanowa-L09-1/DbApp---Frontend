@@ -25,8 +25,11 @@ const TeamData = ({ teamId }) => {
     let placeHolder2 = null
 
     if (!teamId) {
-        placeHolder1 = " ";
-        placeHolder2 = " ";
+        placeHolder1 = "Liverpool F.C";
+        placeHolder2 = "Suduk Unguruk";
+    } else {
+        placeHolder1 = teamData.teamName;
+        placeHolder2 = teamData.coachName;
     }
 
     //DELETE UP TO HERE AND REPLACE BELOW WITH playerData.####
@@ -34,17 +37,17 @@ const TeamData = ({ teamId }) => {
     return (
         <div id="boxTeamData">
             <div id="logoBoxAdmin">
-                <img src={'https://i.pravatar.cc'} alt={`asdasd`} id="logoPhotoAdmin" />
+                <img id="logoPhotoAdmin" src={'https://i.pravatar.cc'} alt={`logo`} />
             </div>
             <div id="boxTeamNameAdmin">
-                <span id="teamNameAdmin" class="bStyle">Liverpool F.C.</span>
+                <span id="teamNameAdmin" class="bStyle"> {placeHolder1} </span>
                 <div id="teamButtonsAdmin">
                     <button class="editTeamAdmin">Edytuj</button>
                     <button class="deleteTeamAdmin">Usuń</button>
                 </div>
             </div>
             <div id="boxCoachNameAdmin">
-                <span id="coachNameAdmin" class="bStyle">Michał Ziutek</span>
+                <span id="coachNameAdmin" class="bStyle">TRENER: {placeHolder2} </span>
                 <div id="coachButtonsAdmin">
                     <button class="editTeamAdmin">Edytuj</button>
                     <button class="deleteTeamAdmin">Usuń</button>
