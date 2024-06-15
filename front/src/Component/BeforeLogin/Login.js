@@ -35,14 +35,15 @@ const Login = () => {
                 localStorage.clear();
                 localStorage.setItem('access_token', data.access);
                 localStorage.setItem('refresh_token', data.refresh);
-                if(data.role==='admin'){
-                    window.location.href='/createteam/';
+                localStorage.setItem('role', data.role);
+                if(data.role==='Admin'){
+                    window.location.href='/adminteamview/';
                 }
-                else if(data.role==='player'){
+                else if(data.role==='Player'){
                     window.location.href='/main/';
                 }
-                else if(data.role==='couch'){
-                    window.location.href='/teamstatisticouch/';
+                else if(data.role==='Coach'){
+                    window.location.href='/teamstatisticoach/';
                 }
             }
             else{
