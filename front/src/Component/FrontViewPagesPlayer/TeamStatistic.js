@@ -3,7 +3,7 @@ import NavBar from '../NavBar.js';
 import Club from '../TeamStatistic/Club.js'
 import TeamInformation from '../TeamStatistic/TeamInformation.js';
 import FormView from '../TeamStatistic/FormView.js';
-import TableLig from '../TeamStatistic/TableLig.js';
+import TeamPhoto from '../TeamStatistic/TeamPhoto.js';
 
 import '../../Style/TeamStatistic.css'
 
@@ -72,7 +72,6 @@ const TeamStatistic = () => {
     })
 
     return (
-        <div id="teamstatisticmain"> 
             <div id="box">
                 <div id="bar">
                     <NavBar/>
@@ -83,16 +82,15 @@ const TeamStatistic = () => {
                     <TeamInformation/>
                 </div>
                 <div id="rightSide">
-                <div className="headers">Wynik ankiety</div>
+                    <div className="headersteam">Wynik ankiety</div>
                     <FormView/>
-                    <div className="headers">Tabela ligowa</div>
-                    <TableLig/>
+                    <div className="headers"></div>
+                    <TeamPhoto/>
                 <div id="bottom"></div>
                 </div>
                 
             </div>
             
-        </div>
         
      );
 }
