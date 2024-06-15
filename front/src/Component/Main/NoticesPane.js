@@ -39,9 +39,7 @@ const NoticesPane = () => {
                         <div id="notifTitle">
                             {teamMessageTitle}
                         </div>
-                        <div id="notifDate">
-                            data
-                        </div>
+                        
                     </div>
                 </div>
                 <div id="notifBottom">

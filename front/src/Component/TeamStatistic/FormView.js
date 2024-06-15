@@ -3,7 +3,7 @@ import '../../Style/TeamStatistic/FormView.css'
 const surveyPhoto = require('../../Icons/surveyIcon.png')
 const arrowPhoto = require('../../Icons/arrow.png')
 
-const FormView = () => {
+const FormView = (sharedState) => {
     const [clubinfo,setClubInfo]=useState('');
     const [sportEvent,setSportEvent]=useState('');
     const [date,setDate]=useState([]);
@@ -57,6 +57,26 @@ const FormView = () => {
         .catch(error => console.error('Error fetching data:', error));
     }, []);
 
+    const fetchPlayerNames = () => {
+        fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/team_stats/questionary/`, {
+            mode: 'cors',
+            method: 'GET',
+            headers: { "Content-Type": "application/json", "authorization": `Berear ${localStorage.getItem('access_token')}` },
+        }).then(response => response.json()).then(data => {
+            if (data.detail) {
+                console.log(data.detail)
+            } else {
+                
+                
+                setSurvData(data.playerNames.map())
+                console.log(survData)
+            }
+        })
+    }
+    useEffect(() => {
+        fetchPlayerNames()
+    }, [sharedState])
+
     return ( 
             <div id="formmain" className='paneShadow'>
                 <div id="formleft">
@@ -97,11 +117,10 @@ const FormView = () => {
                     </div>
                     {survData.map(row =>(
                     <div className="srRow">
-                        {row.map(value =>(
                             <div className="srCell">
-                                {value}
+                                {`${row.first_name}`}
                             </div>
-                        ))}
+                        
                     </div>
             ))}
                 </div>
