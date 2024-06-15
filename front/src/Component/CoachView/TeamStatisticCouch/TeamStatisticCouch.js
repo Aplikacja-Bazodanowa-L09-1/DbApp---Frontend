@@ -2,7 +2,7 @@ import { useState, React, useEffect} from "react"
 import NavBar from '../../NavBar.js';
 import Club from '../../TeamStatistic/Club.js'
 import FormView from '../../TeamStatistic/FormView.js';
-import TableLig from '../../TeamStatistic/TableLig.js';
+//import TableLig from '../../TeamStatistic/TableLig.js';
 import TeamInformationCouch from "./TeamInformationCouch.js";
 
 
@@ -83,7 +83,7 @@ const TeamStatisticCouch = () => {
                 </div>
                 <div id="rightSide">
                     <FormView/>
-                    <TableLig/>
+                    {/*<TableLig/>*/}
                 </div>
                 
             </div>
