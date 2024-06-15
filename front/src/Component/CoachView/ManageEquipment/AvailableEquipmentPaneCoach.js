@@ -60,7 +60,14 @@ const AvailableEquipmentPaneCoach = ({toggleSharedState, sharedState}) => {
                       <span className="bStyle listStyle">
                         {item.descr}
                       </span>
-                      <div className="eqButton" onClick={() => {rentEq(item.id)}}>Wypożycz</div>
+                      <div className="avEqBtn">
+                        <div className="eqBtnPos">
+                            <div className="eqButton" onClick={() => {rentEq(item.id)}}>Wypożycz</div>
+                        </div>
+                        <div className="redBtnPos">
+                            <div className="smallRedBtn">Usuń</div>
+                        </div>
+                      </div>
                     </p>
                 )}})}
         </div>

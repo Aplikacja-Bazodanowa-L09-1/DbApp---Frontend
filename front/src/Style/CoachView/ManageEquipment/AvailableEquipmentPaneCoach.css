@@ -37,7 +37,25 @@
 .bStyle{
     font-weight: 700;
 }
-
+.avEqBtn
+{
+    display: flex;
+}
+.eqBtnPos
+{
+    width: 40%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.redBtnPos
+{
+    width: 55%;
+    margin-right: 5%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
 @media only screen and (max-width: 800px) {
     #availableEquipmentPaneCoach{
         width: 75vw;

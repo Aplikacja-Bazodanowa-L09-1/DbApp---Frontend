@@ -14,12 +14,12 @@
     height: 450px;
     overflow-y: auto;
 }
-.eqButton
+.rEqButton
 {
     display: flex;
     width: 100px;
     height: 35px;
-    background-color: #A69999;
+    background-color: rgb(214, 15, 15);
     color: white;
     font-weight: 700;
     justify-content: center;
@@ -28,6 +28,33 @@
     border: 3px solid black;
     margin-top: 10px;
 }
+.rEqButton:hover
+{
+    cursor: pointer;
+    background-color: white;
+    color: rgb(240, 0, 0);
+}
+.rInfoBtn
+{
+    display: flex;
+    width: 250px;
+    height: 35px;
+    background-color: rgb(214, 15, 15);
+    color: white;
+    font-weight: 700;
+    justify-content: start;
+    align-items: center;
+    border-radius: 5px;
+    border: 3px solid black;
+    margin-top: 10px;
+    padding-left: 10px;
+}
+/* .rInfoBtn:hover
+{
+    cursor: pointer;
+    background-color: white;
+    color: rgb(240, 0, 0);
+} */
 .bStyle{
     font-weight: 700;
 }

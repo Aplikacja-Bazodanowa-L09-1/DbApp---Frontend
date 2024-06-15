@@ -3,6 +3,9 @@ import { useState, React, useEffect} from "react"
 
 const RentedEquipmentPaneLarge = ({toggleSharedState, sharedState}) => {
     const [rEquipment, setREquipment] = useState([]);
+    const [role, setRole] = useState('')
+    const [name, setName] = useState('')
+    const [surname, setSurname] = useState('')
 
 
     // DAWID SZYMONIK -----------------------------------------------------------------------
@@ -23,6 +26,9 @@ const RentedEquipmentPaneLarge = ({toggleSharedState, sharedState}) => {
                 //     console.log(data.eq[i])
                 //     setAEquipment([])
                 // }
+                setRole(data.user_cred.role)
+
+                localStorage.setItem('user.role', data.user_cred.role)
                 setREquipment(data.eq)
                 //console.log(rEquipment)
             }
@@ -60,7 +66,8 @@ const RentedEquipmentPaneLarge = ({toggleSharedState, sharedState}) => {
                       <span className="bStyle listStyle">
                         {item.descr}
                       </span>
-                      <div className="eqButton" onClick={() => {returnEq(item.id)}}>Zwróć</div>
+                      {role === 'Coach'? <div className='rInfoBtn'>{name} {surname}</div>:
+                      <div className="rEqButton" onClick={() => {returnEq(item.id)}}>Zwróć</div>}
                     </p>
                 )})}
         </div>
