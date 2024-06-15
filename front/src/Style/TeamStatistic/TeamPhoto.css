@@ -1,0 +1,23 @@
+#teamphotoblock{
+    width: 40vw;
+    min-height: 55vh;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#tableligimg{
+    width: 38vw;
+    min-height: 53vh;
+    border-radius: 10px;
+}
+
+@media only screen and (max-width: 800px) {
+    #teamphotoblock{
+        width: 80vw;
+    }
+    #tableligimg{
+        width: 78vw;
+    }
+}
