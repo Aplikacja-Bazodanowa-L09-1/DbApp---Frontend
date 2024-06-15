@@ -1,9 +1,6 @@
-<<<<<<< Updated upstream
 label{
     text-align: left;
 }
-=======
->>>>>>> Stashed changes
 #text{
     text-align: left;
 }
@@ -51,6 +48,10 @@ label{
     position: relative;
     justify-content: center;
     margin: 0px;
+}
+p{
+    margin: 0px;
+    margin-bottom: 10px;
 }
 .inputfield>input{
     margin: 0px;

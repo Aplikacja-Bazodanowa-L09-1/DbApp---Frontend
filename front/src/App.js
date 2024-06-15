@@ -23,6 +23,7 @@ import UserView from './Component/FrontViewPagesPlayer/UserView';
 import EquipmentView from './Component/FrontViewPagesPlayer/EquipmentView'
 import AddEventsPopup from './Component/Main/AddEventsPopup'
 import AdminTeamView from './Component/Admin/AdminTeamView/AdminTeamView.js';
+import ManageEquipmentView from './Component/CoachView/ManageEquipment/ManageEquipmentView.js'
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
           <Route path='surveypane/' Component={SurveyPane} />
           <Route path='createteam/' Component={CreatingTeam}/>
           <Route path='manageteam/' Component={ManageTeam} />
+          <Route path='manage-equipment' Component={ManageEquipmentView} />
           <Route path='registrationcouch/' Component={RegistrationCouch} />
           <Route path='/teamstatisticouch' Component={TeamStatisticCouch}/>
           <Route path='/teaminformationcouch' Component={TeamInformationCouch}/>

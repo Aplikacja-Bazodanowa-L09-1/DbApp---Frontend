@@ -1,5 +1,5 @@
 import "../../Style/CoachView/ManageTeam.css";
-import NavBar from "../NavBar_CV.js";
+import NavBar from "../NavBar.js";
 import PlayerData from "./PlayerDataPane_CV.js";
 import PlayerStats from "./PlayerStatisticsPane_CV.js";
 import RentedEquipment from "./RentedEquipmentPane_CV.js";
@@ -16,7 +16,7 @@ const ManageTeam = () => {
     return (
         <div id="boxManageTeam_CV">
             <div id="bar">
-                <NavBar />
+                <NavBar/>
             </div>
             <div id="playerListCV">
                 <PlayerList onSelectPlayer={handleSelectPlayer} />
