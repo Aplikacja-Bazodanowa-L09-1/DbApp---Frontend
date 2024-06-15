@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import '../../Style/NoticesPane.css'
-const bicepsIcon = require('../../Icons/biceps.png')
+const notificationIcon = require('../../Icons/IconNotification.png')
 
 const NoticesPane = () => {
 
@@ -33,7 +33,7 @@ const NoticesPane = () => {
             <div id="notification">
                 <div id="notifTop">
                     <div id="notifLeft">
-                        <img id="notifIcon" src={bicepsIcon} alt="icon" />
+                        <img id="notifIcon" src={notificationIcon} alt="icon" />
                     </div>
                     <div id="notifRight">
                         <div id="notifTitle">
