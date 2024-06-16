@@ -35,9 +35,6 @@ const Login = () => {
                 localStorage.clear();
                 localStorage.setItem('access_token', data.access);
                 localStorage.setItem('refresh_token', data.refresh);
-<<<<<<< Updated upstream
-                window.location.href='/main/'
-=======
                 localStorage.setItem('role', data.role);
                 if(data.role==='Admin'){
                     window.location.href='/adminteamview/';
@@ -48,7 +45,6 @@ const Login = () => {
                 else if(data.role==='Coach'){
                     window.location.href='/teamstatisticouch/';
                 }
->>>>>>> Stashed changes
             }
             else{
                 console.log(data.detail);
