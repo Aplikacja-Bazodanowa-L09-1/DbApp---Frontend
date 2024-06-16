@@ -34,6 +34,9 @@ const NavBar = () => {
         {
             window.location.href = '/equipment-view/'
         }
+    const goToTeamStatisticCoach=()=>{
+        window.location.href='/teamstatisticouch/';
+    }
     const goToManageTeam = () =>
         {
             window.location.href = '/manageteam'
@@ -46,22 +49,22 @@ const NavBar = () => {
         <div>
             <div id="navPane">
                 <div className="buttons" onClick={goToMain}>
-                    {/* <img src={HomeIcon} width="70%"  alt="1"/> */}
+                    
                     <i className="icon-home"/>
                 </div>
-                <div className="buttons" onClick={goToTeamStatistic}>
-                    {/* <img  src={HomeIcon} width="70%" alt="2"/> */}
-                    <i className="icon-users"/>
-                </div>
+                {role ==='Coach' ? <div className="buttons" onClick={goToTeamStatisticCoach}><i className="icon-users"/></div>:
+                    <div className="buttons" onClick={goToTeamStatistic}><i className="icon-users"/></div>
+                    
+                }
                 {role === 'Coach'? <div className="buttons" onClick={goToManageTeam}><i className="icon-user"/>
                 </div>: <div className="buttons" onClick={goToUserView}><i className="icon-user"/>
                 </div>}
-                    {/* <img src={HomeIcon} width="70%"alt="3"/> */}
+                    
                     
                     {role === 'Coach'? <div className="buttons" onClick={goToManageEquipmentView}><i className="icon-soccer-ball"/>
                 </div>: <div className="buttons" onClick={goToEquipmentView}><i className="icon-soccer-ball"/>
                 </div>}
-                    {/* <img src={HomeIcon} width="70%" alt="4"/> */}
+                    
             </div>
         </div>
     );
