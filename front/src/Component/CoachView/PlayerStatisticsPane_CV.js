@@ -60,7 +60,10 @@ const PlayerStatisticsPane_CV = ({ playerId }) => {
         <div id="playerStatisticsPane_CV">
             <h2 id="whiteFont" class="whiteTextShadow">Statystyki Zawodnika</h2>
             <div id="dataBoxStatisticsPane_CV">
-                <p><span className="bStyle" id="whiteFont">BRAMKARZ</span></p>
+                <div id="positionDeleteBox_CV">
+                    <p><span className="bStyle playerPositionStyle" id="whiteFont">BRAMKARZ</span></p>
+                    <button id="deleteButton_CV">Edytuj</button>
+                </div>
                 <p><span className="bStyle">Gole: {placeHolder1}</span></p>
                 <p><span className="bStyle">Asysty: {placeHolder2}</span></p>
                 <p><span className="bStyle">Czerwone Kartki: {placeHolder3}</span></p>

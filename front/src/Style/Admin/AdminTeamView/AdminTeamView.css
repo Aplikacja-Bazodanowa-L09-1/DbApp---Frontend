@@ -34,16 +34,21 @@
         flex-direction: column;
     }
 
+    #notNavbarAdmin {
+        flex-direction: column;
+        width: 80vw;
+        height: auto;
+    }
+
     #teamList {
         align-self: center;
         width: 80vw;
     }
 
     #teamAdminStats {
-        height: 80vh;
+        align-self: center;
         width: 80vw;
-        display: flex;
-        flex-direction: row;
+        height: 80vh;
     }
 
 }
