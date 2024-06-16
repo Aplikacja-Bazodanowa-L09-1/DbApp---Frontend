@@ -1,4 +1,4 @@
-import '../../Style/ResetPassword.css'
+import '../../Style/BeforeLogin/ResetPassword.css'
 import { useState } from 'react'
 import {useParams} from 'react-router-dom'
 

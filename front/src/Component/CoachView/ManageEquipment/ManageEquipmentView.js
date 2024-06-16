@@ -1,4 +1,4 @@
-import "../../../Style/CoachView/ManageEquipment/ManageEquipmentView.css"
+import "../../../Style/Main/MainTemplate.css"
 import NavBar from "../../NavBar"
 import AddEquipmentPane from "../../CoachView/ManageEquipment/AddEquipmentPane";
 import AvailableEquipmentPaneCoach from "../../CoachView/ManageEquipment/AvailableEquipmentPaneCoach";

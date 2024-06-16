@@ -1,4 +1,4 @@
-import '../../Style/RemindPassword.css';
+import '../../Style/BeforeLogin/RemindPassword.css';
 import { useState } from 'react';
 
 

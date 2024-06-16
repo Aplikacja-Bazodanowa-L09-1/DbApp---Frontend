@@ -1,4 +1,4 @@
-import "../../Style/Main.css"
+import "../../Style/Main/MainTemplate.css"
 import NavBar from "../NavBar"
 import ProfilePane from "../Main/ProfilePane"
 import NoticesPane from "../Main/NoticesPane"

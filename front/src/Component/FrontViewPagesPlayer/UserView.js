@@ -1,4 +1,4 @@
-import '../../Style/UserView.css'
+import '../../Style/Main/MainTemplate.css'
 import NavBar from "../NavBar"
 import ProfilePane from "../Main/ProfilePane"
 import PlayerDataPane from "../UserView/PlayerDataPane"

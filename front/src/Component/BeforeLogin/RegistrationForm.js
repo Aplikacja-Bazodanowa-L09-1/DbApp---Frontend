@@ -1,4 +1,4 @@
-import '../../Style/RegistrationForm.css'
+import '../../Style/BeforeLogin/RegistrationForm.css'
 import { useState, useEffect, useRef } from 'react';
 import { validEmail } from '../Regex.js';
 

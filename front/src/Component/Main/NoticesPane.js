@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import '../../Style/NoticesPane.css'
+import '../../Style/Main/NoticesPane.css'
 const notifIcon = require('../../Icons/notifiIcon.png')
 
 const NoticesPane = () => {

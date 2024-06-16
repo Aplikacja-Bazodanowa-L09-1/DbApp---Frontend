@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import '../../Style/CalendarPane.css'
+import '../../Style/Main/CalendarPane.css'
 import '../../Style/CalendarComponent.css';
 import Calendar from 'react-calendar';
 

@@ -1,4 +1,4 @@
-import '../../Style/EquipmentView.css'
+import '../../Style/Main/MainTemplate.css'
 import NavBar from "../NavBar"
 import AvailableEquipmentPane from "../EquipmentView/AvailableEquipmentPane"
 import RentedEquipmentPaneLarge from "../EquipmentView/RentedEquipmentPaneLarge"

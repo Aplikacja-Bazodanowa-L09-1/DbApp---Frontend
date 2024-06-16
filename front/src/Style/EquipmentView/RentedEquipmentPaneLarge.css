@@ -55,9 +55,7 @@
     background-color: white;
     color: rgb(240, 0, 0);
 } */
-.bStyle{
-    font-weight: 700;
-}
+
 
 @media only screen and (max-width: 800px) {
     #rentedEquipmentPaneLarge{

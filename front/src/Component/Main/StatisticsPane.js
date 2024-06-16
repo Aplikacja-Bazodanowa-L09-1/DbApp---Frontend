@@ -1,4 +1,4 @@
-import '../../Style/StatisticsPane.css'
+import '../../Style/Main/StatisticsPane.css'
 
 const StatisticsPane = () => {
 

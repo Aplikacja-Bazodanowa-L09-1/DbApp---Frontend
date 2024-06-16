@@ -38,23 +38,6 @@
     height: 30%;
     width: 80%;
 }
-.smallRedBtn
-{
-    width: 90px;
-    height: 30px;
-    border-radius: 20px;
-    background-color: rgb(214, 15, 15);
-    color: white;
-    font-weight: 600;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.smallRedBtn:hover
-{
-    cursor: pointer;
-    background-color: rgb(240, 0, 0)
-}
 #addEqBtn
 {
     width: 30%;

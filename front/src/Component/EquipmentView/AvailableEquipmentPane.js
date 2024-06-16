@@ -1,4 +1,4 @@
-import '../../Style/AvailableEquipmentPane.css'
+import '../../Style/EquipmentView/AvailableEquipmentPane.css'
 import { useState, React, useEffect} from "react"
 
 const AvailableEquipmentPane = ({toggleSharedState, sharedState}) => {
