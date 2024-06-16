@@ -1,0 +1,57 @@
+#noticesPane{
+    min-height: 20vh;
+    width: 40vw;
+    background-color: white;
+    border-radius: 10px ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#notification
+{
+    width: 37.5vw;
+    height: 15vh;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+#notifTop{
+    display: flex;
+    height: 50%;
+    width: 100%;
+}
+#notifBottom{
+    height: 50%;
+    margin-left: 3vw;
+}
+#notifRight
+{
+    width: 90%;
+    margin: 2%;
+    display: flex;
+    justify-content: space-between;
+}
+#notifLeft{
+    width: 20%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+#notifIcon{
+    
+    border-radius: 25px;
+    height: 14vh;
+    width: 15vh;
+
+}
+#notifTitle{
+    font-weight: 700;
+}
+@media only screen and (max-width: 800px) {
+    #noticesPane{
+        width: 80vw;
+    }
+    #notification
+    {
+      width: 75vw;
+    }
+}
