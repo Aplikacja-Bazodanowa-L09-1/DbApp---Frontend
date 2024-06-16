@@ -2,7 +2,7 @@ import { useState, React, useEffect} from "react"
 import NavBar from '../../NavBar.js';
 import Club from '../../TeamStatistic/Club.js'
 import FormView from '../../TeamStatistic/FormView.js';
-//import TableLig from '../../TeamStatistic/TableLig.js';
+import TeamPhoto from '../../TeamStatistic/TeamPhoto.js';
 import TeamInformationCouch from "./TeamInformationCouch.js";
 
 
@@ -39,7 +39,7 @@ const TeamStatisticCouch = () => {
             }
         }).then(response => {
 
-            if (response.status == 403) {
+            if (response.status === 403) {
                 throw new Error("access_token expired")
             }
             else return response.json()
@@ -48,7 +48,7 @@ const TeamStatisticCouch = () => {
             setPageContent(data.content)
 
         }).catch(err => {
-            if (err == 'Error: access_token expired') {
+            if (err === 'Error: access_token expired') {
                 if (window.confirm("Sesja wygasła. Czy chcesz ją odnowić?")) {
 
                     /// ODNOWIENIE SESJI
@@ -72,23 +72,24 @@ const TeamStatisticCouch = () => {
     })
 
     return (
-        <div id="teamstatisticmain"> 
             <div id="box">
                 <div id="bar">
                     <NavBar/>
                 </div>
                 <div id="leftSide">
                     <Club/>
+                    <h2 id="whiteFont" class="whiteTextShadow">Statystyki drużyny</h2>
                     <TeamInformationCouch/>
                 </div>
                 <div id="rightSide">
+                    <h2 id="whiteFont" class="whiteTextShadow headersteam">Wynik ankiety</h2>
                     <FormView/>
-                    {/*<TableLig/>*/}
+                    <h2 id="whiteFont" class="whiteTextShadow headersteamphoto"></h2>
+                    <TeamPhoto/>
                 </div>
                 
             </div>
             
-        </div>
         
      );
 }

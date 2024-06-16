@@ -7,8 +7,13 @@ const TeamInformationCouch = () => {
     const [draws,setDraws] = useState('')
     const [topScorer,setTopScorer]=useState('')
     const [leastCards,setLeastCards]=useState('')
-    const [iswrite,setIsWrite]=useState(false)
-    const [isview,setIsView]=useState(true)
+    // atributs for edition - START
+    const [winsedit,setWinsEdit] = useState('')
+    const [losesedit,setLosesEdit] = useState('')
+    const [drawsedit,setDrawsEdit] = useState('')
+    const [topScoreredit,setTopScorerEdit]=useState('')
+    const [leastCardsedit,setLeastCardsEdit]=useState('')
+    // atributs for edition - END
     useEffect(() => {
         if(localStorage.getItem('team_stats.matches_won') !== null){
             setWins(localStorage.getItem('team_stats.matches_won'))
@@ -43,70 +48,87 @@ const TeamInformationCouch = () => {
         })
         }
     })
-
-    const changeInformation =()=>{
-        setIsWrite(true);
-        setIsView(false);
-    }
-    const saveChanges=()=>{
-        setIsWrite(false);
-        setIsView(true);
-    }
-
-    return ( 
-        <div>
-            <div id="informationheader">Statystyki Drużyny</div>
-            <div id="informationmain">
+    const visibilityOn = () =>
+        {
+            window.scrollTo(0, 0);
+            document.body.style.overflow = 'hidden';
+            setVisibility({visibility: "visible"});
+        }
+    const visibilityOff = () =>
+        {
+            document.body.style.overflow = 'auto';
+            setVisibility({visibility: "hidden"});
+            
+        }
+        const [visibility, setVisibility] = useState({visibility: "hidden"});
+    return (
+        <div id="informationcouchmain" className='paneShadow'>
+                <div className='informationcouchblocks'>
+                    <div className='informationcouchleft'>Ilość Wygranych Meczy</div>
+                    <div className='informationcouchright'>{wins}</div>
+                </div>
+                <div className='informationcouchblocks'>
+                    <div className='informationcouchleft'>Ilość Przegranych Meczy</div>
+                    <div className='informationcouchright'>{loses}</div>
+                </div>
+                <div className='informationcouchblocks'>
+                    <div className='informationcouchleft'>Ilość Remisów</div>
+                    <div className='informationcouchright'>{draws}</div>
+                </div>
+                <div className='informationcouchblocks'>
+                    <div className='informationcouchleft'>Najlepszy Strzelec</div>
+                    <div className='informationcouchright'>{topScorer}</div>
+                </div>
+                <div className='informationcouchblocks'>
+                    <div className='informationcouchleft'>Najmniejsza Ilość Kartek</div>
+                    <div className='informationcouchright'>{leastCards}</div>
+                </div>
                 <br/>
-                <div className='informationblocks'>
-                    <div className='informationleft'>Ilość Wygranych Meczy</div>
-                    {isview && <div className='informationright'>{wins}</div>}
-                    {iswrite && <div className='informationright'>
-                         <input type='text' className='couchinformationinput' value={wins} onChange={(e)=>setWins(e.target.value)}/>
-                    </div>}
+                <div id="couchinformationdiv">
+                    <button id="couchinformationbutton" onClick={visibilityOn}><b>Edytuj</b></button>
                 </div>
-                <div className='informationblocks'>
-                    <div className='informationleft'>Ilość Przegranych Meczy</div>
-                    {isview &&<div className='informationright'>{loses}</div>}
-                    {iswrite && <div className='informationright'>
-                         <input type='text' className='couchinformationinput' value={loses} onChange={(e)=>setLoses(e.target.value)}/>
-                    </div>}
-                </div>
-                <div className='informationblocks'>
-                    <div className='informationleft'>Ilość Remisów</div>
-                    { isview && <div className='informationright'>
-                        {draws}
-                    </div>}
-                    {iswrite && <div className='informationright'>
-                         <input type='text' className='couchinformationinput' value={draws} onChange={(e)=>setDraws(e.target.value)}/>
-                    </div>}
-                </div>
-                <div className='informationblocks'>
-                    <div className='informationleft'>Najlepszy Strzelec</div>
-                    {isview && <div className='informationright'>
-                        {topScorer}
-                    </div>}
-                    {iswrite && <div className='informationright'>
-                         <input type='text' className='couchinformationinput' value={topScorer} onChange={(e)=>setTopScorer(e.target.value)}/>
-                    </div>}
-                </div>
-                <div className='informationblocks'>
-                    <div className='informationleft'>Najmniejsza Ilość Kartek</div>
-                    {isview &&<div className='informationright'>
-                        {leastCards}
-                    </div>}
-                    {iswrite && <div className='informationright'>
-                         <input type='text' className='couchinformationinput' value={leastCards} onChange={(e)=>setLeastCards(e.target.value)}/>
-                    </div>}
-                </div>
-                <br/><br/>
-                {isview &&<div id="couchinformationdiv">
-                    <button id="couchinformationbutton" onClick={changeInformation}>Edytuj</button>
-                </div>}
-                {iswrite &&<div id="couchinformationdiv">
-                    <button id="couchinformationbutton" onClick={saveChanges}>Save</button>
-                </div>}
-            </div>
+                <div id="editBox" style={visibility} >
+                    <div id="editWindow">
+                        <div id="editTitle">
+                            Statystyki Drużyny
+                        </div>
+                        <div id="editInputs">
+                            <div className="editOption">
+                                <div className='editlefttext'>Ilość Wygranych Meczy</div>
+                                <div className='editright'>
+                                    <input type="text" name="" id="" min="0" placeholder={wins} onChange={(e)=>setWinsEdit(e.target.value)}/>
+                                </div>
+                            </div>
+                            <div className="editOption">
+                                <div className='editlefttext'>Ilość Przegranych Meczy:</div>
+                                <div className='editright'>
+                                    <input type="text" name="" id="" min="0" placeholder={loses} onChange={(e)=>setLosesEdit(e.target.value)}/>
+                                </div>
+                            </div>
+                            <div className="editOption">
+                                <div className='editlefttext'>Ilość Remisów:</div>
+                                <div className='editright'>
+                                    <input type="text" name="" id="" min="0" placeholder={draws} onChange={(e)=>setDrawsEdit(e.target.value)}/>
+                                </div>
+                            </div>
+                            <div className="editOption txtOpt">
+                            <div className='editlefttext'>Najlepszy Strzelec:</div>
+                                <div className='editright'>
+                                    <input type="text" name="" id=""  placeholder={topScorer} onChange={(e)=>setTopScorerEdit(e.target.value)}/>
+                                </div>
+                            </div>
+                            <div className="editOption txtOpt">
+                                <div className='editlefttext'>Najmniejsza Ilość Kartek:</div>
+                                <div className='editright'>
+                                    <input type="text" name="" id=""  placeholder={leastCards} onChange={(e)=>setLeastCardsEdit(e.target.value)}/>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="editButtons">
+                            <div class="editBtn" id="okBtn" onClick={visibilityOff}>OK</div>
+                        </div>
+                    </div>
+      </div>
         </div>
      );
 }
