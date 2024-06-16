@@ -59,7 +59,7 @@ const PlayerList_CV = ({ onSelectPlayer,sharedState }) => {
         <div id="playerList_CV">
             <div className="addPlayerCard_CV">
                 <i class="icon-plus-alternative"/>
-                <span className="playerName_CV bStyle">DODAJ ZAWODNIKA</span>
+                <span className="addName_CV bStyle">DODAJ ZAWODNIKA</span>
                 <button className="copy_CV" onClick={handleCopyClick}>Kopiuj</button>
             </div>
             <div id = "listOfPlayers_CV">

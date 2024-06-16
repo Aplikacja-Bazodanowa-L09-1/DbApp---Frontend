@@ -44,7 +44,7 @@
 .copy_CV {
     background-color: #e53935;
     border: none;
-    padding: 10px;
+    padding: 5px;
     color: white;
     cursor: pointer;
     border-radius: 20px;
@@ -89,6 +89,10 @@
     margin-right: 10px;
 }
 
+.addName_CV {
+    font-size: 17px;
+}
+
 .editButton_CV {
     background-color: transparent;
     border: none;
@@ -118,4 +122,40 @@
 
 .playerCard_CV:hover {
     background-color: gainsboro;
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1100px){
+    .addName_CV {
+        font-size: 14px;
+    }
+    .copy_CV {
+        margin-left: 10%;
+    }
+}
+
+@media only screen and (min-width: 900px) and (max-width: 1000px){
+    .addName_CV {
+        font-size: 12px;
+    }
+    .copy_CV {
+        margin-left: 5%;
+    }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 900px){
+    .addName_CV {
+        font-size: 9px;
+    }
+    .copy_CV {
+        margin-left: 0%;
+    }
+}
+
+@media only screen and (max-width: 800px){
+    .addName_CV {
+        font-size: 17px;
+    }
+    .copy_CV {
+        margin-left: 15%;
+    }
 }

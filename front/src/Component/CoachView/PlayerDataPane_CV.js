@@ -3,6 +3,8 @@ import "../../Style/CoachView/PlayerDataPane_CV.css";
 
 const PlayerDataPane_CV = ({ playerId }) => {
     const [playerData, setPlayerData] = useState(null);
+    const [alertMessage, setAlertMessage] = useState('');
+    const [showAlert, setShowAlert] = useState(false);
 
     const fetchPlayerData = async (playerId) => {
         try {
@@ -19,6 +21,29 @@ const PlayerDataPane_CV = ({ playerId }) => {
             fetchPlayerData(playerId);
         }
     }, [playerId]);
+
+    const handleDeleteClick = async () => {
+        try {
+            const response = await fetch('YOUR_BACKEND_ENDPOINT');
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+            // Assume the link is returned in the `link` field of the response data
+            const link = data.link;
+
+            // Handle copying the link to the stash here (e.g., using the Clipboard API)
+            navigator.clipboard.writeText(link).then(() => {
+                window.confirm('Do you want to delete this player?');
+            });
+        } catch (error) {
+            console.error('Error fetching link:', error);
+            setAlertMessage('Failed to copy link.');
+            setShowAlert(true);
+            setTimeout(() => setShowAlert(false), 3000); // Hide alert after 3 seconds
+        }
+        window.confirm('Do you want to delete this player?');
+    };
 
     //DELETE THESE WHEN ITS ALL CONNECTED
     let placeHolder1 = null
@@ -51,7 +76,7 @@ const PlayerDataPane_CV = ({ playerId }) => {
             <div id="dataBoxDataPane_CV">
                 <div id="positionDeleteBox_CV">
                     <p><span className="bStyle playerPositionStyle">BRAMKARZ</span></p>
-                    <button id="deleteButton_CV">Usuń</button>
+                    <button id="deleteButton_CV" onClick={handleDeleteClick}>Usuń</button>
                 </div>
                 <p><span className="bStyle">Data Urodzenia: {placeHolder1}</span></p>
                 <p><span className="bStyle">Wzrost: {placeHolder2} cm</span></p>
