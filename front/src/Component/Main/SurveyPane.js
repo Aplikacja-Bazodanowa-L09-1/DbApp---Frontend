@@ -63,27 +63,25 @@ const SurveyPane = () => {
 
      return (
         <div id="survPane" className='paneShadow'>
-          <div id="upperSurvBox">
-            <div className="sBoxes sLeft">
-              <div id="sLogo">
-                <img src={surveyPhoto} alt="logo klubu" id="frontimage" />
+            <div id="sLeft">
+              <div id="sLogoAndName">
+                  <div id="sLogo">
+                    <img src={surveyPhoto} alt="logo klubu" id="frontimage" />
+                  </div>
+                  <div id="sTitle"> <span id="sClubInfo">{clubinfo}</span> <br/> <span id="sSportEvent">{sportEvent}</span></div>
               </div>
-              <div id="sTitle">{clubinfo} <br/> {sportEvent}</div>
+              <div id="sBtnBox">
+                  <div id="redBtn" onClick={visibilityOn}>Nieuzupełniono</div>
+              </div>
             </div>
-            <div className="sBoxes sRight">
-              {date[0]}
-              <br/>
-              {date[1] ? date[1].slice(0, -5) : ''}
-            </div>
-          </div>
-          <div id="downSurvBox">
-            <div className="sBoxes sLeft">
-              <div id="redBtn" onClick={visibilityOn}>Nieuzupełniono</div>
-            </div>
-            <div className="sBoxes sRight">
+            <div id="sRight">
+              <div id="sDateAndTime">
+                {date[0]}
+                <br/>
+                {date[1] ? date[1].slice(0, -5) : ''}
+              </div>
               <div id="sCount">{players.active}/{players.max} </div>
             </div>
-          </div>
           <div id="survBox" style={visibility} >
       <div id="survWindow">
           <div id="survTitle">
