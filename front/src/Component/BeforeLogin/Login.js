@@ -36,6 +36,7 @@ const Login = () => {
                 localStorage.setItem('access_token', data.access);
                 localStorage.setItem('refresh_token', data.refresh);
                 localStorage.setItem('role', data.role);
+
                 if(data.role==='Admin'){
                     window.location.href='/adminteamview/';
                 }
@@ -43,7 +44,7 @@ const Login = () => {
                     window.location.href='/main/';
                 }
                 else if(data.role==='Coach'){
-                    window.location.href='/teamstatisticoach/';
+                    window.location.href='/main/';
                 }
             }
             else{
@@ -53,7 +54,7 @@ const Login = () => {
                 setPassword('');
             }
             
-        }).catch((err)=>{console.log(err.message);},setStatus(false));
+        }).catch((err)=>{console.log(err.message);});
     }
 
     const Przypomnienie = () =>{
