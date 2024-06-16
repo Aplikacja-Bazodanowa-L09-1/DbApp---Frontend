@@ -58,12 +58,8 @@ function CalendarComponent() {
             <img className="image_training" src={require('../../Icons/barbells.png')} alt='barbells icon' />
             <div className="trainings">
               <p className="sub">Trening</p>
-<<<<<<< Updated upstream
-            </div>
-=======
             </div>  
             
->>>>>>> Stashed changes
 
             <img className="image_ball" src={require('../../Icons/ball.png')} alt='ball icon' />
             <div className="matches">

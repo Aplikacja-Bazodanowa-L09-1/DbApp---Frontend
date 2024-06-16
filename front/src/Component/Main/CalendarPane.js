@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import '../../Style/CalendarPane.css'
-import CalendarComponent from './CalendarComponent';
+import '../../Style/Main/CalendarPane.css';
+import Calendar from 'react-calendar';
 
 const CalendarPane = ({sharedState}) => {
     const [isOpen, setIsOpen] = useState(false);
