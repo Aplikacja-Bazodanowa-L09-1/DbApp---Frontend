@@ -78,13 +78,13 @@ const TeamStatistic = () => {
                 </div>
                 <div id="leftSide">
                     <Club/>
-                    <div className="headers">Statystyki drużyny</div>
+                    <h2 id="whiteFont" class="whiteTextShadow">Statystyki drużyny</h2>
                     <TeamInformation/>
                 </div>
                 <div id="rightSide">
-                    <div className="headersteam">Wynik ankiety</div>
+                    <h2 id="whiteFont" class="whiteTextShadow headersteam">Wynik ankiety</h2>
                     <FormView/>
-                    <div className="headers"></div>
+                    <h2 id="whiteFont" class="whiteTextShadow headersteamphoto"></h2>
                     <TeamPhoto/>
                 <div id="bottom"></div>
                 </div>

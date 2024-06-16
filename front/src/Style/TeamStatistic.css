@@ -29,10 +29,11 @@
 }
 .headersteam{
     height: 4vh;
-    font-weight: 600;
-    color: white;
-    margin-top: -4vh;
+    margin-top: -6vh;
     margin-left: 1vh;
+}
+.headersteamphoto{
+    height: 3vh;
 }
 
 .calHeader{
@@ -85,6 +86,6 @@
         background-color: #D32020;
     }
     .headersteam{
-        margin-top: 1vh;
+        margin-top: 5vh;
     }
 }

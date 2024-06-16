@@ -83,7 +83,7 @@ const FormView = (sharedState) => {
     }, [sharedState])
 
     return ( 
-            <div id="formmain" className='paneShadow'>
+        <div id="formmain" className='paneShadow'>
                 <div id="formleft">
                     <div id="formclub">
                         <img src={surveyPhoto} alt='zdjecie' id="frontimage"/>
