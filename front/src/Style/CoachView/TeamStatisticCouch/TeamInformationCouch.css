@@ -3,7 +3,9 @@
     border-radius: 10px;
     height: 52vh;
     width: 40vw;
-    padding-top: 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 .informationcouchblocks{
     background-color: rgba(213, 50, 50, 0.934);
@@ -12,7 +14,6 @@
     /* height: 58px; */
     width: 90%;
     margin: auto;
-    margin-top: 4.5vh;
     display: flex;
 }
 .informationcouchleft{
@@ -34,6 +35,7 @@
 #couchinformationdiv{
     width: 100%;
     text-align: center;
+    margin-bottom: 20px;
 }
 #couchinformationbutton{
     border: none;
@@ -72,16 +74,10 @@
     .informationcouchleft,.informationcouchright{
         font-size: 20px;
     }
-    .informationcouchblocks{
-        margin-top: 5vh;
-    }
 }
 @media(max-width:1150px){
     .informationcouchleft,.informationcouchright{
         font-size: 15px;
-    }
-    .informationcouchblocks{
-        margin-top: 6vh;
     }
 }
 @media(max-width:900px){
@@ -96,24 +92,15 @@
     .informationcouchleft,.informationcouchright{
         font-size: 25px;
     }
-    .informationcouchblocks{
-        margin-top: 4.5vh;
-    }
 }
 @media(max-width:700px){
     .informationcouchleft,.informationcouchright{
         font-size: 20px;
     }
-    .informationcouchblocks{
-        margin-top: 5vh;
-    }
 }
 @media(max-width:600px){
     .informationcouchleft,.informationcouchright{
         font-size: 15px;
-    }
-    .informationcouchblocks{
-        margin-top: 6vh;
     }
 }
 

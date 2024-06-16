@@ -128,7 +128,7 @@ const TeamInformationCouch = () => {
                             <div class="editBtn" id="okBtn" onClick={visibilityOff}>OK</div>
                         </div>
                     </div>
-      </div>
+                </div>
         </div>
      );
 }
