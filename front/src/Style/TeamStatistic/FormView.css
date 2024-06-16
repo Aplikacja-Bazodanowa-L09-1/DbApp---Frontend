@@ -16,7 +16,6 @@
     margin: 10px;
     text-align: center;
     width: 100%;
-    margin-bottom: 20px;
 }
 #formclubinfo{
     margin-left: 10px;
@@ -33,10 +32,16 @@
     width: 60%;
     text-align: left;
     margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 #formright{
     width: 40%;
     margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 #formhowmany{
     text-align: right;
@@ -48,7 +53,6 @@
     border: none;
     width:  120px;
     height: 40px;
-    margin: auto;
     
 }
 #srBox

@@ -97,7 +97,7 @@ const FormView = (sharedState) => {
                 <div id="formright">
                     <div id="formdate">{date[0]}<br/>
                     {date[1] && date[1].slice(0,-5)} </div>
-                    <br/><br/>
+                    
                     <div id="formhowmany">
                         {players.active}/{players.max}
                     </div>
