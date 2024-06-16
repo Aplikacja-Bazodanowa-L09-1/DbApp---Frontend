@@ -144,7 +144,8 @@
     justify-content: space-evenly;
 }
 .survBtn{
-    color: #000000;
+    color: white;
+    font-weight: 600;
     background-color: #9F9393;
     border: 1px solid black;
     width: 100px;

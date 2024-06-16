@@ -27,7 +27,7 @@ const NoticesPane = () => {
         if(localStorage.getItem('notification.team_message_title') !== null){
             setTeamMessageTitle(localStorage.getItem('notification.team_message_title'))
             setTeamMessage(localStorage.getItem('notification.team_message'))
-            setRole(localStorage.getItem('user.role'))
+            setRole(localStorage.getItem('role'))
         }
         else{
             fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/app/team/notification/`, {
@@ -38,9 +38,9 @@ const NoticesPane = () => {
             console.log(data.user)
             setTeamMessageTitle(data.notification.player.team.team_message_title)
             setTeamMessage(data.notification.player.team.team_message)
-            setRole(data.user_cred.role)
+            // setRole(data.user_cred.role)
 
-            localStorage.setItem('user.role', data.user_cred.role)
+            // localStorage.setItem('user.role', data.user_cred.role)
             localStorage.setItem('notification.team_message_title', data.notification.player.team.team_message_title)
             localStorage.setItem('notification.team_message', data.notification.player.team.team_message)
         })
