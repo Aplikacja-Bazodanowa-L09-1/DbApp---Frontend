@@ -103,6 +103,38 @@
     transform: scale(1.05);
     transition: 1s;
 } */
+
+
+.redScrollbar::-webkit-scrollbar {
+    width: 0.8vw;
+}
+
+.redScrollbar::-webkit-scrollbar-track {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0.4vw 0.6vh 0.4vw 0.25vh rgba(88, 9, 9, 1);
+}
+
+.redScrollbar::-webkit-scrollbar-thumb {
+    background-color: #e53935;
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+}
+
+.redScrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: #922523;
+}
+
+.redScrollbar::-webkit-scrollbar-button {
+    display: none;
+}
+
+@-moz-document url-prefix() {
+    .redScrollbar {
+        scrollbar-width: thin;
+        scrollbar-color: #e53935 #ffffff;
+    }
+}
 @media only screen and (max-width: 800px) {
     #box{
         flex-direction: column;

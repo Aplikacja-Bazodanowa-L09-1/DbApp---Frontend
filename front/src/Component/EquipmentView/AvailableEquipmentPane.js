@@ -51,8 +51,7 @@ const AvailableEquipmentPane = ({toggleSharedState, sharedState}) => {
 
     return (
     <div id="availableEquipmentPane" className='paneShadow'>
-        <div id="scrollBoxA">
-        <div id="abc">
+        <div id="scrollBoxA" className='redScrollbar'>
         {aEquipment.map(item => {
             if(item.available == true){
                 return(
@@ -63,7 +62,6 @@ const AvailableEquipmentPane = ({toggleSharedState, sharedState}) => {
                       <div className="eqButton" onClick={() => {rentEq(item.id)}}>Wypożycz</div>
                     </p>
                 )}})}
-        </div>
         </div>
     </div> 
    );

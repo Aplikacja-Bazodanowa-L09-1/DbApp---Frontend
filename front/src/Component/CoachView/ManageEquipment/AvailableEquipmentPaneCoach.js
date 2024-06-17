@@ -51,8 +51,7 @@ const AvailableEquipmentPaneCoach = ({toggleSharedState, sharedState}) => {
 
     return (
     <div id="availableEquipmentPaneCoach" className='paneShadow'>
-        <div id="scrollBoxAC">
-        <div id="abc">
+        <div id="scrollBoxAC" className='redScrollbar'>
         {aEquipment.map(item => {
             if(item.available == true){
                 return(
@@ -70,7 +69,6 @@ const AvailableEquipmentPaneCoach = ({toggleSharedState, sharedState}) => {
                       </div>
                     </p>
                 )}})}
-        </div>
         </div>
     </div> 
    );
