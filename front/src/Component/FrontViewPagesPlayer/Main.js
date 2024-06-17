@@ -88,7 +88,7 @@ const Main = () => {
             <div id="rightSide">
                 <div className="headers calHeader">Kalendarz</div>
                 <CalendarPane/>
-                <div className="headers">Statystyki</div>
+                <div className="headers">Tabela ligowa</div>
                 <StatisticsPane/>
                 <div id="bottom"></div>
             </div>

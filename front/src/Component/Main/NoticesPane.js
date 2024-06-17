@@ -49,7 +49,7 @@ const NoticesPane = () => {
 
      return (
         <div id="noticesPane" className='paneShadow'>
-            <div id="notification" className='lightShadow'>
+            <div id="notification">
                 <div id="nLeft">
                     <img src={notifIcon} alt="icon" />
                 </div>  
