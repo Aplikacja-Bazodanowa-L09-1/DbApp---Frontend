@@ -26,9 +26,9 @@ const RentedEquipmentPaneLarge = ({toggleSharedState, sharedState}) => {
                 //     console.log(data.eq[i])
                 //     setAEquipment([])
                 // }
-                setRole(data.user_cred.role)
+                //setRole(data.user_cred.role)
 
-                localStorage.setItem('user.role', data.user_cred.role)
+                //localStorage.setItem('user.role', data.user_cred.role)
                 setREquipment(data.eq)
                 //console.log(rEquipment)
             }
