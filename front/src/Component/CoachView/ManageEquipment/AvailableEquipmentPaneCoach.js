@@ -48,6 +48,19 @@ const AvailableEquipmentPaneCoach = ({toggleSharedState, sharedState}) => {
 
 
     // DAWID SZYMONIK - koniec ----------------------------------------------------------------------------
+    const deleteEq = (id) => {
+        fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/coach/equipment/delete/${id}/`, {
+            mode:'cors',
+            method: 'DELETE',
+            headers: { "Content-Type": "application/json", "authorization": `Berear ${localStorage.getItem('access_token')}` },
+        }).then(response => response.json()).then(data => {
+            if(data.message == 'deleted'){
+                setAEquipment(prevEquipment => prevEquipment.filter(item => item.id !== id));
+                toggleSharedState()
+            }
+        })
+    }
+
 
     return (
     <div id="availableEquipmentPaneCoach" className='paneShadow'>
@@ -64,7 +77,7 @@ const AvailableEquipmentPaneCoach = ({toggleSharedState, sharedState}) => {
                             <div className="eqButton" onClick={() => {rentEq(item.id)}}>Wypożycz</div>
                         </div>
                         <div className="redBtnPos">
-                            <div className="smallRedBtn">Usuń</div>
+                            <div className="smallRedBtn" onClick={() => {deleteEq(item.id)}}>Usuń</div>
                         </div>
                       </div>
                     </p>

@@ -11,6 +11,32 @@ const NoticesPane = () => {
     const [role, setRole] = useState('')
     const [visibility, setVisibility] = useState({visibility: "hidden"});
 
+
+    const fetchUpdateNotification = async () => {
+        fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/coach/notification/update`, {
+            mode: 'cors',
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+                "authorization": `Bearer ${localStorage.getItem('access_token')}`
+            },
+            body: JSON.stringify( {
+                team_message_title: editTeamMessageTitle,
+                team_message: editTeamMessage
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.detail) {
+                console.log('Error:', data.detail);
+            } else {
+                console.log('Updated data:', data.body);
+            }
+        })
+        .catch(error => {
+            console.error('Error updating team meassage', error)
+        })
+    }
     const visibilityOn = () =>
         {
             window.scrollTo(0, 0);
@@ -23,28 +49,40 @@ const NoticesPane = () => {
           setVisibility({visibility: "hidden"});
         }
 
-    useEffect(() => {
-        if(localStorage.getItem('notification.team_message_title') !== null){
-            setTeamMessageTitle(localStorage.getItem('notification.team_message_title'))
-            setTeamMessage(localStorage.getItem('notification.team_message'))
-            setRole(localStorage.getItem('role'))
+        const handleSubmit = () => {
+            // Implement the logic to save the updated statistics
+            fetchUpdateNotification();
+            setTeamMessageTitle(editTeamMessageTitle);
+            setTeamMessage(editTeamMessage);
+            visibilityOff();
         }
-        else{
+        
+        const fetchNotification = async() => {
             fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/app/team/notification/`, {
-            mode: 'cors',
-            method: 'GET',
-            headers: {"Content-Type": "application/json", "authorization": `Berear ${localStorage.getItem('access_token')}`},
-        }).then(response=>response.json()).then(data=>{
-            console.log(data.user)
-            setTeamMessageTitle(data.notification.player.team.team_message_title)
-            setTeamMessage(data.notification.player.team.team_message)
-            // setRole(data.user_cred.role)
-
-            // localStorage.setItem('user.role', data.user_cred.role)
-            localStorage.setItem('notification.team_message_title', data.notification.player.team.team_message_title)
-            localStorage.setItem('notification.team_message', data.notification.player.team.team_message)
-        })
-        }
+                mode: 'cors',
+                method: 'GET',
+                headers: {"Content-Type": "application/json", "authorization": `Berear ${localStorage.getItem('access_token')}`},
+            }).then(response=>response.json()).then(data=>{
+                console.log(data.user)
+                setTeamMessageTitle(data.notification.player.team.team_message_title)
+                setTeamMessage(data.notification.player.team.team_message)
+                // setRole(data.user_cred.role)
+    
+                // localStorage.setItem('user.role', data.user_cred.role)
+                localStorage.setItem('notification.team_message_title', data.notification.player.team.team_message_title)
+                localStorage.setItem('notification.team_message', data.notification.player.team.team_message)
+            })
+        } 
+    useEffect(() => {
+        // if(localStorage.getItem('notification.team_message_title') !== null){
+        //     setTeamMessageTitle(localStorage.getItem('notification.team_message_title'))
+        //     setTeamMessage(localStorage.getItem('notification.team_message'))
+        //     setRole(localStorage.getItem('role'))
+        // }
+        // else{
+            setRole(localStorage.getItem('role'))
+            fetchNotification();
+        
     })
 
      return (
@@ -80,7 +118,7 @@ const NoticesPane = () => {
                 </div>
                 <div id="notifButtons">
                     <div class="smallRedBtn" onClick={visibilityOff}>Wróć</div>
-                    <div class="smallRedBtn">Zapisz</div>
+                    <div class="smallRedBtn" onClick={handleSubmit}>Zapisz</div>
                 </div>
             </div>
         </div>

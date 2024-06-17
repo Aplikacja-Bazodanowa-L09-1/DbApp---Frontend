@@ -86,7 +86,8 @@ const ManageEquipmentView = () => {
             </div>
             <div id="leftSide">
                 <div className="headers">Dodaj Nowy Sprzęt</div>
-                <AddEquipmentPane/>
+                <AddEquipmentPane toggleSharedState={toggleSharedState}
+                sharedState={sharedState}/>
                 <div className="headers">Dostępny Sprzęt</div>
                 <AvailableEquipmentPaneCoach toggleSharedState={toggleSharedState} sharedState={sharedState}/>
             </div>
