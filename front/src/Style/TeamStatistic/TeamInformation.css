@@ -8,9 +8,8 @@
     justify-content: space-evenly;
 }
 .informationblocks{
-    background-color: rgba(213, 50, 50, 0.934);
     border-radius: 26px;
-    color: white;
+    color: black;
     /* height: 58px; */
     width: 90%;
     margin: auto;

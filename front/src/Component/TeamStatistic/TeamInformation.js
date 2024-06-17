@@ -48,23 +48,23 @@ const TeamInformation = () => {
             <div id="informationmain" className='paneShadow'>
                 <br/>
                 <div className='informationblocks'>
-                    <div className='informationleft'>Ilość Wygranych Meczy</div>
+                    <div className='informationleft bStyle'>Ilość Wygranych Meczy:</div>
                     <div className='informationright'>{wins}</div>
                 </div>
                 <div className='informationblocks'>
-                    <div className='informationleft'>Ilość Przegranych Meczy</div>
+                    <div className='informationleft bStyle'>Ilość Przegranych Meczy:</div>
                     <div className='informationright'>{loses}</div>
                 </div>
                 <div className='informationblocks'>
-                    <div className='informationleft'>Ilość Remisów</div>
+                    <div className='informationleft bStyle'>Ilość Remisów:</div>
                     <div className='informationright'>{draws}</div>
                 </div>
                 <div className='informationblocks'>
-                    <div className='informationleft'>Najlepszy Strzelec</div>
+                    <div className='informationleft bStyle'>Najlepszy Strzelec:</div>
                     <div className='informationright'>{topScorer}</div>
                 </div>
                 <div className='informationblocks'>
-                    <div className='informationleft'>Najmniejsza Ilość Kartek</div>
+                    <div className='informationleft bStyle'>Najmniejsza Ilość Kartek:</div>
                     <div className='informationright'>{leastCards}</div>
                 </div>
                 <br/><br/>

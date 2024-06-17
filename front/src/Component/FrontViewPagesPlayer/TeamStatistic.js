@@ -8,9 +8,8 @@ import TeamPhoto from '../TeamStatistic/TeamPhoto.js';
 import '../../Style/TeamStatistic.css'
 
 const TeamStatistic = () => {
-
     const [PageContent, setPageContent] = useState('')
-
+    
     const logoutHandler = (event) => {
         const refrsh_token = localStorage.getItem('refresh_token')
         const data = {"token": refrsh_token}
@@ -30,7 +29,6 @@ const TeamStatistic = () => {
 
 
     useEffect(() => {
-
         fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/team_stats/`, {
             mode: 'cors',
             method: 'GET',
@@ -39,7 +37,7 @@ const TeamStatistic = () => {
             }
         }).then(response => {
 
-            if (response.status == 403) {
+            if (response.status === 403) {
                 throw new Error("access_token expired")
             }
             else return response.json()
@@ -48,7 +46,7 @@ const TeamStatistic = () => {
             setPageContent(data.content)
 
         }).catch(err => {
-            if (err == 'Error: access_token expired') {
+            if (err === 'Error: access_token expired') {
                 if (window.confirm("Sesja wygasła. Czy chcesz ją odnowić?")) {
 
                     /// ODNOWIENIE SESJI
@@ -69,6 +67,18 @@ const TeamStatistic = () => {
                 }
             }
         })
+    })
+    const checkRole = ()=>{
+        const webRole = localStorage.getItem('role');
+        if(webRole!== 'Player'){
+            localStorage.removeItem('role');
+            window.alert('Nie posiadasz uprawnień do odwiedzania tej strony');
+            logoutHandler();
+            
+        }
+    }
+    useEffect(()=>{
+        checkRole();
     })
 
     return (

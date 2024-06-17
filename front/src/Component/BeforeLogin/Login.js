@@ -43,7 +43,7 @@ const Login = () => {
                     window.location.href='/main/';
                 }
                 else if(data.role==='Coach'){
-                    window.location.href='/teamstatisticouch/';
+                    window.location.href='/main/';
                 }
             }
             else{

@@ -75,7 +75,18 @@ const EquipmentView = () => {
 
     const toggleSharedState = () => {setShatedState(!sharedState)}
 /// DAWID SZYMONIK - koniec----------------------------------------------------------------
-
+    const checkRole = ()=>{
+        const webRole = localStorage.getItem('role');
+        if(webRole!== 'Player'){
+            localStorage.removeItem('role');
+            window.alert('Nie posiadasz uprawnień do odwiedzania tej strony');
+            logoutHandler();
+            
+        }
+    }
+    useEffect(()=>{
+        checkRole();
+    })
     
     return (
         <div>
