@@ -1,8 +1,6 @@
 import { useState, React, useEffect } from "react"
-import ReactCalendar from './Calendar';
-import CalendarPopup from './CalendarPopup';
 
-function CalendarComponent() {
+const CalendarComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedDate, setSelectedDate] = useState(null);
 

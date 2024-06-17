@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import '../../Style/Main/CalendarPane.css';
+import '../../Style/Main/CalendarComponent.css';
 import Calendar from 'react-calendar';
 
 const CalendarPane = ({sharedState}) => {
