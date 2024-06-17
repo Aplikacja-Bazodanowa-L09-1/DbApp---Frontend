@@ -6,11 +6,12 @@ const PlayerStatisticsPane_CV = ({ playerId }) => {
     const [playerStats, setPlayerStats] = useState({
         goals: "",
         assists: "",
-        redCards: "",
-        yellowCards: "",
-        attendanceAtTraining: "",
-        attendanceAtMatches: ""
+        red_cards: "",
+        yellow_cards: "",
+        attended_trainings: "",
+        attended_matches: ""
     });
+
 
     const visibilityOn = () =>
     {
@@ -25,13 +26,57 @@ const PlayerStatisticsPane_CV = ({ playerId }) => {
     }
 
     const fetchPlayerStats = async (playerId) => {
+        console.log('select id', playerId)
         try {
-            const response = await fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/playerstats/${playerId}`);
-            const data = await response.json();
-            setPlayerStats(data);
-        } catch (error) {
-            console.error('Error fetching player statistics:', error);
+
+                const response = await fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/coach/statistic?playerId=${playerId}`, {
+                    mode: 'cors',
+                    method: 'GET',
+                    headers: {
+                        "Content-Type": "application/json",
+                        "authorization": `Bearer ${localStorage.getItem('access_token')}`
+                    }
+                });
+                const data = await response.json();
+                if (data.detail) {
+                    console.log('Error:', data.detail);
+                } else {
+                    console.log('Fetched data:', data.user_stats_view.player.player_stats);
+                    setPlayerStats(data.user_stats_view.player.player_stats[0]) // Dodaj log
+                    
+                }
+            } catch (error) {
+                console.error('Error fetching player statistics:', error);
+            }
+    };
+
+    const fetchUpdatePlayerstats = async (playerId) => {
+        console.log('Updating stats for id:', playerId);
+    fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/coach/statistic/update?playerId=${playerId}`, {
+        mode: 'cors',
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json",
+            "authorization": `Bearer ${localStorage.getItem('access_token')}`
+        },
+        body: JSON.stringify( {
+            goals: playerStats.goals,
+            assists: playerStats.assists,
+            red_cards: playerStats.red_cards,
+            yellow_cards: playerStats.yellow_cards
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.detail) {
+            console.log('Error:', data.detail);
+        } else {
+            console.log('Updated data:', data.body);
         }
+    })
+    .catch(error => {
+        console.error('Error updating player statistics:', error);
+    });
     };
 
     useEffect(() => {
@@ -50,6 +95,7 @@ const PlayerStatisticsPane_CV = ({ playerId }) => {
 
     const handleSubmit = () => {
         // Implement the logic to save the updated statistics
+        fetchUpdatePlayerstats(playerId)
         visibilityOff();
     };
 
@@ -71,10 +117,10 @@ const PlayerStatisticsPane_CV = ({ playerId }) => {
     } else {
         placeHolder1 = playerStats.goals;
         placeHolder2 = playerStats.assists;
-        placeHolder3 = playerStats.redCards;
-        placeHolder4 = playerStats.yellowCards;
-        placeHolder5 = playerStats.attendanceAtTraining;
-        placeHolder6 = playerStats.attendanceAtMatches;
+        placeHolder3 = playerStats.red_cards;
+        placeHolder4 = playerStats.yellow_cards;
+        placeHolder5 = playerStats.attended_trainings;
+        placeHolder6 = playerStats.attended_matches;
     }
     //DELETE UP TO HERE AND REPLACE BELOW WITH THE RESPECTIVE VALUES
 
@@ -122,7 +168,7 @@ const PlayerStatisticsPane_CV = ({ playerId }) => {
                             <input
                                 type="number"
                                 name="yellowCards"
-                                value={playerStats.yellowCards}
+                                value={playerStats.yellow_cards}
                                 onChange={handleInputChange}
                                 min="0"
                             />
@@ -132,7 +178,7 @@ const PlayerStatisticsPane_CV = ({ playerId }) => {
                             <input
                                 type="number"
                                 name="redCards"
-                                value={playerStats.redCards}
+                                value={playerStats.red_cards}
                                 onChange={handleInputChange}
                                 min="0"
                             />

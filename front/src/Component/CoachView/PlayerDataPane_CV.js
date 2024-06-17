@@ -2,18 +2,45 @@ import { useState, useEffect } from 'react';
 import "../../Style/CoachView/PlayerDataPane_CV.css";
 
 const PlayerDataPane_CV = ({ playerId }) => {
-    const [playerData, setPlayerData] = useState(null);
+    const [playerData, setPlayerData] = useState("");
+    const [playerDataSpecif, setPlayerDataSpecif] = useState("");
     const [alertMessage, setAlertMessage] = useState('');
     const [showAlert, setShowAlert] = useState(false);
 
+    // const fetchPlayerData = async (playerId) => {
+    //     try {
+    //         const response = await fetch(`https://api.example.com/players/${playerId}`);
+    //         const data = await response.json();
+    //         setPlayerData(data);
+    //     } catch (error) {
+    //         console.error('Error fetching player data:', error);
+    //     }
+    // };
+
     const fetchPlayerData = async (playerId) => {
+        console.log('select id', playerId)
         try {
-            const response = await fetch(`https://api.example.com/players/${playerId}`);
-            const data = await response.json();
-            setPlayerData(data);
-        } catch (error) {
-            console.error('Error fetching player data:', error);
-        }
+
+                const response = await fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/coach/data?playerId=${playerId}`, {
+                    mode: 'cors',
+                    method: 'GET',
+                    headers: {
+                        "Content-Type": "application/json",
+                        "authorization": `Bearer ${localStorage.getItem('access_token')}`
+                    }
+                });
+                const data = await response.json();
+                if (data.detail) {
+                    console.log('Error:', data.detail);
+                } else {
+                    console.log('Fetched data player:', data.user_info_id);
+                    setPlayerData(data.user_info_id) // Dodaj log
+                    setPlayerDataSpecif(data.user_info_id.player)
+                    
+                }
+            } catch (error) {
+                console.error('Error fetching player info:', error);
+            }
     };
 
     useEffect(() => {
@@ -61,12 +88,12 @@ const PlayerDataPane_CV = ({ playerId }) => {
         placeHolder5 = " ";
         placeHolder6 = " ";
     } else {
-        placeHolder1 = playerData.dateOfBirth;
-        placeHolder2 = playerData.height;
-        placeHolder3 = playerData.weight
-        placeHolder4 = playerData.bootSize;
+        placeHolder1 = playerDataSpecif.date_of_birth;
+        placeHolder2 = playerDataSpecif.height;
+        placeHolder3 = playerDataSpecif.weight
+        placeHolder4 = playerDataSpecif.boot_size;
         placeHolder5 = playerData.email;
-        placeHolder6 = playerData.phoneNumber;
+        placeHolder6 = playerData.phone_number;
     }
     //DELETE UP TO HERE AND REPLACE BELOW WITH playerData.####
 
