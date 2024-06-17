@@ -1,13 +1,4 @@
-import "../../Style/CoachView/ManageTeam.css";
-import NavBar from "../NavBar.js";
-import PlayerData from "./PlayerDataPane_CV.js";
-import PlayerStats from "./PlayerStatisticsPane_CV.js";
-import RentedEquipment from "./RentedEquipmentPane_CV.js";
-import PlayerList from "./PlayerList_CV.js";
-import { useState } from "react";
 
-const ManageTeam = () => {
-=======
 import "../../Style/CoachView/ManageTeam.css";
 import NavBar from "../NavBar.js";
 import PlayerData from "./PlayerDataPane_CV.js";
@@ -85,7 +76,6 @@ const ManageTeam = () => {
         })
     }, [])
 
->>>>>>> Stashed changes
     return (
         <div id="boxManageTeam_CV">
             <div id="bar">

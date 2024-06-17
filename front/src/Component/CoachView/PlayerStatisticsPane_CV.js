@@ -4,7 +4,12 @@ import "../../Style/CoachView/PlayerStatisticsPane_CV.css";
 const PlayerStatisticsPane_CV = ({ playerId }) => {
     const [visibility, setVisibility] = useState({visibility: "hidden"});
     const [playerStats, setPlayerStats] = useState(null);
-
+    const [goalsNumber, setGoals] = useState('');
+    const [assistsNumber, setAssists] = useState('');
+    const [yellowCards, setYellCards] = useState('');
+    const [redCards, setRedCards] = useState('');
+    const [attendanceAtTraining, setAttendanceAtTraining] = useState('');
+    const [attendanceAtMatches, setAttendanceAtMatches] = useState('');
     const visibilityOn = () =>
     {
         window.scrollTo(0, 0);
