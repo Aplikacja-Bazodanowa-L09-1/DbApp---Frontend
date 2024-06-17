@@ -10,6 +10,15 @@ const FormView = (sharedState) => {
     const [sportEvent,setSportEvent]=useState('');
     const [date,setDate]=useState([]);
     //const [hour,setHour]=useState('');
+=======
+
+
+const FormView = () => {
+    const [clubinfo,setClubinfo]=useState('FC Barcelona');
+    const [sportEvent,setSportEvent]=useState('Wyjazd');
+    const [date,setDate]=useState('21.04.2024');
+    const [hour,setHour]=useState('18:00');
+>>>>>>> Stashed changes
     const [players,setPlayers]=useState(
         {
             max:'',
@@ -81,6 +90,21 @@ const FormView = (sharedState) => {
     useEffect(() => {
         fetchPlayerNames()
     }, [sharedState])
+=======
+
+    // WYSLANIE ZAPYTANIA DO BACKENDU O ANKIETE
+    // 
+    // BACKEND ----
+    //      SPRAWDZENIE CZY W PRZECIAGU 7 DNI BEDZIE JAKIS EVENT    zmienna = USER->PLAYER->TEAM->EVENT
+                                                        //          id_teamu = zmienna.x.x.x.team_id
+    //          JESLI BEDZIE TO:
+
+            //      zapytanie = questionary.findOne(where team_id=id_teamu)
+    //              zwróć zmienna -> questionary
+    //          JEŚLI NIE MA TO:
+    //              zwróć że nie ma (np. json({"message":"no event", "dont_ask_date":"data_akutalna + 15minut"}))
+    //
+>>>>>>> Stashed changes
 
     return ( 
         <div id="formmain" className='paneShadow'>
