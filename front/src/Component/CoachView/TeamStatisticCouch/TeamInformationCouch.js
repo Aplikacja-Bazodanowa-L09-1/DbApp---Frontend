@@ -74,36 +74,36 @@ const TeamInformationCouch = () => {
     };
 
     const handleSubmit = () => {
-        // updateStatistics({
-        //     matches_won: wins,
-        //     matches_lost: loses,
-        //     matches_drawn: draws,
-        //     top_scorer: topScorer,
-        //     least_cards: leastCards
-        // });
+        updateStatistics({
+            matches_won: wins,
+            matches_lost: loses,
+            matches_drawn: draws,
+            top_scorer: topScorer,
+            least_cards: leastCards
+        });
         visibilityOff();
     };
-    // const updateStatistics = (data) => {
-    //     fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/team_stats/statistics/`, {
-    //         mode: 'cors',
-    //         method: 'POST',
-    //         headers: {
-    //             "Content-Type": "application/json",
-    //             "authorization": `Bearer ${localStorage.getItem('access_token')}`
-    //         },
-    //         body: JSON.stringify(data)
-    //     })
-    //         .then(response => response.json())
-    //         .then(responseData => {
-    //             console.log('Statistics updated successfully:', responseData);
-    //             // Update localStorage if needed
-    //             // Example:
-    //             // localStorage.setItem('team_stats.matches_won', data.matches_won);
-    //             // localStorage.setItem('team_stats.matches_lost', data.matches_lost);
-    //             // ...
-    //         })
-    //         .catch(error => console.error('Error updating statistics:', error));
-    // };
+    const updateStatistics = (data) => {
+        fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/coach/teamstatistic/update`, {
+            mode: 'cors',
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+                "authorization": `Bearer ${localStorage.getItem('access_token')}`
+            },
+            body: JSON.stringify(data)
+        })
+            .then(response => response.json())
+            .then(responseData => {
+                console.log('Statistics updated successfully:', responseData);
+                localStorage.setItem('team_stats.matches_won', data.matches_won);
+                localStorage.setItem('team_stats.matches_lost', data.matches_lost);
+                localStorage.setItem('team_stats.matches_drawn', data.matches_drawn);
+                localStorage.setItem('team_stats.top_scorer', data.top_scorer);
+                localStorage.setItem('team_stats.least_cards', data.least_cards);
+            })
+            .catch(error => console.error('Error updating statistics:', error));
+    };
     return (
         <div id="informationcouchmain" className='paneShadow'>
             <div className='informationcouchblocks'>

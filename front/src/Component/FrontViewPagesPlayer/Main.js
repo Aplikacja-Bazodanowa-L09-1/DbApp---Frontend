@@ -79,6 +79,9 @@ const Main = () => {
             logoutHandler();
         }
     }
+    const [sharedState, setShatedState] = useState(false);
+
+    const toggleSharedState = () => {setShatedState(!sharedState)}
     useEffect(()=>{
         checkRole();
     })
@@ -91,7 +94,8 @@ const Main = () => {
             <div id="leftSide">
                 <ProfilePane/>
                 <div className="headers">Powiadomienia</div>
-                <NoticesPane/>
+                <NoticesPane toggleSharedState={toggleSharedState} 
+                sharedState={sharedState}/>
                 <div className="headers">Ankieta meczowa</div>
                 <SurveyPane/>
             </div>

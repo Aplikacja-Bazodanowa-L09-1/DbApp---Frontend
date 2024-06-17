@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import '../../Style/Main/NoticesPane.css'
 const notifIcon = require('../../Icons/notifiIcon.png')
 
-const NoticesPane = () => {
+const NoticesPane = ({toggleSharedState, sharedState}) => {
 
     const [teamMessageTitle, setTeamMessageTitle] = useState('')
     const [teamMessage, setTeamMessage] = useState('')
@@ -31,6 +31,7 @@ const NoticesPane = () => {
                 console.log('Error:', data.detail);
             } else {
                 console.log('Updated data:', data.body);
+                toggleSharedState()
             }
         })
         .catch(error => {
