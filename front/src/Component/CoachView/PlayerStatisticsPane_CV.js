@@ -3,13 +3,15 @@ import "../../Style/CoachView/PlayerStatisticsPane_CV.css";
 
 const PlayerStatisticsPane_CV = ({ playerId }) => {
     const [visibility, setVisibility] = useState({visibility: "hidden"});
-    const [playerStats, setPlayerStats] = useState(null);
-    const [goalsNumber, setGoals] = useState('');
-    const [assistsNumber, setAssists] = useState('');
-    const [yellowCards, setYellCards] = useState('');
-    const [redCards, setRedCards] = useState('');
-    const [attendanceAtTraining, setAttendanceAtTraining] = useState('');
-    const [attendanceAtMatches, setAttendanceAtMatches] = useState('');
+    const [playerStats, setPlayerStats] = useState({
+        goals: "",
+        assists: "",
+        redCards: "",
+        yellowCards: "",
+        attendanceAtTraining: "",
+        attendanceAtMatches: ""
+    });
+
     const visibilityOn = () =>
     {
         window.scrollTo(0, 0);
@@ -37,6 +39,19 @@ const PlayerStatisticsPane_CV = ({ playerId }) => {
             fetchPlayerStats(playerId);
         }
     }, [playerId]);
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setPlayerStats((prevStats) => ({
+            ...prevStats,
+            [name]: value
+        }));
+    };
+
+    const handleSubmit = () => {
+        // Implement the logic to save the updated statistics
+        visibilityOff();
+    };
 
     //DELETE THESE WHEN ITS ALL CONNECTED
     let placeHolder1 = null
@@ -78,32 +93,54 @@ const PlayerStatisticsPane_CV = ({ playerId }) => {
                 <p><span className="bStyle">Obecność Na Treningach: {placeHolder5}</span></p>
                 <p><span className="bStyle">Obecność Na Meczach: {placeHolder6}</span></p>
             </div>
-            <div id="survBox" style={visibility} >
+            <div id="survBox" style={visibility}>
                 <div id="survWindow">
-                    <div id="survTitle">
-                        Zmień Statystyki Gracza
-                    </div>
+                    <div id="survTitle">Zmień Statystyki Gracza</div>
                     <div id="survInputs">
                         <div className="survOption">
                             Gole:
-                            <input type="number" name="" id="" min="0" value={placeHolder1} onChange={(e)=>setGoals(e.target.value)}/>
+                            <input
+                                type="number"
+                                name="goals"
+                                value={playerStats.goals}
+                                onChange={handleInputChange}
+                                min="0"
+                            />
                         </div>
                         <div className="survOption">
                             Asysty:
-                            <input type="number" name="" id="" min="0" value={placeHolder2} onChange={(e)=>setAssists(e.target.value)}/>
+                            <input
+                                type="number"
+                                name="assists"
+                                value={playerStats.assists}
+                                onChange={handleInputChange}
+                                min="0"
+                            />
                         </div>
                         <div className="survOption">
                             Żółte kartki:
-                            <input type="number" name="" id="" min="0" value={placeHolder3} onChange={(e)=>setYellCards(e.target.value)}/>
+                            <input
+                                type="number"
+                                name="yellowCards"
+                                value={playerStats.yellowCards}
+                                onChange={handleInputChange}
+                                min="0"
+                            />
                         </div>
-                        <div className="survOption txtOpt">
+                        <div className="survOption">
                             Czerwone kartki:
-                            <input type="text" name="" id="" value={placeHolder4} onChange={(e)=>setRedCards(e.target.value)} />
+                            <input
+                                type="number"
+                                name="redCards"
+                                value={playerStats.redCards}
+                                onChange={handleInputChange}
+                                min="0"
+                            />
                         </div>
                     </div>
                     <div id="survButtons">
-                        <div class="survBtn" id="exitBtn" onClick={visibilityOff}>X</div>
-                        <div class="survBtn" id="okBtn">OK</div>
+                        <div className="survBtn" id="exitBtn" onClick={visibilityOff}>X</div>
+                        <div className="survBtn" id="okBtn" onClick={handleSubmit}>OK</div>
                     </div>
                 </div>
             </div>
