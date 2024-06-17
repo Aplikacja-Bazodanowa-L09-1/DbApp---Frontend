@@ -73,11 +73,30 @@ const PlayerList_CV = ({ onSelectPlayer,sharedState }) => {
     // }, []);
 >>>>>>> Stashed changes
 
+    const fetchCreatePlayerToken = async () => {
+        fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/coach/getCreatePlayerToken`, {
+            method: 'GET',
+            mode: 'cors',
+            headers: { "Content-Type": "application/json", "authorization": `Berear ${localStorage.getItem('access_token')}` },
+        }).then(response => response.json())
+        .then(data => {
+            console.log(data)
+        })
+    }
+
     return (
+<<<<<<< Updated upstream
         /*<div id="playerList_CV">
             <div class="playerCard_CV">
                 <span class="playerName_CV bStyle">DODAJ ZAWODNIKA</span>
                 <button class="copy_CV">Kopiuj</button>
+=======
+        <div id="playerList_CV">
+            <div className="playerCard_CV addPlayerCard_CV">
+                <img id="profPhoto_CV" src="https://i.pravatar.cc/99" alt="Tu będzie profilowe"/>
+                <span className="playerName_CV bStyle">DODAJ ZAWODNIKA</span>
+                <button className="copy_CV" onClick={fetchCreatePlayerToken}>Kopiuj</button>
+>>>>>>> Stashed changes
             </div>
 <<<<<<< Updated upstream
             <div class="playerCard_CV">
