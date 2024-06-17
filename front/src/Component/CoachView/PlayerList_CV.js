@@ -63,12 +63,12 @@ const PlayerList_CV = ({ onSelectPlayer,sharedState }) => {
                 <button className="copy_CV" onClick={handleCopyClick}>Kopiuj</button>
             </div>
             <div id = "listOfPlayers_CV">
-            {fetchedPlayers.map(player => (
-                <div key={player.id} onClick={() => onSelectPlayer(player.id)} className="playerCard_CV">
-                    <img src={'https://i.pravatar.cc/100?img=1'} alt={`${player.first_name} ${player.lastName}`} />
-                    <span className="playerName_CV bStyle">{`${player.first_name} ${player.last_name} ${player.player.player_positions.map(position => position.position.position_code)}`}</span>
-                </div>
-            ))}
+                {fetchedPlayers.map(player => (
+                    <div key={player.id} onClick={() => onSelectPlayer(player.id)} className="playerCard_CV">
+                        <img src={'https://i.pravatar.cc/100?img=1'} alt={`${player.first_name} ${player.lastName}`} />
+                        <span className="playerName_CV bStyle">{`${player.first_name} ${player.last_name} ${player.player.player_positions.map(position => position.position.position_code)}`}</span>
+                    </div>
+                ))}
             </div>
         </div>
     );
