@@ -1,5 +1,11 @@
+<<<<<<< Updated upstream
 import { useState, useEffect, useRef } from 'react';
 import "../../Style/CoachView/PlayerList_CV.css"
+=======
+import { useState, useEffect} from 'react';
+
+import "../../Style/CoachView/PlayerList_CV.css";
+>>>>>>> Stashed changes
 
 <<<<<<< Updated upstream
 const PlayerList_CV = () => {
@@ -11,6 +17,8 @@ const PlayerList_CV = ({ onSelectPlayer,sharedState }) => {
 >>>>>>> Stashed changes
 
     const [players, setPlayers] = useState([]);
+    const [createPlayerToken, setCreatePlayerToken] = useState()
+    
 
     const fetchPlayerList_CV = () => {
         fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/coach/list/`, {
@@ -36,6 +44,7 @@ const PlayerList_CV = ({ onSelectPlayer,sharedState }) => {
         fetchPlayerList_CV()
     }, [sharedState])
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
     useEffect(() => {
         fetch('YOUR_API_ENDPOINT')
@@ -83,6 +92,40 @@ const PlayerList_CV = ({ onSelectPlayer,sharedState }) => {
             console.log(data)
         })
     }
+=======
+    const handleCopyClick = async () => {
+        try {
+            const response = await fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/coach/getCreatePlayerToken/`,{
+                method: 'GET',
+                mode: 'cors',
+                headers: { "Content-Type": "application/json", "authorization": `Berear ${localStorage.getItem('access_token')}`},
+            }).then(response => response.json())
+            .then(data => {
+                setCreatePlayerToken(data.createPlayerToken)
+                console.log(createPlayerToken)
+            })
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+            // Assume the link is returned in the `link` field of the response data
+            const link = data.link;
+
+            // Handle copying the link to the stash here (e.g., using the Clipboard API)
+            navigator.clipboard.writeText(link).then(() => {
+                window.alert('Link copied successfully: ' +{link});
+            });
+        } catch (error) {
+            console.error('Error fetching link:', error);
+            setAlertMessage('Failed to copy link.');
+            setShowAlert(true);
+            setTimeout(() => setShowAlert(false), 3000); // Hide alert after 3 seconds
+        }
+        
+        window.alert(createPlayerToken ? `Link do tworzenia zawodnika: \n ${process.env.REACT_APP_FRONT_ADDRESS}/registrationform/${createPlayerToken} \n Skopiowano do schowka` : 'Error')
+        navigator.clipboard.writeText(`${process.env.REACT_APP_FRONT_ADDRESS}/registrationform/${createPlayerToken}`)
+    };
+>>>>>>> Stashed changes
 
     return (
 <<<<<<< Updated upstream

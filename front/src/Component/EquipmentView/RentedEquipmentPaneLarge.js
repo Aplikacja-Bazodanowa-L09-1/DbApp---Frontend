@@ -23,6 +23,13 @@ const RentedEquipmentPaneLarge = ({toggleSharedState, sharedState}) => {
                 //     console.log(data.eq[i])
                 //     setAEquipment([])
                 // }
+<<<<<<< Updated upstream
+=======
+                //console.log('user_data ', data.user_cred)
+                //setRole(data.user_cred.role)
+
+                //localStorage.setItem('user.role', data.user_cred.role)
+>>>>>>> Stashed changes
                 setREquipment(data.eq)
                 //console.log(rEquipment)
             }

@@ -3,20 +3,27 @@ import '../../Style/TeamStatistic/FormView.css'
 const surveyPhoto = require('../../Icons/surveyIcon.png')
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 const FormView = ({sharedState}) => {
     const [clubinfo,setClubInfo]=useState('');
     const [sportEvent,setSportEvent]=useState('');
     const [date,setDate]=useState([]);
     //const [hour,setHour]=useState('');
 =======
+=======
+
+>>>>>>> Stashed changes
 
 
-const FormView = () => {
+
+const FormView = ({sharedState, setClubInfo}) => {
     const [clubinfo,setClubinfo]=useState('FC Barcelona');
     const [sportEvent,setSportEvent]=useState('Wyjazd');
     const [date,setDate]=useState('21.04.2024');
     const [hour,setHour]=useState('18:00');
->>>>>>> Stashed changes
+    const [survData, setSurvData] = useState([[]]);
+    //const [hour,setHour]=useState('');
+
     const [players,setPlayers]=useState(
         {
             max:'',
@@ -88,7 +95,7 @@ const FormView = () => {
     useEffect(() => {
         fetchPlayerSurvData()
     }, [sharedState])
-=======
+
 
     // WYSLANIE ZAPYTANIA DO BACKENDU O ANKIETE
     // 
@@ -102,7 +109,7 @@ const FormView = () => {
     //          JEŚLI NIE MA TO:
     //              zwróć że nie ma (np. json({"message":"no event", "dont_ask_date":"data_akutalna + 15minut"}))
     //
->>>>>>> Stashed changes
+
 
     return ( 
         <div id="mainhead">
