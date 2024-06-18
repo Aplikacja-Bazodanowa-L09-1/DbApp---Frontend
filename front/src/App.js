@@ -35,13 +35,10 @@ function App() {
           <Route path='team-statistic/' Component={TeamStatistic}/>
           <Route path='user-view/' Component={UserView}/>
           <Route path='equipment-view/' Component={EquipmentView}/>
-<<<<<<< Updated upstream
           <Route path='registrationform/' Component={RegistrationForm}/>
           <Route path='calendar/' Component={Calendar} />
           <Route path='calendar-component/' Component={CalendarComponent} />
-=======
           <Route path='registrationform/:token' Component={RegistrationForm}/>
->>>>>>> Stashed changes
           <Route path='calendarpane/' Component={CalendarPane} />
           <Route path='navbar/' Component={NavBar} />
           <Route path='noticespane/' Component={NoticesPane} />

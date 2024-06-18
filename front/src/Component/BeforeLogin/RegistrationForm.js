@@ -1,11 +1,8 @@
 import '../../Style/BeforeLogin/RegistrationForm.css'
 import { useState, useEffect, useRef } from 'react';
-<<<<<<< Updated upstream
 
-=======
 import { validEmail } from '../Regex.js';
 import {useParams} from 'react-router-dom'
->>>>>>> Stashed changes
 
 const RegistrationForm = () => {
     const[page,setPage]=useState(1);
@@ -100,10 +97,6 @@ const RegistrationForm = () => {
     }
     const CheckPasswords = (e) =>{
         e.preventDefault();
-<<<<<<< Updated upstream
-
-        if(islogin && ismail)//jak istnieje email lub login niech zwroci true, a jeśli nie ma w bazie to false
-=======
         if(!validEmail.test(email))
             {
                 setIsMail(false);
@@ -142,7 +135,6 @@ const RegistrationForm = () => {
         }
         
         if(password!==passwordRepeat || password.length<5)
->>>>>>> Stashed changes
         {
             setInformation("Taki login istnieje. Taki email istnieje.");
             setIsLogin(false);

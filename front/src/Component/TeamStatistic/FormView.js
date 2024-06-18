@@ -4,18 +4,6 @@ const surveyPhoto = require('../../Icons/surveyIcon.png')
 const arrowPhoto = require('../../Icons/arrow.png')
 
 
-const FormView = (sharedState) => {
-    const [survData, setSurvData] = useState([[]]);
-    const [clubinfo,setClubInfo]=useState('');
-    const [sportEvent,setSportEvent]=useState('');
-    const [date,setDate]=useState([]);
-    //const [hour,setHour]=useState('');
-=======
-=======
-
->>>>>>> Stashed changes
-
-
 
 const FormView = ({sharedState, setClubInfo}) => {
     const [clubinfo,setClubinfo]=useState('FC Barcelona');
