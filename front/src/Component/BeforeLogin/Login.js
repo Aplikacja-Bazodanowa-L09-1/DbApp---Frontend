@@ -36,15 +36,7 @@ const Login = () => {
                 localStorage.setItem('access_token', data.access);
                 localStorage.setItem('refresh_token', data.refresh);
                 localStorage.setItem('role', data.role);
-                if(data.role==='Admin'){
-                    window.location.href='/adminteamview/';
-                }
-                else if(data.role==='Player'){
-                    window.location.href='/main/';
-                }
-                else if(data.role==='Coach'){
-                    window.location.href='/main/';
-                }
+                window.location = '/'
             }
             else{
                 console.log(data.detail);

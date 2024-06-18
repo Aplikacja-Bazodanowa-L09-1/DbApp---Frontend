@@ -41,10 +41,11 @@ const FormView = ({sharedState, setClubInfo}) => {
         })
         .then(response => response.json())
         .then(data => {
+            console.log(data.events_form)
             //  console.log('Fetched data:', data);  // Debug: sprawdź dane
             if (data.events_form && data.events_form.length > 0) {
                 
-                setClubInfo(data.events_form[0].player.team.events[0].title);
+                setClubinfo(data.events_form[0].player.team.events[0].title);
                 setSportEvent(data.events_form[0].player.team.events[0].type);
                 setDate(data.events_form[0].player.team.events[0].event_datetime.split('T'));
                 setPlayers({

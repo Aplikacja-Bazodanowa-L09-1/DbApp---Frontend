@@ -1,11 +1,6 @@
-<<<<<<< Updated upstream
-import { useState, useEffect, useRef } from 'react';
-import "../../Style/CoachView/PlayerList_CV.css"
-=======
 import { useState, useEffect} from 'react';
 
 import "../../Style/CoachView/PlayerList_CV.css";
->>>>>>> Stashed changes
 
 const PlayerList_CV = ({ onSelectPlayer,sharedState }) => {
     const [fetchedPlayers, setFetchedPlayers] = useState([]);
@@ -42,7 +37,15 @@ const PlayerList_CV = ({ onSelectPlayer,sharedState }) => {
 
     const handleCopyClick = async () => {
         try {
-            const response = await fetch('YOUR_BACKEND_ENDPOINT');
+            const response = await fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/coach/getCreatePlayerToken/`,{
+                method: 'GET',
+                mode: 'cors',
+                headers: { "Content-Type": "application/json", "authorization": `Berear ${localStorage.getItem('access_token')}`},
+            }).then(response => response.json())
+            .then(data => {
+                setCreatePlayerToken(data.createPlayerToken)
+                console.log(createPlayerToken)
+            })
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -60,7 +63,9 @@ const PlayerList_CV = ({ onSelectPlayer,sharedState }) => {
             setShowAlert(true);
             setTimeout(() => setShowAlert(false), 3000); // Hide alert after 3 seconds
         }
-        window.alert("asdasddasd")
+        
+        window.alert(createPlayerToken ? `Link do tworzenia zawodnika: \n ${process.env.REACT_APP_FRONT_ADDRESS}/registrationform/${createPlayerToken} \n Skopiowano do schowka` : 'Error')
+        navigator.clipboard.writeText(`${process.env.REACT_APP_FRONT_ADDRESS}/registrationform/${createPlayerToken}`)
     };
 
     return (

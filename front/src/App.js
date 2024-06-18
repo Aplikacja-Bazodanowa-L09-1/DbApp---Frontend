@@ -36,8 +36,8 @@ function App() {
           <Route path='user-view/' Component={UserView}/>
           <Route path='equipment-view/' Component={EquipmentView}/>
           <Route path='registrationform/' Component={RegistrationForm}/>
-          <Route path='calendar/' Component={Calendar} />
-          <Route path='calendar-component/' Component={CalendarComponent} />
+          {/* <Route path='calendar/' Component={Calendar} /> */}
+          {/* <Route path='calendar-component/' Component={CalendarComponent} /> */}
           <Route path='registrationform/:token' Component={RegistrationForm}/>
           <Route path='calendarpane/' Component={CalendarPane} />
           <Route path='navbar/' Component={NavBar} />

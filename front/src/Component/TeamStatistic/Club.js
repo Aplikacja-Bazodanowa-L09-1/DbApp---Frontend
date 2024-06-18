@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import '../../Style/TeamStatistic/Club.css'
-
-
+const club_logo = require('./1.webp')
 const Club = () => {
     const [clubName,setClubName] = useState('')
     const [coachName,setCoachName] = useState('')
@@ -39,7 +38,7 @@ const Club = () => {
     return ( 
         <div id="club" className='paneShadow'>
             <div id="clubimage">
-                <img alt="Logo klubu" id="clublogo"/>
+                <img alt="Logo klubu" id="clublogo" src={club_logo}/>
             </div>
             <div id="clubinformation">
                 <div className="clubnazwa"><label><b>{clubName}</b></label></div>
