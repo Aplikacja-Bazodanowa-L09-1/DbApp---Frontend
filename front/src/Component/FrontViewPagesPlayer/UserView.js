@@ -70,15 +70,7 @@ const UserView = () => {
             }
         })
     })
-    const checkRole = ()=>{
-        const webRole = localStorage.getItem('role');
-        if(webRole !== 'Player'){
-            window.location.href='/main';
-        }
-    }
-    useEffect(()=>{
-        checkRole();
-    })
+    
     return (
         <div>
         <div id="box">

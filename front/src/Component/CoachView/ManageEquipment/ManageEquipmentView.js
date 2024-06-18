@@ -76,15 +76,7 @@ const ManageEquipmentView = () => {
 
     const toggleSharedState = () => {setShatedState(!sharedState)}
 /// DAWID SZYMONIK - koniec----------------------------------------------------------------
-    const checkRole = ()=>{
-        const webRole = localStorage.getItem('role');
-        if(webRole!== 'Coach'){
-            window.location.href='/main';
-        }
-    }
-    useEffect(()=>{
-        checkRole();
-    })
+    
     
     return (
         <div>

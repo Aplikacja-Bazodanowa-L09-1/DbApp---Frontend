@@ -160,7 +160,7 @@ const RegistrationForm = () => {
         }
         if(password!==passwordRepeat || password.length===0)
         {
-            setInformationPassword("Hasła nie są takie same / Brak hasła Hasło jest z krótkie /");
+            setInformationPassword("Hasła nie są takie same / Brak hasła / Hasło jest z krótkie /");
             setIsPassword(false);
         }
         else

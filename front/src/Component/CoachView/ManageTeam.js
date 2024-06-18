@@ -78,15 +78,7 @@ const ManageTeam = () => {
         })
     }, [])
 
-    const checkRole = ()=>{
-        const webRole = localStorage.getItem('role');
-        if(webRole!== 'Coach'){
-            window.location.href='/main';
-        }
-    }
-    useEffect(()=>{
-        checkRole();
-    })
+    
     
     return (
         <div id="boxManageTeam_CV">
