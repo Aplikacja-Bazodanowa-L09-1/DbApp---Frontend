@@ -71,6 +71,16 @@ const TeamStatisticCouch = () => {
         })
     })
 
+    const checkRole = ()=>{
+        const webRole = localStorage.getItem('role');
+        if(webRole!== 'Coach'){
+            window.location.href='/main';
+        }
+    }
+    useEffect(()=>{
+        checkRole();
+    })
+
     return (
             <div id="box">
                 <div id="bar">

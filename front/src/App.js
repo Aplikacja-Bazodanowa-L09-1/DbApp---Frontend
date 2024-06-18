@@ -46,9 +46,9 @@ function App() {
           <Route path='manageteam/' Component={ManageTeam} />
           <Route path='manage-equipment' Component={ManageEquipmentView} />
           <Route path='registrationcouch/' Component={RegistrationCouch} />
-          <Route path='/teamstatisticouch' Component={TeamStatisticCouch}/>
-          <Route path='/teaminformationcouch' Component={TeamInformationCouch}/>
-          <Route path='/adminteamview' Component={AdminTeamView}/>
+          <Route path='teamstatisticouch/' Component={TeamStatisticCouch}/>
+          <Route path='teaminformationcouch/' Component={TeamInformationCouch}/>
+          <Route path='adminteamview/' Component={AdminTeamView}/>
         </Routes>
       </BrowserRouter>
     </div>

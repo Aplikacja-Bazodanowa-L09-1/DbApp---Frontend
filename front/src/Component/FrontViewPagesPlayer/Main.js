@@ -71,20 +71,10 @@ const Main = () => {
             }
         })
     })
-    const checkRole = ()=>{
-        const webRole = localStorage.getItem('role');
-        if(webRole !== 'Player' && webRole!== 'Coach'){
-            localStorage.removeItem('role');
-            window.alert('Nie posiadasz uprawnień do odwiedzania tej strony');
-            logoutHandler();
-        }
-    }
+    
     const [sharedState, setShatedState] = useState(false);
 
     const toggleSharedState = () => {setShatedState(!sharedState)}
-    useEffect(()=>{
-        checkRole();
-    })
     return ( 
     <div>
         <div id="box">

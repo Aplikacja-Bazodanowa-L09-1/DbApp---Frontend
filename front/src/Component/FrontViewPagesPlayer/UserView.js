@@ -72,11 +72,8 @@ const UserView = () => {
     })
     const checkRole = ()=>{
         const webRole = localStorage.getItem('role');
-        if(webRole!== 'Player'){
-            localStorage.removeItem('role');
-            window.alert('Nie posiadasz uprawnień do odwiedzania tej strony');
-            logoutHandler();
-            
+        if(webRole !== 'Player'){
+            window.location.href='/main';
         }
     }
     useEffect(()=>{
