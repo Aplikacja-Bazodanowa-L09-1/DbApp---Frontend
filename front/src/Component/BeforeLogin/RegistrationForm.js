@@ -1,6 +1,11 @@
 import '../../Style/BeforeLogin/RegistrationForm.css'
 import { useState, useEffect, useRef } from 'react';
+<<<<<<< Updated upstream
+
+=======
 import { validEmail } from '../Regex.js';
+import {useParams} from 'react-router-dom'
+>>>>>>> Stashed changes
 
 const RegistrationForm = () => {
     const[page,setPage]=useState(1);
@@ -19,9 +24,31 @@ const RegistrationForm = () => {
     const[ispassword,setIsPassword]=useState(true);
     const[information,setInformation]=useState('');
     const[informationpassword,setInformationPassword]=useState('');
+
+    let {token} = useParams()
     
     const [image, setImage] = useState("");
   const imageRef = useRef(null);
+
+
+    const checkToken = (token) => {
+        fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/coach/check`, {
+            method: 'POST',
+            mode: 'cors',
+            headers: { "Content-Type": "application/json", "authorization": `Berear ${localStorage.getItem('access_token')}`},
+            body: JSON.stringify({
+                'token': token
+            })
+        }).then(response => response.json())
+        .then(data => {
+            console.log(data)
+        })
+    }
+
+    useEffect(() => {
+        checkToken(token);
+    }, [])
+
 
   function useDisplayImage() {
     const [result, setResult] = useState("");
@@ -40,51 +67,106 @@ const RegistrationForm = () => {
     return { result, uploader };
   }
 
+
   const { result, uploader } = useDisplayImage();
 
     const gotoFirstPageRegistration = () =>{
         setPage(1);
     }
     const sendRegistrationPage = () =>{
+        fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/coach/create/${token}`, {
+            method: 'POST',
+            mode: 'cors',
+            headers: { "Content-Type": "application/json", "authorization": `Berear ${localStorage.getItem('access_token')}` },
+            body: JSON.stringify({
+                login: login,
+                name: name,
+                surname: surname,
+                password: password,
+                secondpassword: passwordRepeat,
+                email: email,
+                birthday: birthday,
+                height: height,
+                weight: weight,
+                bootnumber: bootnumber,
+            })
+        }).then(response => response.json())
+        .then(data => {
+            if(data.message=='successfully created'){
+                document.location.href='/login'
+            }
+        })
         setPage(1);
     }
     const CheckPasswords = (e) =>{
         e.preventDefault();
+<<<<<<< Updated upstream
+
+        if(islogin && ismail)//jak istnieje email lub login niech zwroci true, a jeśli nie ma w bazie to false
+=======
         if(!validEmail.test(email))
             {
                 setIsMail(false);
                 setInformation("Źle napisany email");
             }
-        else{
+        else {
             setIsMail(true);
             setInformation('');
-            if(islogin && ismail)//jak istnieje email lub login niech zwroci true, a jeśli nie ma w bazie to false
-            {
-                setInformation("Taki login istnieje. Taki email istnieje.");
-                setIsLogin(false);
-                setIsMail(false);
-            }
-            else if(islogin && !ismail)
-            {
-                setInformation("Taki login istnieje.");
-                setIsLogin(false);
-                setIsMail(true);
-            }
-            else if(!islogin &&ismail)
-            {
-                setInformation("Taki email istnieje.");
-                setIsLogin(true);
-                setIsMail(false);
-            }
-            else
-            {
-                setInformation("");
-                setIsLogin(true);
-                setIsMail(true);
-            }
+
+            fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/coach/checkUser/`, {
+                method: 'POST',
+                mode: 'cors',
+                headers: { "Content-Type": "application/json", "authorization": `Berear ${localStorage.getItem('access_token')}` },
+                body: JSON.stringify({
+                    username: login,
+                    email: email,
+                })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.message == false) {
+                        setInformation("Istnieje takie konto o takim emailu lub loginie.");
+                        setIsLogin(false);
+                        setIsMail(false);
+                    }
+                    else {
+                        setInformation("");
+                        setIsLogin(true);
+                        setIsMail(true);
+                        setPage(2)
+                    }
+                })
+                
+            
+
         }
         
         if(password!==passwordRepeat || password.length<5)
+>>>>>>> Stashed changes
+        {
+            setInformation("Taki login istnieje. Taki email istnieje.");
+            setIsLogin(false);
+            setIsMail(false);
+        }
+        else if(islogin && !ismail)
+        {
+            setInformation("Taki login istnieje.");
+            setIsLogin(false);
+            setIsMail(true);
+        }
+        else if(!islogin &&ismail)
+        {
+            setInformation("Taki email istnieje.");
+            setIsLogin(true);
+            setIsMail(false);
+        }
+        else
+        {
+            setInformation("");
+            setIsLogin(true);
+            setIsMail(true);
+        }
+        if(password!==passwordRepeat || password.length===0)
         {
             setInformationPassword("Hasła nie są takie same / Brak hasła Hasło jest z krótkie /");
             setIsPassword(false);

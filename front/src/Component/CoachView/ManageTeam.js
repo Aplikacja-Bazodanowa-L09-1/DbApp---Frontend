@@ -7,6 +7,8 @@ import RentedEquipment from "./RentedEquipmentPane_CV.js";
 import PlayerList from "./PlayerList_CV.js";
 import { useState, useEffect } from "react";
 
+
+
 const ManageTeam = () => {
     const [selectedPlayerId, setSelectedPlayerId] = useState(null);
 
@@ -108,5 +110,6 @@ const ManageTeam = () => {
         </div>
     );
 }
+
 
 export default ManageTeam;

@@ -10,6 +10,21 @@ const FormView = (sharedState) => {
     const [sportEvent,setSportEvent]=useState('');
     const [date,setDate]=useState([]);
     //const [hour,setHour]=useState('');
+=======
+=======
+
+>>>>>>> Stashed changes
+
+
+
+const FormView = ({sharedState, setClubInfo}) => {
+    const [clubinfo,setClubinfo]=useState('FC Barcelona');
+    const [sportEvent,setSportEvent]=useState('Wyjazd');
+    const [date,setDate]=useState('21.04.2024');
+    const [hour,setHour]=useState('18:00');
+    const [survData, setSurvData] = useState([[]]);
+    //const [hour,setHour]=useState('');
+
     const [players,setPlayers]=useState(
         {
             max:'',
@@ -95,6 +110,7 @@ const FormView = (sharedState) => {
     //          JEŚLI NIE MA TO:
     //              zwróć że nie ma (np. json({"message":"no event", "dont_ask_date":"data_akutalna + 15minut"}))
     //
+
 
 
     return ( 

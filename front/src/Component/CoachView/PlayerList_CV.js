@@ -1,5 +1,11 @@
-import { useState, useEffect } from 'react';
+<<<<<<< Updated upstream
+import { useState, useEffect, useRef } from 'react';
+import "../../Style/CoachView/PlayerList_CV.css"
+=======
+import { useState, useEffect} from 'react';
+
 import "../../Style/CoachView/PlayerList_CV.css";
+>>>>>>> Stashed changes
 
 const PlayerList_CV = ({ onSelectPlayer,sharedState }) => {
     const [fetchedPlayers, setFetchedPlayers] = useState([]);
@@ -7,6 +13,8 @@ const PlayerList_CV = ({ onSelectPlayer,sharedState }) => {
     const [showAlert, setShowAlert] = useState(false);
 
     const [players, setPlayers] = useState([]);
+    const [createPlayerToken, setCreatePlayerToken] = useState()
+    
 
     const fetchPlayerList_CV = () => {
         fetch(`${process.env.REACT_APP_SERVER_ADDRESS}/coach/list/`, {
